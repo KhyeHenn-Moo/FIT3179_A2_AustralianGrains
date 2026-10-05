@@ -1,0 +1,9 @@
+body {
+    font-family: sans-serif;
+    margin: 20px;
+}
+
+#grain_map {
+    width: 100%;
+    max-width: 900px;
+}
