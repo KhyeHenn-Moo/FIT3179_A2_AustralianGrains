@@ -1,0 +1,210 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 700,
+  "height": 520,
+  "title": {
+    "text": "Grain production density by SA2",
+    "subtitle": "Levied production per km² of SA2 area; grey = none reported"
+  },
+  "params": [
+    {
+      "name": "crop",
+      "value": "Wheat",
+      "bind": {
+        "input": "select",
+        "options": [
+          "Wheat",
+          "Barley",
+          "Oats",
+          "Sorghum"
+        ],
+        "name": "Crop: "
+      }
+    },
+    {
+      "name": "year",
+      "value": "2024-25",
+      "bind": {
+        "input": "radio",
+        "options": [
+          "2022-23",
+          "2023-24",
+          "2024-25"
+        ],
+        "name": "Year: "
+      }
+    },
+    {
+      "name": "breaks",
+      "value": {
+        "Wheat": [
+          1,
+          5,
+          20,
+          50
+        ],
+        "Barley": [
+          0.5,
+          2,
+          10,
+          30
+        ],
+        "Oats": [
+          0.05,
+          0.2,
+          1,
+          4
+        ],
+        "Sorghum": [
+          0.1,
+          0.5,
+          2,
+          8
+        ]
+      }
+    }
+  ],
+  "projection": {
+    "type": "conicEqualArea",
+    "parallels": [
+      -18,
+      -36
+    ],
+    "rotate": [
+      -134,
+      0
+    ],
+    "center": [
+      0,
+      -27
+    ]
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "../js/sa2_2021.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "SA2_2021_AUST_GDA2020"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.properties.STE_NAME21 != 'Other Territories' && datum.properties.STE_NAME21 != 'Outside Australia'"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "fill": "#eeeeee",
+        "stroke": "#ffffff",
+        "strokeWidth": 0.1
+      }
+    },
+    {
+      "data": {
+        "url": "../data/grain_sa2.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "SA2_CODE21": "string",
+            "tonnes": "number",
+            "km2": "number",
+            "tonnes_per_km2": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.crop === crop && datum.year === year"
+        },
+        {
+          "calculate": "datum.tonnes_per_km2 < breaks[datum.crop][0] ? 0 : datum.tonnes_per_km2 < breaks[datum.crop][1] ? 1 : datum.tonnes_per_km2 < breaks[datum.crop][2] ? 2 : datum.tonnes_per_km2 < breaks[datum.crop][3] ? 3 : 4",
+          "as": "class"
+        },
+        {
+          "lookup": "SA2_CODE21",
+          "from": {
+            "data": {
+              "url": "../js/sa2_2021.topojson",
+              "format": {
+                "type": "topojson",
+                "feature": "SA2_2021_AUST_GDA2020"
+              }
+            },
+            "key": "properties.SA2_CODE21"
+          },
+          "as": "geo"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#ffffff",
+        "strokeWidth": 0.1
+      },
+      "encoding": {
+        "shape": {
+          "field": "geo",
+          "type": "geojson"
+        },
+        "color": {
+          "field": "class",
+          "type": "ordinal",
+          "scale": {
+            "domain": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "range": [
+              "#fef0d9",
+              "#fdcc8a",
+              "#fc8d59",
+              "#e34a33",
+              "#b30000"
+            ]
+          },
+          "legend": {
+            "title": "Tonnes per km²",
+            "labelExpr": "datum.value == 0 ? 'Under ' + breaks[crop][0] : datum.value == 4 ? breaks[crop][3] + ' and over' : breaks[crop][datum.value - 1] + ' – ' + breaks[crop][datum.value]"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "SA2_NAME21",
+            "title": "SA2"
+          },
+          {
+            "field": "crop",
+            "title": "Crop"
+          },
+          {
+            "field": "year",
+            "title": "Year"
+          },
+          {
+            "field": "tonnes_per_km2",
+            "title": "Tonnes per km²",
+            "format": ",.2f"
+          },
+          {
+            "field": "tonnes",
+            "title": "Total tonnes",
+            "format": ","
+          },
+          {
+            "field": "km2",
+            "title": "SA2 area (km²)",
+            "format": ",.0f"
+          }
+        ]
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
+}
