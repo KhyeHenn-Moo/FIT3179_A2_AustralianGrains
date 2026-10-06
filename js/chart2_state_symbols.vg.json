@@ -1,0 +1,169 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 700,
+  "height": 520,
+  "title": {
+    "text": "Grain production by state",
+    "subtitle": "Levied production (tonnes); symbol area is proportional to tonnes"
+  },
+  "params": [
+    {
+      "name": "crop",
+      "value": "Wheat",
+      "bind": {
+        "input": "select",
+        "options": [
+          "Wheat",
+          "Barley",
+          "Oats",
+          "Sorghum"
+        ],
+        "name": "Crop: "
+      }
+    },
+    {
+      "name": "year",
+      "value": "2024-25",
+      "bind": {
+        "input": "radio",
+        "options": [
+          "2022-23",
+          "2023-24",
+          "2024-25"
+        ],
+        "name": "Year: "
+      }
+    },
+    {
+      "name": "maxT",
+      "value": {
+        "Wheat": 15000000,
+        "Barley": 7000000,
+        "Oats": 1000000,
+        "Sorghum": 2000000
+      }
+    }
+  ],
+  "projection": {
+    "type": "conicEqualArea",
+    "parallels": [
+      -18,
+      -36
+    ],
+    "rotate": [
+      -134,
+      0
+    ],
+    "center": [
+      0,
+      -27
+    ]
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "../js/states_2021.geojson",
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#eeeeee",
+        "stroke": "#ffffff",
+        "strokeWidth": 0.8
+      }
+    },
+    {
+      "data": {
+        "url": "../data/state_grain.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "tonnes": "number",
+            "lon": "number",
+            "lat": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.crop === crop && datum.year === year"
+        },
+        {
+          "calculate": "datum.tonnes / maxT[datum.crop]",
+          "as": "share_of_max"
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "fill": "#b30000",
+        "fillOpacity": 0.6,
+        "stroke": "#ffffff",
+        "strokeWidth": 0.8
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "share_of_max",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              1
+            ],
+            "range": [
+              0,
+              5000
+            ]
+          },
+          "legend": {
+            "title": "Production (tonnes)",
+            "values": [
+              0.1,
+              0.5,
+              1
+            ],
+            "labelExpr": "format(datum.value * maxT[crop], '~s')"
+          }
+        },
+        "order": {
+          "field": "tonnes",
+          "sort": "descending"
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "title": "State"
+          },
+          {
+            "field": "crop",
+            "title": "Crop"
+          },
+          {
+            "field": "year",
+            "title": "Year"
+          },
+          {
+            "field": "tonnes",
+            "title": "Tonnes",
+            "format": ","
+          }
+        ]
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
+}
