@@ -1,0 +1,71 @@
+state,crop,year,tonnes,lon,lat
+Tasmania,Wheat,2022-23,37913,146.594,-41.928
+Tasmania,Wheat,2023-24,38965,146.594,-41.928
+Tasmania,Wheat,2024-25,33627,146.594,-41.928
+Queensland,Sorghum,2022-23,1555382,144.453,-22.517
+Queensland,Sorghum,2023-24,1587181,144.453,-22.517
+Queensland,Sorghum,2024-25,1648962,144.453,-22.517
+Western Australia,Wheat,2022-23,14682964,122.289,-25.344
+Western Australia,Wheat,2023-24,8476379,122.289,-25.344
+Western Australia,Wheat,2024-25,12430868,122.289,-25.344
+Queensland,Oats,2022-23,1415,144.453,-22.517
+Queensland,Oats,2023-24,2201,144.453,-22.517
+Queensland,Oats,2024-25,1401,144.453,-22.517
+Queensland,Wheat,2022-23,3471722,144.453,-22.517
+Queensland,Wheat,2023-24,1240163,144.453,-22.517
+Queensland,Wheat,2024-25,2142973,144.453,-22.517
+Victoria,Wheat,2022-23,4976114,144.284,-36.85
+Victoria,Wheat,2023-24,5285751,144.284,-36.85
+Victoria,Wheat,2024-25,4197337,144.284,-36.85
+New South Wales,Wheat,2022-23,11194843,147.016,-32.15
+New South Wales,Wheat,2023-24,8387085,147.016,-32.15
+New South Wales,Wheat,2024-25,13076622,147.016,-32.15
+Victoria,Sorghum,2022-23,7309,144.284,-36.85
+Victoria,Sorghum,2023-24,10915,144.284,-36.85
+Victoria,Sorghum,2024-25,9580,144.284,-36.85
+Northern Territory,Wheat,2022-23,6354,133.356,-19.364
+South Australia,Oats,2022-23,23308,135.767,-30.072
+South Australia,Oats,2023-24,16390,135.767,-30.072
+South Australia,Oats,2024-25,13125,135.767,-30.072
+Western Australia,Sorghum,2022-23,261,122.289,-25.344
+Western Australia,Sorghum,2023-24,2561,122.289,-25.344
+Western Australia,Sorghum,2024-25,2722,122.289,-25.344
+South Australia,Wheat,2022-23,6829575,135.767,-30.072
+South Australia,Wheat,2023-24,4600086,135.767,-30.072
+South Australia,Wheat,2024-25,2882114,135.767,-30.072
+Western Australia,Barley,2022-23,5704122,122.289,-25.344
+Western Australia,Barley,2023-24,4213087,122.289,-25.344
+Western Australia,Barley,2024-25,6499110,122.289,-25.344
+Tasmania,Barley,2022-23,24668,146.594,-41.928
+Tasmania,Barley,2023-24,24973,146.594,-41.928
+Tasmania,Barley,2024-25,23803,146.594,-41.928
+New South Wales,Oats,2022-23,82426,147.016,-32.15
+New South Wales,Oats,2023-24,80341,147.016,-32.15
+New South Wales,Oats,2024-25,126888,147.016,-32.15
+Victoria,Barley,2022-23,2285305,144.284,-36.85
+Victoria,Barley,2023-24,2593746,144.284,-36.85
+Victoria,Barley,2024-25,2135729,144.284,-36.85
+South Australia,Sorghum,2022-23,3602,135.767,-30.072
+South Australia,Sorghum,2023-24,2490,135.767,-30.072
+New South Wales,Barley,2022-23,2123557,147.016,-32.15
+New South Wales,Barley,2023-24,1880564,147.016,-32.15
+New South Wales,Barley,2024-25,3249806,147.016,-32.15
+Queensland,Barley,2022-23,571159,144.453,-22.517
+Queensland,Barley,2023-24,373054,144.453,-22.517
+Queensland,Barley,2024-25,863626,144.453,-22.517
+New South Wales,Sorghum,2022-23,759712,147.016,-32.15
+New South Wales,Sorghum,2023-24,837945,147.016,-32.15
+New South Wales,Sorghum,2024-25,942236,147.016,-32.15
+Tasmania,Oats,2022-23,667,146.594,-41.928
+Tasmania,Oats,2023-24,1118,146.594,-41.928
+Tasmania,Oats,2024-25,925,146.594,-41.928
+Australian Capital Territory,Wheat,2024-25,15638,149.003,-35.488
+South Australia,Barley,2022-23,2782564,135.767,-30.072
+South Australia,Barley,2023-24,1876462,135.767,-30.072
+South Australia,Barley,2024-25,961332,135.767,-30.072
+Victoria,Oats,2022-23,104613,144.284,-36.85
+Victoria,Oats,2023-24,93408,144.284,-36.85
+Victoria,Oats,2024-25,106590,144.284,-36.85
+Western Australia,Oats,2022-23,747399,122.289,-25.344
+Western Australia,Oats,2023-24,543662,122.289,-25.344
+Western Australia,Oats,2024-25,902583,122.289,-25.344
