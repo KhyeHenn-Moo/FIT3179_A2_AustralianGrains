@@ -4,7 +4,11 @@
   "height": 520,
   "title": {
     "text": "Grain production by state",
-    "subtitle": "Levied production (tonnes); symbol area is proportional to tonnes"
+    "subtitle": [
+      "Levied production (tonnes); symbol area is proportional to tonnes",
+      "Circles sit at each state's geometric centre, not where the crop is grown",
+      "No circle = no production recorded for that state, crop and year (not zero)"
+    ]
   },
   "params": [
     {
