@@ -1,0 +1,293 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Crop share of each state's grain production",
+    "subtitle": [
+      "Share of wheat, barley, oats and sorghum tonnes (levied production), each row adds up to 100%",
+      "ACT and Northern Territory are left out: each has only one wheat record, in a single year",
+      "Grey = no record (not zero); <1% = recorded but tiny"
+    ]
+  },
+  "data": {
+    "url": "../data/state_crop_share.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "tonnes": "number",
+        "share_pct": "number",
+        "state_total": "number",
+        "recorded": "boolean"
+      }
+    }
+  },
+  "transform": [
+    {
+      "calculate": "!datum.recorded ? 5 : datum.share_pct < 1 ? 0 : round(datum.share_pct) < 10 ? 1 : round(datum.share_pct) < 25 ? 2 : round(datum.share_pct) < 50 ? 3 : 4",
+      "as": "class"
+    },
+    {
+      "calculate": "!datum.recorded ? '–' : datum.share_pct < 1 ? '<1%' : format(datum.share_pct, '.0f') + '%'",
+      "as": "label"
+    }
+  ],
+  "facet": {
+    "column": {
+      "field": "year",
+      "type": "ordinal",
+      "title": null,
+      "header": {
+        "labelFontSize": 13,
+        "labelFontWeight": "bold",
+        "labelPadding": 6
+      }
+    }
+  },
+  "spec": {
+    "width": 200,
+    "height": 250,
+    "layer": [
+      {
+        "mark": {
+          "type": "rect",
+          "stroke": "#ffffff",
+          "strokeWidth": 2
+        },
+        "encoding": {
+          "x": {
+            "field": "crop",
+            "type": "ordinal",
+            "sort": [
+              "Wheat",
+              "Barley",
+              "Oats",
+              "Sorghum",
+              "Total"
+            ],
+            "scale": {
+              "domain": [
+                "Wheat",
+                "Barley",
+                "Oats",
+                "Sorghum",
+                "Total"
+              ]
+            },
+            "axis": {
+              "title": null,
+              "orient": "top",
+              "labelAngle": 0,
+              "labelFontSize": 10,
+              "ticks": false,
+              "domain": false
+            }
+          },
+          "y": {
+            "field": "state",
+            "type": "nominal",
+            "sort": [
+              "Western Australia",
+              "New South Wales",
+              "Victoria",
+              "South Australia",
+              "Queensland",
+              "Tasmania"
+            ],
+            "axis": {
+              "title": null,
+              "ticks": false,
+              "domain": false,
+              "labelFontSize": 11
+            }
+          },
+          "color": {
+            "field": "class",
+            "type": "ordinal",
+            "scale": {
+              "domain": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "range": [
+                "#eff3ff",
+                "#c6dbef",
+                "#6baed6",
+                "#3182bd",
+                "#08519c",
+                "#d9d9d9"
+              ]
+            },
+            "legend": {
+              "title": "Share of state total",
+              "labelExpr": "['Under 1%','1–10%','10–25%','25–50%','50% and over','No record'][datum.value]"
+            }
+          },
+          "tooltip": [
+            {
+              "field": "state",
+              "title": "State"
+            },
+            {
+              "field": "crop",
+              "title": "Crop"
+            },
+            {
+              "field": "year",
+              "title": "Year"
+            },
+            {
+              "field": "label",
+              "title": "Share"
+            },
+            {
+              "field": "tonnes",
+              "title": "Tonnes",
+              "format": ","
+            },
+            {
+              "field": "state_total",
+              "title": "State total (tonnes)",
+              "format": ","
+            }
+          ]
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "fontSize": 11
+        },
+        "encoding": {
+          "x": {
+            "field": "crop",
+            "type": "ordinal",
+            "sort": [
+              "Wheat",
+              "Barley",
+              "Oats",
+              "Sorghum",
+              "Total"
+            ],
+            "scale": {
+              "domain": [
+                "Wheat",
+                "Barley",
+                "Oats",
+                "Sorghum",
+                "Total"
+              ]
+            }
+          },
+          "y": {
+            "field": "state",
+            "type": "nominal",
+            "sort": [
+              "Western Australia",
+              "New South Wales",
+              "Victoria",
+              "South Australia",
+              "Queensland",
+              "Tasmania"
+            ]
+          },
+          "text": {
+            "field": "label",
+            "type": "nominal"
+          },
+          "color": {
+            "condition": {
+              "test": "datum.recorded && round(datum.share_pct) >= 25",
+              "value": "#ffffff"
+            },
+            "value": "#222222"
+          }
+        }
+      },
+      {
+        "transform": [
+          {
+            "filter": "datum.crop === 'Wheat'"
+          },
+          {
+            "calculate": "'Total'",
+            "as": "col"
+          },
+          {
+            "calculate": "datum.state_total >= 1000000 ? format(datum.state_total / 1000000, '.1f') + ' Mt' : format(datum.state_total / 1000, '.0f') + ' kt'",
+            "as": "total_label"
+          }
+        ],
+        "mark": {
+          "type": "text",
+          "fontSize": 10,
+          "color": "#555555",
+          "fontStyle": "italic"
+        },
+        "encoding": {
+          "x": {
+            "field": "col",
+            "type": "ordinal",
+            "sort": [
+              "Wheat",
+              "Barley",
+              "Oats",
+              "Sorghum",
+              "Total"
+            ],
+            "scale": {
+              "domain": [
+                "Wheat",
+                "Barley",
+                "Oats",
+                "Sorghum",
+                "Total"
+              ]
+            }
+          },
+          "y": {
+            "field": "state",
+            "type": "nominal",
+            "sort": [
+              "Western Australia",
+              "New South Wales",
+              "Victoria",
+              "South Australia",
+              "Queensland",
+              "Tasmania"
+            ]
+          },
+          "text": {
+            "field": "total_label",
+            "type": "nominal"
+          },
+          "tooltip": [
+            {
+              "field": "state",
+              "title": "State"
+            },
+            {
+              "field": "year",
+              "title": "Year"
+            },
+            {
+              "field": "state_total",
+              "title": "Four-grain total (tonnes)",
+              "format": ","
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "sans-serif"
+    }
+  }
+}
