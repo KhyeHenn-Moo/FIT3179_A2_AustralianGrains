@@ -1,0 +1,252 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "How each state's grain production changed from one year to the next",
+    "subtitle": [
+      "Change in the four-grain total (wheat, barley, oats and sorghum), in million tonnes; % change in brackets",
+      "ACT and Northern Territory are left out (see the crop share chart). Three years of data show recent swings, not a long-term trend"
+    ]
+  },
+  "data": {
+    "url": "../data/state_change.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "from_tonnes": "number",
+        "to_tonnes": "number",
+        "change_tonnes": "number",
+        "change_pct": "number"
+      }
+    }
+  },
+  "transform": [
+    {
+      "filter": "datum.period !== '2022-23 to 2024-25'"
+    },
+    {
+      "calculate": "datum.change_tonnes / 1000000",
+      "as": "change_mt"
+    },
+    {
+      "calculate": "datum.change_tonnes < 0 ? 'Fell' : 'Rose'",
+      "as": "direction"
+    },
+    {
+      "calculate": "(datum.change_tonnes < 0 ? '−' : '+') + (abs(datum.change_tonnes) < 100000 ? format(abs(datum.change_tonnes) / 1000, '.0f') + ' kt' : format(abs(datum.change_mt), '.1f') + ' Mt') + ' (' + (datum.change_pct < 0 ? '−' : '+') + format(abs(datum.change_pct), '.0f') + '%)'",
+      "as": "label"
+    }
+  ],
+  "facet": {
+    "column": {
+      "field": "period",
+      "type": "ordinal",
+      "title": null,
+      "header": {
+        "labelFontSize": 13,
+        "labelFontWeight": "bold",
+        "labelPadding": 6,
+        "labelExpr": "replace(datum.label, ' to ', ' → ')"
+      }
+    }
+  },
+  "spec": {
+    "width": 330,
+    "height": 240,
+    "layer": [
+      {
+        "mark": {
+          "type": "bar"
+        },
+        "encoding": {
+          "x": {
+            "field": "change_mt",
+            "type": "quantitative",
+            "scale": {
+              "domain": [
+                -14,
+                11
+              ]
+            },
+            "axis": {
+              "title": "Change in production (million tonnes)",
+              "values": [
+                -10,
+                -5,
+                0,
+                5,
+                10
+              ],
+              "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value",
+              "grid": true,
+              "gridColor": "#eeeeee"
+            }
+          },
+          "y": {
+            "field": "state",
+            "type": "nominal",
+            "sort": [
+              "Western Australia",
+              "New South Wales",
+              "Victoria",
+              "South Australia",
+              "Queensland",
+              "Tasmania"
+            ],
+            "scale": {
+              "paddingInner": 0.3
+            },
+            "axis": {
+              "title": null,
+              "ticks": false,
+              "domain": false,
+              "labelFontSize": 11,
+              "labelPadding": 8
+            }
+          },
+          "color": {
+            "field": "direction",
+            "type": "nominal",
+            "scale": {
+              "domain": [
+                "Fell",
+                "Rose"
+              ],
+              "range": [
+                "#d95f02",
+                "#2c7bb6"
+              ]
+            },
+            "legend": {
+              "title": "Change",
+              "orient": "right"
+            }
+          },
+          "tooltip": [
+            {
+              "field": "state",
+              "title": "State"
+            },
+            {
+              "field": "period",
+              "title": "Period"
+            },
+            {
+              "field": "from_tonnes",
+              "title": "Start (tonnes)",
+              "format": ","
+            },
+            {
+              "field": "to_tonnes",
+              "title": "End (tonnes)",
+              "format": ","
+            },
+            {
+              "field": "change_tonnes",
+              "title": "Change (tonnes)",
+              "format": "+,"
+            },
+            {
+              "field": "change_pct",
+              "title": "Change (%)",
+              "format": "+.1f"
+            }
+          ]
+        }
+      },
+      {
+        "mark": {
+          "type": "rule",
+          "color": "#333333",
+          "strokeWidth": 1
+        },
+        "encoding": {
+          "x": {
+            "datum": 0
+          }
+        }
+      },
+      {
+        "transform": [
+          {
+            "filter": "datum.change_tonnes < 0"
+          }
+        ],
+        "mark": {
+          "type": "text",
+          "align": "right",
+          "dx": -5,
+          "fontSize": 10,
+          "color": "#333333"
+        },
+        "encoding": {
+          "x": {
+            "field": "change_mt",
+            "type": "quantitative"
+          },
+          "y": {
+            "field": "state",
+            "type": "nominal",
+            "sort": [
+              "Western Australia",
+              "New South Wales",
+              "Victoria",
+              "South Australia",
+              "Queensland",
+              "Tasmania"
+            ]
+          },
+          "text": {
+            "field": "label",
+            "type": "nominal"
+          }
+        }
+      },
+      {
+        "transform": [
+          {
+            "filter": "datum.change_tonnes >= 0"
+          }
+        ],
+        "mark": {
+          "type": "text",
+          "align": "left",
+          "dx": 5,
+          "fontSize": 10,
+          "color": "#333333"
+        },
+        "encoding": {
+          "x": {
+            "field": "change_mt",
+            "type": "quantitative"
+          },
+          "y": {
+            "field": "state",
+            "type": "nominal",
+            "sort": [
+              "Western Australia",
+              "New South Wales",
+              "Victoria",
+              "South Australia",
+              "Queensland",
+              "Tasmania"
+            ]
+          },
+          "text": {
+            "field": "label",
+            "type": "nominal"
+          }
+        }
+      }
+    ]
+  },
+  "resolve": {
+    "axis": {
+      "y": "shared"
+    }
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
+}
