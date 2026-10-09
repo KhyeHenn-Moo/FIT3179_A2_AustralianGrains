@@ -1,0 +1,308 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 760,
+  "height": 420,
+  "title": {
+    "text": "Where Australian grain was exported in 2024",
+    "subtitle": [
+      "Line width is proportional to tonnes exported (FAOSTAT); only flows of 1,000 t or more are shown",
+      "Lines run from the middle of Australia to each destination's capital city, not along real shipping routes",
+      "Malaysia is highlighted in blue; no blue line means no Malaysian exports of that crop at 1,000 t or more"
+    ]
+  },
+  "params": [
+    {
+      "name": "crop",
+      "value": "Wheat",
+      "bind": {
+        "input": "select",
+        "options": [
+          "Wheat",
+          "Barley",
+          "Oats",
+          "Sorghum"
+        ],
+        "name": "Crop: "
+      }
+    },
+    {
+      "name": "maxT",
+      "value": {
+        "Wheat": 3500000,
+        "Barley": 5000000,
+        "Oats": 300000,
+        "Sorghum": 2100000
+      }
+    }
+  ],
+  "projection": {
+    "type": "equalEarth",
+    "rotate": [
+      -150,
+      0
+    ]
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "../js/ne_110m_countries.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "ne_110m_admin_0_countries"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#eeeeee",
+        "stroke": "#ffffff",
+        "strokeWidth": 0.5
+      }
+    },
+    {
+      "data": {
+        "url": "../js/oceans.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "oceans"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#cfe6f3"
+      }
+    },
+    {
+      "data": {
+        "url": "../js/WorldMapWithGraticules.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "ne_110m_graticules_30"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": null,
+        "stroke": "#b0b0b0",
+        "strokeWidth": 0.5
+      }
+    },
+    {
+      "data": {
+        "url": "../data/flows.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "tonnes": "number",
+            "rank_in_crop": "number",
+            "origin_lon": "number",
+            "origin_lat": "number",
+            "dest_lon": "number",
+            "dest_lat": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.crop === crop"
+        },
+        {
+          "calculate": "datum.tonnes / maxT[datum.crop]",
+          "as": "share_of_max"
+        },
+        {
+          "calculate": "datum.partner === 'China, mainland' ? 'China' : datum.partner === 'Republic of Korea' ? 'South Korea' : datum.partner === 'China, Taiwan Province of' ? 'Taiwan' : datum.partner === 'Viet Nam' ? 'Vietnam' : datum.partner",
+          "as": "label"
+        }
+      ],
+      "layer": [
+        {
+          "transform": [
+            {
+              "filter": "!datum.is_malaysia || datum.is_malaysia === 'False'"
+            }
+          ],
+          "mark": {
+            "type": "rule",
+            "stroke": "#fc8d59",
+            "opacity": 0.6,
+            "strokeCap": "round"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "origin_lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "origin_lat",
+              "type": "quantitative"
+            },
+            "longitude2": {
+              "field": "dest_lon"
+            },
+            "latitude2": {
+              "field": "dest_lat"
+            },
+            "strokeWidth": {
+              "field": "share_of_max",
+              "type": "quantitative",
+              "scale": {
+                "domain": [
+                  0,
+                  1
+                ],
+                "range": [
+                  0.5,
+                  14
+                ]
+              },
+              "legend": {
+                "title": "Exported (tonnes)",
+                "values": [
+                  0.1,
+                  0.5,
+                  1
+                ],
+                "labelExpr": "format(datum.value * maxT[crop], '~s')"
+              }
+            },
+            "tooltip": [
+              {
+                "field": "partner",
+                "title": "Destination"
+              },
+              {
+                "field": "crop",
+                "title": "Crop"
+              },
+              {
+                "field": "tonnes",
+                "title": "Tonnes (2024)",
+                "format": ","
+              },
+              {
+                "field": "rank_in_crop",
+                "title": "Rank for this crop"
+              }
+            ]
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum.is_malaysia === 'True' || datum.is_malaysia === true"
+            }
+          ],
+          "mark": {
+            "type": "rule",
+            "stroke": "#08519c",
+            "opacity": 0.9,
+            "strokeCap": "round"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "origin_lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "origin_lat",
+              "type": "quantitative"
+            },
+            "longitude2": {
+              "field": "dest_lon"
+            },
+            "latitude2": {
+              "field": "dest_lat"
+            },
+            "strokeWidth": {
+              "field": "share_of_max",
+              "type": "quantitative",
+              "scale": {
+                "domain": [
+                  0,
+                  1
+                ],
+                "range": [
+                  0.5,
+                  14
+                ]
+              },
+              "legend": null
+            },
+            "tooltip": [
+              {
+                "field": "partner",
+                "title": "Destination"
+              },
+              {
+                "field": "crop",
+                "title": "Crop"
+              },
+              {
+                "field": "tonnes",
+                "title": "Tonnes (2024)",
+                "format": ","
+              },
+              {
+                "field": "rank_in_crop",
+                "title": "Rank for this crop"
+              }
+            ]
+          }
+        },
+        {
+          "mark": {
+            "type": "circle",
+            "size": 25,
+            "fill": "#444444",
+            "stroke": "#ffffff",
+            "strokeWidth": 0.5
+          },
+          "encoding": {
+            "longitude": {
+              "field": "dest_lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "dest_lat",
+              "type": "quantitative"
+            }
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum.rank_in_crop <= 5 || datum.is_malaysia === 'True' || datum.is_malaysia === true"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "dx": 6,
+            "dy": -5,
+            "fontSize": 11,
+            "fontWeight": "bold",
+            "color": "#222222"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "dest_lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "dest_lat",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "label"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
+}
