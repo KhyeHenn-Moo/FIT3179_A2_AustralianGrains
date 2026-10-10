@@ -1,0 +1,260 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 760,
+  "height": 420,
+  "title": {
+    "text": "Grain yield by country, 2024",
+    "subtitle": [
+      "Tonnes harvested per hectare (production \u00f7 area harvested), FAOSTAT; same classes for every crop",
+      "Grey = no data, or under 1,000 hectares harvested (too small for a reliable yield)",
+      "Australia is outlined in black, with its yield labelled for the selected crop"
+    ]
+  },
+  "params": [
+    {
+      "name": "crop",
+      "value": "Wheat",
+      "bind": {
+        "input": "select",
+        "options": [
+          "Wheat",
+          "Barley",
+          "Oats",
+          "Sorghum"
+        ],
+        "name": "Crop: "
+      }
+    },
+    {
+      "name": "breaks",
+      "value": [
+        1.5,
+        3,
+        4.5,
+        6
+      ]
+    }
+  ],
+  "projection": {
+    "type": "equalEarth",
+    "rotate": [
+      -150,
+      0
+    ]
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "../js/oceans.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "oceans"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#cfe6f3"
+      }
+    },
+    {
+      "data": {
+        "url": "../js/ne_110m_countries.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "ne_110m_admin_0_countries"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#eeeeee",
+        "stroke": "#ffffff",
+        "strokeWidth": 0.5
+      }
+    },
+    {
+      "data": {
+        "url": "../data/world_yield.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "production_t": "number",
+            "area_ha": "number",
+            "yield_t_ha": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.crop === crop"
+        },
+        {
+          "calculate": "datum.yield_t_ha < breaks[0] ? 0 : datum.yield_t_ha < breaks[1] ? 1 : datum.yield_t_ha < breaks[2] ? 2 : datum.yield_t_ha < breaks[3] ? 3 : 4",
+          "as": "class"
+        },
+        {
+          "lookup": "adm0_a3",
+          "from": {
+            "data": {
+              "url": "../js/ne_110m_countries.topojson",
+              "format": {
+                "type": "topojson",
+                "feature": "ne_110m_admin_0_countries"
+              }
+            },
+            "key": "properties.ADM0_A3"
+          },
+          "as": "geo"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#ffffff",
+        "strokeWidth": 0.5
+      },
+      "encoding": {
+        "shape": {
+          "field": "geo",
+          "type": "geojson"
+        },
+        "color": {
+          "field": "class",
+          "type": "ordinal",
+          "scale": {
+            "domain": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "range": [
+              "#edf8e9",
+              "#bae4b3",
+              "#74c476",
+              "#31a354",
+              "#006d2c"
+            ]
+          },
+          "legend": {
+            "title": "Tonnes per hectare",
+            "labelExpr": "datum.value == 0 ? 'Under ' + breaks[0] : datum.value == 4 ? breaks[3] + ' and over' : breaks[datum.value - 1] + ' \u2013 ' + breaks[datum.value]"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "country",
+            "title": "Country"
+          },
+          {
+            "field": "crop",
+            "title": "Crop"
+          },
+          {
+            "field": "yield_t_ha",
+            "title": "Yield (t/ha)",
+            "format": ",.2f"
+          },
+          {
+            "field": "production_t",
+            "title": "Production (t)",
+            "format": ","
+          },
+          {
+            "field": "area_ha",
+            "title": "Area harvested (ha)",
+            "format": ","
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "../js/ne_110m_countries.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "ne_110m_admin_0_countries"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.properties.ADM0_A3 === 'AUS'"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "fill": null,
+        "stroke": "#222222",
+        "strokeWidth": 2
+      }
+    },
+    {
+      "data": {
+        "url": "../js/WorldMapWithGraticules.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "ne_110m_graticules_30"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": null,
+        "stroke": "#b0b0b0",
+        "strokeWidth": 0.5
+      }
+    },
+    {
+      "data": {
+        "url": "../data/world_yield.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "production_t": "number",
+            "area_ha": "number",
+            "yield_t_ha": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.crop === crop && datum.adm0_a3 === 'AUS'"
+        },
+        {
+          "calculate": "'Australia: ' + format(datum.yield_t_ha, '.2f') + ' t/ha'",
+          "as": "txt"
+        },
+        {
+          "calculate": "134",
+          "as": "lon"
+        },
+        {
+          "calculate": "-48",
+          "as": "lat"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 13,
+        "fontWeight": "bold",
+        "color": "#222222"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "txt"
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
+}
