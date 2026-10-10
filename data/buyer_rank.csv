@@ -1,0 +1,365 @@
+crop,period,partner,label,tonnes,avg_annual_t,rank,is_malaysia
+All Grains,1986-91,Japan,Japan,12068590.0,2011432.0,1,False
+All Grains,1986-91,"China, mainland",China,11862180.0,1977030.0,2,False
+All Grains,1986-91,Iran (Islamic Republic of),Iran,10599273.0,1766546.0,3,False
+All Grains,1986-91,Egypt,Egypt,10466577.0,1744430.0,4,False
+All Grains,1986-91,USSR,USSR,5512245.0,918708.0,5,False
+All Grains,1986-91,Iraq,Iraq,5344721.0,890787.0,6,False
+All Grains,1986-91,Indonesia,Indonesia,4801548.0,800258.0,7,False
+All Grains,1986-91,Saudi Arabia,Saudi Arabia,3534543.0,589090.0,8,False
+All Grains,1986-91,Republic of Korea,South Korea,3122193.0,520366.0,9,False
+All Grains,1986-91,Malaysia,Malaysia,2878219.0,479703.0,10,True
+All Grains,1996-00,Indonesia,Indonesia,10356972.0,2071394.0,1,False
+All Grains,1996-00,Iran (Islamic Republic of),Iran,9728873.0,1945775.0,2,False
+All Grains,1996-00,Japan,Japan,8531231.0,1706246.0,3,False
+All Grains,1996-00,Iraq,Iraq,6530642.0,1306128.0,4,False
+All Grains,1996-00,Egypt,Egypt,5806647.0,1161329.0,5,False
+All Grains,1996-00,Pakistan,Pakistan,4818525.0,963705.0,6,False
+All Grains,1996-00,Republic of Korea,South Korea,4798259.0,959652.0,7,False
+All Grains,1996-00,India,India,4370182.0,874036.0,8,False
+All Grains,1996-00,"China, mainland",China,4257317.0,851463.0,9,False
+All Grains,1996-00,Malaysia,Malaysia,3762822.0,752564.0,10,True
+All Grains,2001-05,Indonesia,Indonesia,10620738.0,2124148.0,1,False
+All Grains,2001-05,Japan,Japan,8507697.0,1701539.0,2,False
+All Grains,2001-05,Iraq,Iraq,7966099.0,1593220.0,3,False
+All Grains,2001-05,Egypt,Egypt,6928857.0,1385771.0,4,False
+All Grains,2001-05,"China, mainland",China,6537535.0,1307507.0,5,False
+All Grains,2001-05,Republic of Korea,South Korea,5486147.0,1097229.0,6,False
+All Grains,2001-05,Iran (Islamic Republic of),Iran,4872457.0,974491.0,7,False
+All Grains,2001-05,Saudi Arabia,Saudi Arabia,4354509.0,870902.0,8,False
+All Grains,2001-05,Malaysia,Malaysia,3403450.0,680690.0,9,True
+All Grains,2001-05,Sudan (former),Sudan (former),3057170.0,611434.0,10,False
+All Grains,2006-10,Indonesia,Indonesia,12737408.0,2547482.0,1,False
+All Grains,2006-10,Japan,Japan,8114225.0,1622845.0,2,False
+All Grains,2006-10,Saudi Arabia,Saudi Arabia,6024737.0,1204947.0,3,False
+All Grains,2006-10,"China, mainland",China,5135822.0,1027164.0,4,False
+All Grains,2006-10,Republic of Korea,South Korea,4380012.0,876002.0,5,False
+All Grains,2006-10,Viet Nam,Vietnam,3981851.0,796370.0,6,False
+All Grains,2006-10,Malaysia,Malaysia,3611740.0,722348.0,7,True
+All Grains,2006-10,Sudan (former),Sudan (former),3378803.0,675761.0,8,False
+All Grains,2006-10,Yemen,Yemen,2850117.0,570023.0,9,False
+All Grains,2006-10,Egypt,Egypt,2801870.0,560374.0,10,False
+All Grains,2011-15,Indonesia,Indonesia,19759954.94,3951991.0,1,False
+All Grains,2011-15,"China, mainland",China,15060767.95,3012154.0,2,False
+All Grains,2011-15,Viet Nam,Vietnam,8184749.97,1636950.0,3,False
+All Grains,2011-15,Japan,Japan,7237883.95,1447577.0,4,False
+All Grains,2011-15,Republic of Korea,South Korea,6908052.09,1381610.0,5,False
+All Grains,2011-15,Malaysia,Malaysia,4492091.49,898418.0,6,True
+All Grains,2011-15,Philippines,Philippines,4285714.390000001,857143.0,7,False
+All Grains,2011-15,Yemen,Yemen,4200719.25,840144.0,8,False
+All Grains,2011-15,Iraq,Iraq,4167284.3,833457.0,9,False
+All Grains,2011-15,Saudi Arabia,Saudi Arabia,3500290.83,700058.0,10,False
+All Grains,2016-20,"China, mainland",China,20565068.85,4113014.0,1,False
+All Grains,2016-20,Indonesia,Indonesia,12007118.709999999,2401424.0,2,False
+All Grains,2016-20,Japan,Japan,7553385.39,1510677.0,3,False
+All Grains,2016-20,Philippines,Philippines,6734702.1899999995,1346940.0,4,False
+All Grains,2016-20,Viet Nam,Vietnam,6678277.59,1335656.0,5,False
+All Grains,2016-20,Republic of Korea,South Korea,5333205.41,1066641.0,6,False
+All Grains,2016-20,Thailand,Thailand,3582268.48,716454.0,7,False
+All Grains,2016-20,Malaysia,Malaysia,3486549.22,697310.0,8,True
+All Grains,2016-20,Yemen,Yemen,3212511.31,642502.0,9,False
+All Grains,2016-20,Kuwait,Kuwait,2748479.52,549696.0,10,False
+All Grains,2021-24,"China, mainland",China,35194407.21,8798602.0,1,False
+All Grains,2021-24,Indonesia,Indonesia,17075670.6,4268918.0,2,False
+All Grains,2021-24,Viet Nam,Vietnam,11928285.46,2982071.0,3,False
+All Grains,2021-24,Philippines,Philippines,11723763.05,2930941.0,4,False
+All Grains,2021-24,Japan,Japan,9652942.200000001,2413236.0,5,False
+All Grains,2021-24,Saudi Arabia,Saudi Arabia,8278216.99,2069554.0,6,False
+All Grains,2021-24,Republic of Korea,South Korea,7048761.290000001,1762190.0,7,False
+All Grains,2021-24,Thailand,Thailand,5936759.79,1484190.0,8,False
+All Grains,2021-24,Yemen,Yemen,4755320.8,1188830.0,9,False
+All Grains,2021-24,Malaysia,Malaysia,4145445.9,1036361.0,10,True
+Barley,1986-91,Saudi Arabia,Saudi Arabia,3466666.0,577778.0,1,False
+Barley,1986-91,Japan,Japan,2824732.0,470789.0,2,False
+Barley,1986-91,"China, mainland",China,1620565.0,270094.0,3,False
+Barley,1986-91,"China, Taiwan Province of",Taiwan,1524712.0,254119.0,4,False
+Barley,1986-91,United Arab Emirates,United Arab Emirates,752784.0,125464.0,5,False
+Barley,1986-91,Iran (Islamic Republic of),Iran,625579.0,104263.0,6,False
+Barley,1986-91,Brazil,Brazil,430068.0,71678.0,7,False
+Barley,1986-91,Kuwait,Kuwait,377735.0,62956.0,8,False
+Barley,1986-91,Peru,Peru,298550.0,49758.0,9,False
+Barley,1986-91,Oman,Oman,285460.0,47577.0,10,False
+Barley,1986-91,Malaysia,Malaysia,189.0,32.0,36,True
+Barley,1996-00,"China, mainland",China,1526305.0,305261.0,1,False
+Barley,1996-00,Japan,Japan,1383827.0,276765.0,2,False
+Barley,1996-00,Saudi Arabia,Saudi Arabia,829083.0,165817.0,3,False
+Barley,1996-00,"China, Taiwan Province of",Taiwan,287108.0,57422.0,4,False
+Barley,1996-00,United Arab Emirates,United Arab Emirates,244438.0,48888.0,5,False
+Barley,1996-00,Kuwait,Kuwait,154325.0,30865.0,6,False
+Barley,1996-00,Iran (Islamic Republic of),Iran,95378.0,19076.0,7,False
+Barley,1996-00,Republic of Korea,South Korea,93164.0,18633.0,8,False
+Barley,1996-00,Oman,Oman,65938.0,13188.0,9,False
+Barley,1996-00,Qatar,Qatar,56520.0,11304.0,10,False
+Barley,1996-00,Malaysia,Malaysia,91.0,18.0,27,True
+Barley,2001-05,Saudi Arabia,Saudi Arabia,4351581.0,870316.0,1,False
+Barley,2001-05,"China, mainland",China,3637353.0,727471.0,2,False
+Barley,2001-05,Japan,Japan,2551417.0,510283.0,3,False
+Barley,2001-05,United Arab Emirates,United Arab Emirates,467858.0,93572.0,4,False
+Barley,2001-05,"China, Taiwan Province of",Taiwan,416678.0,83336.0,5,False
+Barley,2001-05,Kuwait,Kuwait,391167.0,78233.0,6,False
+Barley,2001-05,Iran (Islamic Republic of),Iran,343269.0,68654.0,7,False
+Barley,2001-05,Republic of Korea,South Korea,197449.0,39490.0,8,False
+Barley,2001-05,Colombia,Colombia,150367.0,30073.0,9,False
+Barley,2001-05,Oman,Oman,102806.0,20561.0,10,False
+Barley,2001-05,Malaysia,Malaysia,216.0,43.0,30,True
+Barley,2006-10,Saudi Arabia,Saudi Arabia,5816847.0,1163369.0,1,False
+Barley,2006-10,"China, mainland",China,3682972.0,736594.0,2,False
+Barley,2006-10,Japan,Japan,3073583.0,614717.0,3,False
+Barley,2006-10,United Arab Emirates,United Arab Emirates,651740.0,130348.0,4,False
+Barley,2006-10,Kuwait,Kuwait,324406.0,64881.0,5,False
+Barley,2006-10,"China, Taiwan Province of",Taiwan,217064.0,43413.0,6,False
+Barley,2006-10,Republic of Korea,South Korea,93507.0,18701.0,7,False
+Barley,2006-10,Oman,Oman,88405.0,17681.0,8,False
+Barley,2006-10,Viet Nam,Vietnam,85524.0,17105.0,9,False
+Barley,2006-10,Qatar,Qatar,84486.0,16897.0,10,False
+Barley,2006-10,Malaysia,Malaysia,489.0,98.0,27,True
+Barley,2011-15,"China, mainland",China,6058329.58,1211666.0,1,False
+Barley,2011-15,Saudi Arabia,Saudi Arabia,2336252.0,467250.0,2,False
+Barley,2011-15,Japan,Japan,1745221.68,349044.0,3,False
+Barley,2011-15,United Arab Emirates,United Arab Emirates,481994.61,96399.0,4,False
+Barley,2011-15,Kuwait,Kuwait,364283.0,72857.0,5,False
+Barley,2011-15,Jordan,Jordan,257500.0,51500.0,6,False
+Barley,2011-15,Iran (Islamic Republic of),Iran,239000.0,47800.0,7,False
+Barley,2011-15,Republic of Korea,South Korea,116767.09,23353.0,8,False
+Barley,2011-15,Oman,Oman,108878.09,21776.0,9,False
+Barley,2011-15,Viet Nam,Vietnam,97118.53,19424.0,10,False
+Barley,2011-15,Malaysia,Malaysia,2081.44,416.0,24,True
+Barley,2016-20,"China, mainland",China,12984460.99,2596892.0,1,False
+Barley,2016-20,Japan,Japan,3005900.28,601180.0,2,False
+Barley,2016-20,Thailand,Thailand,1493804.92,298761.0,3,False
+Barley,2016-20,Saudi Arabia,Saudi Arabia,1395367.4500000002,279073.0,4,False
+Barley,2016-20,United Arab Emirates,United Arab Emirates,713143.84,142629.0,5,False
+Barley,2016-20,Viet Nam,Vietnam,614070.81,122814.0,6,False
+Barley,2016-20,Kuwait,Kuwait,583788.5700000001,116758.0,7,False
+Barley,2016-20,Qatar,Qatar,288141.5,57628.0,8,False
+Barley,2016-20,"China, Taiwan Province of",Taiwan,142756.97,28551.0,9,False
+Barley,2016-20,Republic of Korea,South Korea,87006.67,17401.0,10,False
+Barley,2016-20,Malaysia,Malaysia,7297.05,1459.0,18,True
+Barley,2021-24,Saudi Arabia,Saudi Arabia,7784824.0,1946206.0,1,False
+Barley,2021-24,"China, mainland",China,7777046.45,1944262.0,2,False
+Barley,2021-24,Japan,Japan,4222518.32,1055630.0,3,False
+Barley,2021-24,Viet Nam,Vietnam,2031643.76,507911.0,4,False
+Barley,2021-24,Thailand,Thailand,1467281.8800000001,366820.0,5,False
+Barley,2021-24,Kuwait,Kuwait,1175699.18,293925.0,6,False
+Barley,2021-24,Mexico,Mexico,1162922.5,290731.0,7,False
+Barley,2021-24,Philippines,Philippines,1054657.04,263664.0,8,False
+Barley,2021-24,Qatar,Qatar,880840.6,220210.0,9,False
+Barley,2021-24,United Arab Emirates,United Arab Emirates,839949.85,209987.0,10,False
+Barley,2021-24,Malaysia,Malaysia,6379.03,1595.0,26,True
+Oats,1986-91,Japan,Japan,492784.0,82131.0,1,False
+Oats,1986-91,Ecuador,Ecuador,123300.0,20550.0,2,False
+Oats,1986-91,Netherlands (Kingdom of the),Netherlands,90594.0,15099.0,3,False
+Oats,1986-91,USSR,USSR,75036.0,12506.0,4,False
+Oats,1986-91,Algeria,Algeria,68616.0,11436.0,5,False
+Oats,1986-91,Peru,Peru,42525.0,7088.0,6,False
+Oats,1986-91,Malta,Malta,40864.0,6811.0,7,False
+Oats,1986-91,Kuwait,Kuwait,36928.0,6155.0,8,False
+Oats,1986-91,Spain,Spain,34781.0,5797.0,9,False
+Oats,1986-91,Malaysia,Malaysia,34269.0,5712.0,10,True
+Oats,1996-00,Japan,Japan,50479.0,10096.0,1,False
+Oats,1996-00,Philippines,Philippines,17999.0,3600.0,2,False
+Oats,1996-00,Republic of Korea,South Korea,8684.0,1737.0,3,False
+Oats,1996-00,United Arab Emirates,United Arab Emirates,8052.0,1610.0,4,False
+Oats,1996-00,Qatar,Qatar,3653.0,731.0,5,False
+Oats,1996-00,Libya,Libya,3258.0,652.0,6,False
+Oats,1996-00,Malta,Malta,2669.0,534.0,7,False
+Oats,1996-00,"China, Macao SAR","China, Macao SAR",1972.0,394.0,8,False
+Oats,1996-00,Bahrain,Bahrain,1913.0,383.0,9,False
+Oats,1996-00,Mauritius,Mauritius,1840.0,368.0,10,False
+Oats,1996-00,Malaysia,Malaysia,461.0,92.0,24,True
+Oats,2001-05,Japan,Japan,48663.0,9733.0,1,False
+Oats,2001-05,Philippines,Philippines,28078.0,5616.0,2,False
+Oats,2001-05,United Arab Emirates,United Arab Emirates,10551.0,2110.0,3,False
+Oats,2001-05,"China, mainland",China,9142.0,1828.0,4,False
+Oats,2001-05,India,India,8499.0,1700.0,5,False
+Oats,2001-05,Republic of Korea,South Korea,5943.0,1189.0,6,False
+Oats,2001-05,Qatar,Qatar,5491.0,1098.0,7,False
+Oats,2001-05,Cyprus,Cyprus,3539.0,708.0,8,False
+Oats,2001-05,"China, Taiwan Province of",Taiwan,2848.0,570.0,9,False
+Oats,2001-05,"China, Hong Kong SAR","China, Hong Kong SAR",2847.0,569.0,10,False
+Oats,2001-05,Malaysia,Malaysia,1255.0,251.0,19,True
+Oats,2006-10,Japan,Japan,31875.0,6375.0,1,False
+Oats,2006-10,Philippines,Philippines,20336.0,4067.0,2,False
+Oats,2006-10,India,India,15378.0,3076.0,3,False
+Oats,2006-10,United Arab Emirates,United Arab Emirates,5856.0,1171.0,4,False
+Oats,2006-10,Republic of Korea,South Korea,4943.0,989.0,5,False
+Oats,2006-10,Saudi Arabia,Saudi Arabia,3179.0,636.0,6,False
+Oats,2006-10,Qatar,Qatar,2889.0,578.0,7,False
+Oats,2006-10,Singapore,Singapore,2181.0,436.0,8,False
+Oats,2006-10,Malaysia,Malaysia,1287.0,257.0,9,True
+Oats,2006-10,United States of America,USA,1120.0,224.0,10,False
+Oats,2011-15,Japan,Japan,102293.86,20459.0,1,False
+Oats,2011-15,"China, mainland",China,24423.15,4885.0,2,False
+Oats,2011-15,India,India,19427.15,3885.0,3,False
+Oats,2011-15,Philippines,Philippines,14225.93,2845.0,4,False
+Oats,2011-15,United States of America,USA,5715.07,1143.0,5,False
+Oats,2011-15,Republic of Korea,South Korea,2139.41,428.0,6,False
+Oats,2011-15,Thailand,Thailand,1085.48,217.0,7,False
+Oats,2011-15,Singapore,Singapore,1080.73,216.0,8,False
+Oats,2011-15,New Caledonia,New Caledonia,974.01,195.0,9,False
+Oats,2011-15,Malaysia,Malaysia,954.12,191.0,10,True
+Oats,2016-20,"China, mainland",China,96645.56000000001,19329.0,1,False
+Oats,2016-20,India,India,32355.6,6471.0,2,False
+Oats,2016-20,Japan,Japan,21292.420000000002,4258.0,3,False
+Oats,2016-20,Philippines,Philippines,18909.010000000002,3782.0,4,False
+Oats,2016-20,Malaysia,Malaysia,8394.18,1679.0,5,True
+Oats,2016-20,Singapore,Singapore,1123.28,225.0,6,False
+Oats,2016-20,Sri Lanka,Sri Lanka,1061.06,212.0,7,False
+Oats,2016-20,Saudi Arabia,Saudi Arabia,1031.85,206.0,8,False
+Oats,2016-20,Indonesia,Indonesia,708.59,142.0,9,False
+Oats,2016-20,Mauritius,Mauritius,575.97,115.0,10,False
+Oats,2021-24,"China, mainland",China,1099736.28,274934.0,1,False
+Oats,2021-24,Mexico,Mexico,218565.0,54641.0,2,False
+Oats,2021-24,India,India,162537.52000000002,40634.0,3,False
+Oats,2021-24,United Arab Emirates,United Arab Emirates,93671.61,23418.0,4,False
+Oats,2021-24,Malaysia,Malaysia,90554.39,22639.0,5,True
+Oats,2021-24,Japan,Japan,70348.34,17587.0,6,False
+Oats,2021-24,Sri Lanka,Sri Lanka,37591.45,9398.0,7,False
+Oats,2021-24,Philippines,Philippines,21708.9,5427.0,8,False
+Oats,2021-24,South Africa,South Africa,20318.02,5080.0,9,False
+Oats,2021-24,Republic of Korea,South Korea,13613.289999999999,3403.0,10,False
+Sorghum,1986-91,Japan,Japan,2545736.0,424289.0,1,False
+Sorghum,1986-91,"China, Taiwan Province of",Taiwan,295651.0,49275.0,2,False
+Sorghum,1986-91,Papua New Guinea,Papua New Guinea,30445.0,5074.0,3,False
+Sorghum,1986-91,Saudi Arabia,Saudi Arabia,28916.0,4819.0,4,False
+Sorghum,1986-91,Singapore,Singapore,27350.0,4558.0,5,False
+Sorghum,1986-91,Somalia,Somalia,23350.0,3892.0,6,False
+Sorghum,1986-91,Fiji,Fiji,19028.0,3171.0,7,False
+Sorghum,1986-91,New Zealand,New Zealand,10617.0,1770.0,8,False
+Sorghum,1986-91,Senegal,Senegal,9620.0,1603.0,9,False
+Sorghum,1986-91,United Republic of Tanzania,United Republic of Tanzania,7140.0,1190.0,10,False
+Sorghum,1986-91,Malaysia,Malaysia,42.0,7.0,32,True
+Sorghum,1996-00,Japan,Japan,1124788.0,224958.0,1,False
+Sorghum,1996-00,"China, Taiwan Province of",Taiwan,111897.0,22379.0,2,False
+Sorghum,1996-00,Papua New Guinea,Papua New Guinea,101863.0,20373.0,3,False
+Sorghum,1996-00,South Africa,South Africa,25104.0,5021.0,4,False
+Sorghum,1996-00,Fiji,Fiji,13920.0,2784.0,5,False
+Sorghum,1996-00,Philippines,Philippines,9398.0,1880.0,6,False
+Sorghum,1996-00,Belgium-Luxembourg,Belgium-Luxembourg,5492.0,1098.0,7,False
+Sorghum,1996-00,Argentina,Argentina,4219.0,844.0,8,False
+Sorghum,1996-00,United Arab Emirates,United Arab Emirates,3194.0,639.0,9,False
+Sorghum,1996-00,Kuwait,Kuwait,2870.0,574.0,10,False
+Sorghum,1996-00,Malaysia,Malaysia,65.0,13.0,30,True
+Sorghum,2001-05,Japan,Japan,68667.0,13733.0,1,False
+Sorghum,2001-05,"China, Taiwan Province of",Taiwan,59619.0,11924.0,2,False
+Sorghum,2001-05,Papua New Guinea,Papua New Guinea,44387.0,8877.0,3,False
+Sorghum,2001-05,Philippines,Philippines,16035.0,3207.0,4,False
+Sorghum,2001-05,New Zealand,New Zealand,8987.0,1797.0,5,False
+Sorghum,2001-05,United Arab Emirates,United Arab Emirates,6751.0,1350.0,6,False
+Sorghum,2001-05,Kuwait,Kuwait,3991.0,798.0,7,False
+Sorghum,2001-05,Portugal,Portugal,2308.0,462.0,8,False
+Sorghum,2001-05,Belgium,Belgium,1333.0,267.0,9,False
+Sorghum,2001-05,"China, mainland",China,1316.0,263.0,10,False
+Sorghum,2006-10,Papua New Guinea,Papua New Guinea,70144.0,14029.0,1,False
+Sorghum,2006-10,"China, Taiwan Province of",Taiwan,57985.0,11597.0,2,False
+Sorghum,2006-10,Japan,Japan,43006.0,8601.0,3,False
+Sorghum,2006-10,Philippines,Philippines,26137.0,5227.0,4,False
+Sorghum,2006-10,"China, mainland",China,25545.0,5109.0,5,False
+Sorghum,2006-10,New Zealand,New Zealand,7479.0,1496.0,6,False
+Sorghum,2006-10,Saudi Arabia,Saudi Arabia,6616.0,1323.0,7,False
+Sorghum,2006-10,United Arab Emirates,United Arab Emirates,3554.0,711.0,8,False
+Sorghum,2006-10,Fiji,Fiji,2607.0,521.0,9,False
+Sorghum,2006-10,Kuwait,Kuwait,1865.0,373.0,10,False
+Sorghum,2011-15,"China, mainland",China,2669273.9299999997,533855.0,1,False
+Sorghum,2011-15,South Africa,South Africa,90075.77,18015.0,2,False
+Sorghum,2011-15,"China, Taiwan Province of",Taiwan,68603.82,13721.0,3,False
+Sorghum,2011-15,Japan,Japan,52979.5,10596.0,4,False
+Sorghum,2011-15,New Zealand,New Zealand,42895.41,8579.0,5,False
+Sorghum,2011-15,Philippines,Philippines,22204.76,4441.0,6,False
+Sorghum,2011-15,Indonesia,Indonesia,6878.0,1376.0,7,False
+Sorghum,2011-15,Saudi Arabia,Saudi Arabia,5233.04,1047.0,8,False
+Sorghum,2011-15,Kuwait,Kuwait,1793.2,359.0,9,False
+Sorghum,2011-15,United Arab Emirates,United Arab Emirates,1587.27,317.0,10,False
+Sorghum,2011-15,Malaysia,Malaysia,166.07,33.0,19,True
+Sorghum,2016-20,"China, mainland",China,1689341.5699999998,337868.0,1,False
+Sorghum,2016-20,Mexico,Mexico,54554.15,10911.0,2,False
+Sorghum,2016-20,"China, Taiwan Province of",Taiwan,43971.32,8794.0,3,False
+Sorghum,2016-20,Philippines,Philippines,42023.119999999995,8405.0,4,False
+Sorghum,2016-20,New Zealand,New Zealand,24886.930000000004,4977.0,5,False
+Sorghum,2016-20,Kenya,Kenya,23501.5,4700.0,6,False
+Sorghum,2016-20,Japan,Japan,9492.88,1899.0,7,False
+Sorghum,2016-20,Saudi Arabia,Saudi Arabia,3009.12,602.0,8,False
+Sorghum,2016-20,Indonesia,Indonesia,2122.1,424.0,9,False
+Sorghum,2016-20,United Arab Emirates,United Arab Emirates,769.92,154.0,10,False
+Sorghum,2016-20,Malaysia,Malaysia,516.6800000000001,103.0,12,True
+Sorghum,2021-24,"China, mainland",China,7313830.16,1828458.0,1,False
+Sorghum,2021-24,Japan,Japan,632695.62,158174.0,2,False
+Sorghum,2021-24,Kenya,Kenya,217411.5,54353.0,3,False
+Sorghum,2021-24,"China, Taiwan Province of",Taiwan,150394.09,37599.0,4,False
+Sorghum,2021-24,Philippines,Philippines,77445.58,19361.0,5,False
+Sorghum,2021-24,New Zealand,New Zealand,36489.96000000001,9122.0,6,False
+Sorghum,2021-24,Sudan,Sudan,30000.0,7500.0,7,False
+Sorghum,2021-24,United Republic of Tanzania,United Republic of Tanzania,6062.87,1516.0,8,False
+Sorghum,2021-24,Viet Nam,Vietnam,3036.38,759.0,9,False
+Sorghum,2021-24,Republic of Korea,South Korea,824.29,206.0,10,False
+Sorghum,2021-24,Malaysia,Malaysia,71.0,18.0,16,True
+Wheat,1986-91,Egypt,Egypt,10466577.0,1744430.0,1,False
+Wheat,1986-91,"China, mainland",China,10241400.0,1706900.0,2,False
+Wheat,1986-91,Iran (Islamic Republic of),Iran,9973694.0,1662282.0,3,False
+Wheat,1986-91,Japan,Japan,6205338.0,1034223.0,4,False
+Wheat,1986-91,Iraq,Iraq,5344721.0,890787.0,5,False
+Wheat,1986-91,USSR,USSR,5158646.0,859774.0,6,False
+Wheat,1986-91,Indonesia,Indonesia,4801035.0,800172.0,7,False
+Wheat,1986-91,Republic of Korea,South Korea,3031990.0,505332.0,8,False
+Wheat,1986-91,Malaysia,Malaysia,2843719.0,473953.0,9,True
+Wheat,1986-91,Oman,Oman,1615653.0,269276.0,10,False
+Wheat,1996-00,Indonesia,Indonesia,10356122.0,2071224.0,1,False
+Wheat,1996-00,Iran (Islamic Republic of),Iran,9633495.0,1926699.0,2,False
+Wheat,1996-00,Iraq,Iraq,6530642.0,1306128.0,3,False
+Wheat,1996-00,Japan,Japan,5972137.0,1194427.0,4,False
+Wheat,1996-00,Egypt,Egypt,5806647.0,1161329.0,5,False
+Wheat,1996-00,Pakistan,Pakistan,4817089.0,963418.0,6,False
+Wheat,1996-00,Republic of Korea,South Korea,4696091.0,939218.0,7,False
+Wheat,1996-00,India,India,4368680.0,873736.0,8,False
+Wheat,1996-00,Malaysia,Malaysia,3762205.0,752441.0,9,True
+Wheat,1996-00,"China, mainland",China,2730936.0,546187.0,10,False
+Wheat,2001-05,Indonesia,Indonesia,10620014.0,2124003.0,1,False
+Wheat,2001-05,Iraq,Iraq,7966099.0,1593220.0,2,False
+Wheat,2001-05,Egypt,Egypt,6928753.0,1385751.0,3,False
+Wheat,2001-05,Japan,Japan,5838950.0,1167790.0,4,False
+Wheat,2001-05,Republic of Korea,South Korea,5282754.0,1056551.0,5,False
+Wheat,2001-05,Iran (Islamic Republic of),Iran,4529188.0,905838.0,6,False
+Wheat,2001-05,Malaysia,Malaysia,3401979.0,680396.0,7,True
+Wheat,2001-05,Sudan (former),Sudan (former),3057168.0,611434.0,8,False
+Wheat,2001-05,"China, mainland",China,2889724.0,577945.0,9,False
+Wheat,2001-05,Viet Nam,Vietnam,2135182.0,427036.0,10,False
+Wheat,2006-10,Indonesia,Indonesia,12735877.0,2547175.0,1,False
+Wheat,2006-10,Japan,Japan,4965761.0,993152.0,2,False
+Wheat,2006-10,Republic of Korea,South Korea,4281562.0,856312.0,3,False
+Wheat,2006-10,Viet Nam,Vietnam,3896314.0,779263.0,4,False
+Wheat,2006-10,Malaysia,Malaysia,3609964.0,721993.0,5,True
+Wheat,2006-10,Sudan (former),Sudan (former),3376799.0,675360.0,6,False
+Wheat,2006-10,Yemen,Yemen,2842587.0,568517.0,7,False
+Wheat,2006-10,Egypt,Egypt,2801746.0,560349.0,8,False
+Wheat,2006-10,Iran (Islamic Republic of),Iran,2103169.0,420634.0,9,False
+Wheat,2006-10,India,India,2067350.0,413470.0,10,False
+Wheat,2011-15,Indonesia,Indonesia,19751945.63,3950389.0,1,False
+Wheat,2011-15,Viet Nam,Vietnam,8086128.48,1617226.0,2,False
+Wheat,2011-15,Republic of Korea,South Korea,6788909.25,1357782.0,3,False
+Wheat,2011-15,"China, mainland",China,6308741.29,1261748.0,4,False
+Wheat,2011-15,Japan,Japan,5337388.91,1067478.0,5,False
+Wheat,2011-15,Malaysia,Malaysia,4488889.86,897778.0,6,True
+Wheat,2011-15,Philippines,Philippines,4242323.5600000005,848465.0,7,False
+Wheat,2011-15,Yemen,Yemen,4200719.25,840144.0,8,False
+Wheat,2011-15,Iraq,Iraq,4167284.3,833457.0,9,False
+Wheat,2011-15,Thailand,Thailand,3237307.46,647461.0,10,False
+Wheat,2016-20,Indonesia,Indonesia,11999428.66,2399886.0,1,False
+Wheat,2016-20,Philippines,Philippines,6640411.96,1328082.0,2,False
+Wheat,2016-20,Viet Nam,Vietnam,6063938.21,1212788.0,3,False
+Wheat,2016-20,"China, mainland",China,5794620.73,1158924.0,4,False
+Wheat,2016-20,Republic of Korea,South Korea,5245605.64,1049121.0,5,False
+Wheat,2016-20,Japan,Japan,4516699.8100000005,903340.0,6,False
+Wheat,2016-20,Malaysia,Malaysia,3470341.31,694068.0,7,True
+Wheat,2016-20,Yemen,Yemen,3212511.31,642502.0,8,False
+Wheat,2016-20,India,India,2576325.37,515265.0,9,False
+Wheat,2016-20,New Zealand,New Zealand,2254033.8899999997,450807.0,10,False
+Wheat,2021-24,"China, mainland",China,19003794.32,4750949.0,1,False
+Wheat,2021-24,Indonesia,Indonesia,17071611.67,4267903.0,2,False
+Wheat,2021-24,Philippines,Philippines,10569951.53,2642488.0,3,False
+Wheat,2021-24,Viet Nam,Vietnam,9889281.71,2472320.0,4,False
+Wheat,2021-24,Republic of Korea,South Korea,6801760.87,1700440.0,5,False
+Wheat,2021-24,Yemen,Yemen,4755320.8,1188830.0,6,False
+Wheat,2021-24,Japan,Japan,4727379.92,1181845.0,7,False
+Wheat,2021-24,Thailand,Thailand,4469295.06,1117324.0,8,False
+Wheat,2021-24,Malaysia,Malaysia,4048441.48,1012110.0,9,True
+Wheat,2021-24,New Zealand,New Zealand,2482812.92,620703.0,10,False
