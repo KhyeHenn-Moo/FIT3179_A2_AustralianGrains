@@ -1,0 +1,200 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 520,
+  "height": 380,
+  "title": {
+    "text": "Yields can fall by half or double from one year to the next",
+    "subtitle": [
+      "Year-to-year % change in Australian yield (tonnes per hectare), 1962 to 2024 (FAOSTAT); 63 changes per crop",
+      "Box = middle 50% of years, line = median; dots = unusually large swings (hover for the year); ordered from most to least variable"
+    ]
+  },
+  "data": {
+    "url": "../data/yield_change.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "year": "number",
+        "yield_t_ha": "number",
+        "prev_yield_t_ha": "number",
+        "change_pct": "number"
+      }
+    }
+  },
+  "transform": [
+    {
+      "joinaggregate": [
+        {
+          "op": "q1",
+          "field": "change_pct",
+          "as": "q1"
+        },
+        {
+          "op": "q3",
+          "field": "change_pct",
+          "as": "q3"
+        }
+      ],
+      "groupby": [
+        "crop"
+      ]
+    },
+    {
+      "calculate": "datum.q3 - datum.q1",
+      "as": "iqr"
+    },
+    {
+      "calculate": "datum.change_pct < datum.q1 - 1.5 * datum.iqr || datum.change_pct > datum.q3 + 1.5 * datum.iqr",
+      "as": "is_outlier"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "crop",
+      "type": "nominal",
+      "sort": [
+        "Sorghum",
+        "Oats",
+        "Wheat",
+        "Barley"
+      ],
+      "axis": {
+        "title": null,
+        "labelAngle": 0,
+        "labelFontSize": 12,
+        "ticks": false,
+        "domain": false
+      }
+    },
+    "y": {
+      "field": "change_pct",
+      "type": "quantitative",
+      "axis": {
+        "title": "Change in yield from the previous year (%)",
+        "format": "+d",
+        "grid": true
+      },
+      "scale": {
+        "domain": [
+          -70,
+          140
+        ]
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "color": "#555555",
+        "strokeDash": [
+          4,
+          3
+        ]
+      },
+      "transform": [
+        {
+          "calculate": "0",
+          "as": "zero"
+        }
+      ],
+      "encoding": {
+        "y": {
+          "field": "zero",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "boxplot",
+        "extent": 1.5,
+        "size": 60,
+        "outliers": false,
+        "box": {
+          "fill": "#f4c7c3",
+          "stroke": "#b30000"
+        },
+        "median": {
+          "color": "#7f0000",
+          "size": 60,
+          "thickness": 3
+        },
+        "rule": {
+          "stroke": "#b30000"
+        },
+        "ticks": {
+          "stroke": "#b30000",
+          "size": 24
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.is_outlier"
+        }
+      ],
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "color": "#b30000",
+        "size": 55,
+        "opacity": 0.9
+      },
+      "encoding": {
+        "tooltip": [
+          {
+            "field": "crop",
+            "title": "Crop"
+          },
+          {
+            "field": "year",
+            "title": "Year",
+            "format": "d"
+          },
+          {
+            "field": "prev_yield_t_ha",
+            "title": "Yield the year before (t/ha)",
+            "format": ".2f"
+          },
+          {
+            "field": "yield_t_ha",
+            "title": "Yield that year (t/ha)",
+            "format": ".2f"
+          },
+          {
+            "field": "change_pct",
+            "title": "Change (%)",
+            "format": "+.1f"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.label !== ''"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 9,
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "color": "#333333"
+      },
+      "encoding": {
+        "text": {
+          "field": "label"
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
+}
