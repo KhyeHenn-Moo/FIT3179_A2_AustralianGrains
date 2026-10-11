@@ -1,0 +1,81 @@
+crop,country,label,year,tonnes,production_mt,label_y,rank_end,change_pct,is_australia
+Barley,Russian Federation,Russia,2004,17087555.0,17.088,17.088,1,-2.5,False
+Barley,Russian Federation,Russia,2024,16667000.0,16.667,16.667,1,-2.5,False
+Barley,Australia,Australia,2004,7739767.0,7.74,7.74,2,71.4,True
+Barley,Australia,Australia,2024,13265000.0,13.265,13.265,2,71.4,True
+Barley,Germany,Germany,2004,12992870.0,12.993,13.472,3,-18.3,False
+Barley,Germany,Germany,2024,10610000.0,10.61,10.61,3,-18.3,False
+Barley,France,France,2004,11033331.4,11.033,10.799,4,-12.4,False
+Barley,France,France,2024,9669250.0,9.669,9.669,4,-12.4,False
+Barley,Canada,Canada,2004,12556700.0,12.557,12.514,5,-35.1,False
+Barley,Canada,Canada,2024,8143897.0,8.144,8.243,5,-35.1,False
+Barley,Türkiye,Turkey,2004,9000000.0,9.0,9.0,6,-10.0,False
+Barley,Türkiye,Turkey,2024,8100000.0,8.1,8.003,6,-10.0,False
+Barley,Spain,Spain,2004,10639817.0,10.64,10.031,7,-30.1,False
+Barley,Spain,Spain,2024,7440970.0,7.441,7.441,7,-30.1,False
+Barley,United Kingdom of Great Britain and Northern Ireland,UK,2004,5799000.0,5.799,5.799,8,22.3,False
+Barley,United Kingdom of Great Britain and Northern Ireland,UK,2024,7091000.0,7.091,7.091,8,22.3,False
+Barley,Ukraine,Ukraine,2004,11084400.0,11.084,11.625,9,-52.1,False
+Barley,Ukraine,Ukraine,2024,5313880.0,5.314,5.314,9,-52.1,False
+Barley,Argentina,Argentina,2004,894610.0,0.895,0.895,10,469.8,False
+Barley,Argentina,Argentina,2024,5097340.0,5.097,5.097,10,469.8,False
+Oats,Canada,Canada,2004,3467200.0,3.467,3.467,1,-3.2,False
+Oats,Canada,Canada,2024,3357551.0,3.358,3.358,1,-3.2,False
+Oats,Russian Federation,Russia,2004,4936709.0,4.937,4.937,2,-39.2,False
+Oats,Russian Federation,Russia,2024,3000000.0,3.0,3.0,2,-39.2,False
+Oats,Poland,Poland,2004,1430468.0,1.43,1.43,3,13.0,False
+Oats,Poland,Poland,2024,1616910.0,1.617,1.617,3,13.0,False
+Oats,Australia,Australia,2004,1282537.0,1.283,1.283,4,2.5,True
+Oats,Australia,Australia,2024,1315000.0,1.315,1.315,4,2.5,True
+Oats,Finland,Finland,2004,1002400.0,1.002,0.992,5,21.9,False
+Oats,Finland,Finland,2024,1221540.0,1.222,1.222,5,21.9,False
+Oats,Spain,Spain,2004,1042975.0,1.043,1.053,6,11.5,False
+Oats,Spain,Spain,2024,1162540.0,1.163,1.163,6,11.5,False
+Oats,Brazil,Brazil,2004,459526.0,0.46,0.46,7,137.6,False
+Oats,Brazil,Brazil,2024,1091883.0,1.092,1.092,7,137.6,False
+Oats,United Kingdom of Great Britain and Northern Ireland,UK,2004,625971.0,0.626,0.626,8,57.5,False
+Oats,United Kingdom of Great Britain and Northern Ireland,UK,2024,986000.0,0.986,1.005,8,57.5,False
+Oats,United States of America,USA,2004,1679310.0,1.679,1.679,9,-41.4,False
+Oats,United States of America,USA,2024,984010.0,0.984,0.966,9,-41.4,False
+Oats,Germany,Germany,2004,1185792.0,1.186,1.186,10,-41.2,False
+Oats,Germany,Germany,2024,696800.0,0.697,0.697,10,-41.2,False
+Sorghum,United States of America,USA,2004,11522120.0,11.522,11.522,1,-24.2,False
+Sorghum,United States of America,USA,2024,8734190.0,8.734,8.734,1,-24.2,False
+Sorghum,Nigeria,Nigeria,2004,8578000.0,8.578,8.578,2,-24.2,False
+Sorghum,Nigeria,Nigeria,2024,6500000.0,6.5,6.53,2,-24.2,False
+Sorghum,Sudan (incl. South Sudan),Sudan (incl. South Sudan),2004,2704000.0,2.704,2.704,3,135.0,False
+Sorghum,Sudan (incl. South Sudan),Sudan (incl. South Sudan),2024,6353620.0,6.354,6.325,3,135.0,False
+Sorghum,India,India,2004,5882100.0,5.882,5.882,4,-8.0,False
+Sorghum,India,India,2024,5413004.64,5.413,5.413,4,-8.0,False
+Sorghum,Mexico,Mexico,2004,7004400.0,7.004,7.004,5,-35.4,False
+Sorghum,Mexico,Mexico,2024,4525322.34,4.525,4.525,5,-35.4,False
+Sorghum,Ethiopia,Ethiopia,2004,1742454.0,1.742,1.742,6,135.3,False
+Sorghum,Ethiopia,Ethiopia,2024,4100000.0,4.1,4.161,6,135.3,False
+Sorghum,Brazil,Brazil,2004,2158872.0,2.159,2.112,7,89.5,False
+Sorghum,Brazil,Brazil,2024,4090428.0,4.09,4.03,7,89.5,False
+Sorghum,"China, mainland",China,2004,2328000.0,2.328,2.328,8,31.9,False
+Sorghum,"China, mainland",China,2024,3069546.49,3.07,3.07,8,31.9,False
+Sorghum,Argentina,Argentina,2004,2164953.0,2.165,2.214,9,15.3,False
+Sorghum,Argentina,Argentina,2024,2495532.0,2.496,2.508,9,15.3,False
+Sorghum,Australia,Australia,2004,2009373.0,2.009,2.009,10,21.5,True
+Sorghum,Australia,Australia,2024,2441091.0,2.441,2.429,10,21.5,True
+Wheat,"China, mainland",China,2004,91952000.0,91.952,91.952,1,52.4,False
+Wheat,"China, mainland",China,2024,140100000.0,140.1,140.1,1,52.4,False
+Wheat,India,India,2004,72156200.0,72.156,72.156,2,57.0,False
+Wheat,India,India,2024,113292368.0,113.292,113.292,2,57.0,False
+Wheat,Russian Federation,Russia,2004,45433661.0,45.434,45.434,3,81.8,False
+Wheat,Russian Federation,Russia,2024,82588000.0,82.588,82.588,3,81.8,False
+Wheat,United States of America,USA,2004,58697040.0,58.697,58.697,4,-8.6,False
+Wheat,United States of America,USA,2024,53650020.0,53.65,53.65,4,-8.6,False
+Wheat,Canada,Canada,2004,24795500.0,24.796,24.796,5,44.9,False
+Wheat,Canada,Canada,2024,35938839.0,35.939,35.939,5,44.9,False
+Wheat,Australia,Australia,2004,21905113.0,21.905,21.905,6,55.7,True
+Wheat,Australia,Australia,2024,34110000.0,34.11,34.11,6,55.7,True
+Wheat,Pakistan,Pakistan,2004,19499800.0,19.5,19.5,7,63.2,False
+Wheat,Pakistan,Pakistan,2024,31814444.0,31.814,31.814,7,63.2,False
+Wheat,France,France,2004,39690179.5,39.69,39.69,8,-33.0,False
+Wheat,France,France,2024,26606940.0,26.607,26.607,8,-33.0,False
+Wheat,Ukraine,Ukraine,2004,17520200.0,17.52,17.52,9,28.1,False
+Wheat,Ukraine,Ukraine,2024,22441110.0,22.441,22.441,9,28.1,False
+Wheat,Türkiye,Turkey,2004,21000000.0,21.0,21.0,10,-1.0,False
+Wheat,Türkiye,Turkey,2024,20800000.0,20.8,20.8,10,-1.0,False
