@@ -1,0 +1,342 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "width": 760,
+  "height": 420,
+  "padding": {
+    "left": 5,
+    "right": 5,
+    "top": 5,
+    "bottom": 5
+  },
+  "autosize": "pad",
+  "title": {
+    "text": "Who buys Australian grain in Asia, and where Malaysia fits",
+    "subtitle": [
+      "Tile area = Australian exports in 2024 (FAOSTAT trade matrix), grouped by UN sub-region; Malaysia is outlined in black",
+      "Buyers under 1,000 t are left out, so Malaysia does not appear for sorghum (no purchases of 1,000 t or more)"
+    ],
+    "anchor": "start",
+    "fontSize": 15,
+    "subtitleFontSize": 11,
+    "subtitlePadding": 4,
+    "offset": 8
+  },
+  "signals": [
+    {
+      "name": "crop",
+      "value": "All Grains",
+      "bind": {
+        "input": "select",
+        "options": [
+          "All Grains",
+          "Wheat",
+          "Barley",
+          "Oats",
+          "Sorghum"
+        ],
+        "name": "Grain: "
+      }
+    }
+  ],
+  "data": [
+    {
+      "name": "leaves",
+      "url": "../data/exports_asia.csv",
+      "format": {
+        "type": "csv",
+        "parse": {
+          "tonnes": "number",
+          "share_of_asia_pct": "number"
+        }
+      },
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.crop === crop"
+        }
+      ]
+    },
+    {
+      "name": "region_totals",
+      "source": "leaves",
+      "transform": [
+        {
+          "type": "aggregate",
+          "groupby": [
+            "subregion"
+          ],
+          "fields": [
+            "tonnes"
+          ],
+          "ops": [
+            "sum"
+          ],
+          "as": [
+            "total"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "tree",
+      "source": "leaves",
+      "transform": [
+        {
+          "type": "nest",
+          "keys": [
+            "subregion"
+          ],
+          "generate": true
+        },
+        {
+          "type": "treemap",
+          "field": "tonnes",
+          "sort": {
+            "field": "value",
+            "order": "descending"
+          },
+          "method": "squarify",
+          "ratio": 1,
+          "round": true,
+          "size": [
+            {
+              "signal": "width"
+            },
+            {
+              "signal": "height"
+            }
+          ],
+          "paddingInner": 1,
+          "paddingOuter": 2,
+          "paddingTop": 18
+        }
+      ]
+    },
+    {
+      "name": "groups",
+      "source": "tree",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.depth === 1"
+        },
+        {
+          "type": "lookup",
+          "from": "region_totals",
+          "key": "subregion",
+          "fields": [
+            "key"
+          ],
+          "values": [
+            "total"
+          ],
+          "as": [
+            "total"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "tiles",
+      "source": "tree",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.depth === 2"
+        }
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "region",
+      "type": "ordinal",
+      "domain": [
+        "Eastern Asia",
+        "South-Eastern Asia",
+        "Southern Asia",
+        "Western Asia"
+      ],
+      "range": [
+        "#8da0cb",
+        "#66c2a5",
+        "#fc8d62",
+        "#e5c494"
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "fill": "region",
+      "orient": "bottom",
+      "direction": "horizontal",
+      "title": "Sub-region",
+      "offset": 8,
+      "symbolType": "square",
+      "labelFontSize": 11,
+      "titleFontSize": 11
+    }
+  ],
+  "marks": [
+    {
+      "type": "rect",
+      "from": {
+        "data": "groups"
+      },
+      "encode": {
+        "update": {
+          "x": {
+            "field": "x0"
+          },
+          "y": {
+            "field": "y0"
+          },
+          "x2": {
+            "field": "x1"
+          },
+          "y2": {
+            "field": "y1"
+          },
+          "fill": {
+            "value": "#f4f4f4"
+          },
+          "stroke": {
+            "value": "#bbbbbb"
+          },
+          "strokeWidth": {
+            "value": 1
+          }
+        }
+      }
+    },
+    {
+      "type": "rect",
+      "from": {
+        "data": "tiles"
+      },
+      "encode": {
+        "enter": {
+          "tooltip": {
+            "signal": "{'Country': datum.country, 'Sub-region': datum.subregion, 'Grain': datum.crop, 'Exports 2024 (t)': format(datum.tonnes, ',.0f'), 'Share of Asia (%)': format(datum.share_of_asia_pct, '.1f')}"
+          }
+        },
+        "update": {
+          "x": {
+            "field": "x0"
+          },
+          "y": {
+            "field": "y0"
+          },
+          "x2": {
+            "field": "x1"
+          },
+          "y2": {
+            "field": "y1"
+          },
+          "fill": {
+            "scale": "region",
+            "field": "subregion"
+          },
+          "stroke": [
+            {
+              "test": "datum.is_malaysia === 'True' || datum.is_malaysia === true",
+              "value": "#000000"
+            },
+            {
+              "value": "#ffffff"
+            }
+          ],
+          "strokeWidth": [
+            {
+              "test": "datum.is_malaysia === 'True' || datum.is_malaysia === true",
+              "value": 3
+            },
+            {
+              "value": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "groups"
+      },
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "datum.x0 + 4"
+          },
+          "y": {
+            "signal": "datum.y0 + 3"
+          },
+          "baseline": {
+            "value": "top"
+          },
+          "text": {
+            "signal": "datum.key + '  \u00b7  ' + format(datum.total / 1000, ',.0f') + ' kt'"
+          },
+          "fontSize": {
+            "value": 11
+          },
+          "fontWeight": {
+            "value": "bold"
+          },
+          "fill": {
+            "value": "#333333"
+          },
+          "limit": {
+            "signal": "max(datum.x1 - datum.x0 - 8, 1)"
+          },
+          "opacity": {
+            "signal": "datum.x1 - datum.x0 > 60 ? 1 : 0"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "tiles"
+      },
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "datum.x0 + 4"
+          },
+          "y": {
+            "signal": "datum.y0 + 3"
+          },
+          "baseline": {
+            "value": "top"
+          },
+          "text": {
+            "signal": "datum.country + (datum.y1 - datum.y0 > 34 ? '\\n' + format(datum.tonnes / 1000, ',.0f') + ' kt' : '')"
+          },
+          "fontSize": {
+            "value": 11
+          },
+          "fill": {
+            "value": "#1a1a1a"
+          },
+          "fontWeight": [
+            {
+              "test": "datum.is_malaysia === 'True' || datum.is_malaysia === true",
+              "value": "bold"
+            },
+            {
+              "value": "normal"
+            }
+          ],
+          "limit": {
+            "signal": "max(datum.x1 - datum.x0 - 6, 1)"
+          },
+          "opacity": {
+            "signal": "(datum.x1 - datum.x0 > 40 && datum.y1 - datum.y0 > 16) ? 1 : 0"
+          }
+        }
+      }
+    }
+  ]
+}
