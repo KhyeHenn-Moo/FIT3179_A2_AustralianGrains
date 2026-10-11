@@ -1,0 +1,25 @@
+crop,continent,tonnes,tonnes_kt,share_pct,n_buyers
+All Grains,Asia,26226120.25,26226.1,91.5,25
+All Grains,Oceania,1141959.56,1142.0,4.0,9
+All Grains,Africa,865614.31,865.6,3.0,9
+All Grains,North America,161778.5,161.8,0.6,2
+All Grains,South America,159205.59,159.2,0.6,4
+All Grains,Europe,115905.4,115.9,0.4,4
+Barley,Asia,6003131.62,6003.1,93.1,16
+Barley,North America,161778.5,161.8,2.5,2
+Barley,South America,159200.5,159.2,2.5,2
+Barley,Europe,69995.0,70.0,1.1,1
+Barley,Africa,46411.1,46.4,0.7,1
+Barley,Oceania,6767.28,6.8,0.1,6
+Oats,Asia,324416.96,324.4,100.0,19
+Oats,Africa,53.88,0.1,0.0,2
+Oats,Oceania,48.02,0.0,0.0,2
+Oats,Europe,0.05,0.0,0.0,1
+Sorghum,Asia,2190229.22,2190.2,98.7,7
+Sorghum,Africa,29616.1,29.6,1.3,2
+Sorghum,Oceania,278.15999999999997,0.3,0.0,2
+Sorghum,South America,5.09,0.0,0.0,2
+Wheat,Asia,17708342.45,17708.3,90.0,23
+Wheat,Oceania,1134866.1,1134.9,5.8,7
+Wheat,Africa,789533.23,789.5,4.0,9
+Wheat,Europe,45910.350000000006,45.9,0.2,3
