@@ -1,0 +1,248 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Australian grain harvests swing widely from year to year",
+    "subtitle": [
+      "Annual production in million tonnes, 1961 to 2024 (FAOSTAT); each panel has its own vertical scale",
+      "Marked years: each crop's record high, and its lowest year since 1990"
+    ]
+  },
+  "data": {
+    "url": "../data/production_history.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "year": "number",
+        "production_mt": "number",
+        "area_mha": "number",
+        "yield_t_ha": "number"
+      }
+    }
+  },
+  "facet": {
+    "field": "crop",
+    "type": "nominal",
+    "sort": [
+      "Wheat",
+      "Barley",
+      "Sorghum",
+      "Oats"
+    ],
+    "header": {
+      "title": null,
+      "labelFontSize": 14,
+      "labelFontWeight": "bold",
+      "labelAlign": "left",
+      "labelAnchor": "start"
+    }
+  },
+  "columns": 2,
+  "resolve": {
+    "scale": {
+      "y": "independent"
+    }
+  },
+  "spec": {
+    "width": 330,
+    "height": 150,
+    "encoding": {
+      "x": {
+        "field": "year",
+        "type": "quantitative",
+        "scale": {
+          "domain": [
+            1961,
+            2024
+          ],
+          "nice": false
+        },
+        "axis": {
+          "title": null,
+          "format": "d",
+          "tickCount": 6,
+          "grid": false
+        }
+      },
+      "y": {
+        "field": "production_mt",
+        "type": "quantitative",
+        "axis": {
+          "title": "Million tonnes",
+          "tickCount": 4,
+          "format": ".1~f"
+        }
+      }
+    },
+    "layer": [
+      {
+        "mark": {
+          "type": "area",
+          "color": "#b30000",
+          "opacity": 0.15
+        },
+        "encoding": {
+          "y": {
+            "field": "production_mt",
+            "type": "quantitative"
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "line",
+          "color": "#b30000",
+          "strokeWidth": 1.8
+        },
+        "encoding": {
+          "tooltip": [
+            {
+              "field": "crop",
+              "title": "Grain"
+            },
+            {
+              "field": "year",
+              "title": "Year",
+              "format": "d"
+            },
+            {
+              "field": "production_mt",
+              "title": "Production (million t)",
+              "format": ",.2f"
+            },
+            {
+              "field": "area_mha",
+              "title": "Area harvested (million ha)",
+              "format": ",.2f"
+            },
+            {
+              "field": "yield_t_ha",
+              "title": "Yield (t/ha)",
+              "format": ",.2f"
+            }
+          ]
+        }
+      },
+      {
+        "transform": [
+          {
+            "filter": "datum.note !== ''"
+          }
+        ],
+        "mark": {
+          "type": "point",
+          "filled": true,
+          "color": "#b30000",
+          "size": 55,
+          "opacity": 1,
+          "stroke": "white",
+          "strokeWidth": 1
+        }
+      },
+      {
+        "transform": [
+          {
+            "filter": "datum.note === 'Record high' && datum.year <= 2005"
+          },
+          {
+            "calculate": "'Record high ' + datum.year + ': ' + format(datum.production_mt, ',.1f') + ' Mt'",
+            "as": "lbl"
+          }
+        ],
+        "mark": {
+          "type": "text",
+          "fontSize": 10,
+          "color": "#333333",
+          "dy": -9,
+          "baseline": "bottom",
+          "align": "left"
+        },
+        "encoding": {
+          "text": {
+            "field": "lbl"
+          }
+        }
+      },
+      {
+        "transform": [
+          {
+            "filter": "datum.note === 'Record high' && datum.year > 2005"
+          },
+          {
+            "calculate": "'Record high ' + datum.year + ': ' + format(datum.production_mt, ',.1f') + ' Mt'",
+            "as": "lbl"
+          }
+        ],
+        "mark": {
+          "type": "text",
+          "fontSize": 10,
+          "color": "#333333",
+          "dy": -9,
+          "baseline": "bottom",
+          "align": "right"
+        },
+        "encoding": {
+          "text": {
+            "field": "lbl"
+          }
+        }
+      },
+      {
+        "transform": [
+          {
+            "filter": "datum.note !== '' && datum.note !== 'Record high' && datum.year <= 2005"
+          },
+          {
+            "calculate": "'Low ' + datum.year + ': ' + format(datum.production_mt, ',.1f') + ' Mt'",
+            "as": "lbl"
+          }
+        ],
+        "mark": {
+          "type": "text",
+          "fontSize": 10,
+          "color": "#333333",
+          "baseline": "middle",
+          "align": "left",
+          "dx": 8
+        },
+        "encoding": {
+          "text": {
+            "field": "lbl"
+          }
+        }
+      },
+      {
+        "transform": [
+          {
+            "filter": "datum.note !== '' && datum.note !== 'Record high' && datum.year > 2005"
+          },
+          {
+            "calculate": "'Low ' + datum.year + ': ' + format(datum.production_mt, ',.1f') + ' Mt'",
+            "as": "lbl"
+          }
+        ],
+        "mark": {
+          "type": "text",
+          "fontSize": 10,
+          "color": "#333333",
+          "baseline": "middle",
+          "align": "right",
+          "dx": -8
+        },
+        "encoding": {
+          "text": {
+            "field": "lbl"
+          }
+        }
+      }
+    ]
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFontSize": 10,
+      "titleFontSize": 10
+    }
+  }
+}
