@@ -44,6 +44,9 @@ s = s.rename(columns={'Region': 'state', 'OBS_VALUE': 'tonnes'})[['state', 'crop
 # 5) join centroids; every state must find its coordinates
 out = s.merge(centroids, on='state', how='left')
 assert out.lon.notna().all(), 'A state name did not match between ABS and the TopoJSON'
+# 5b) composite key used by chart 2's "no data" layer (crop|year|state)
+out['key'] = out.crop + '|' + out.year + '|' + out.state
+assert out.key.is_unique, 'duplicate crop/year/state rows'
 out.to_csv('../data/state_grain.csv', index=False)
 
 # 6) quick checks

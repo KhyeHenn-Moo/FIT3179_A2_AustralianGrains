@@ -4,7 +4,7 @@
   "height": 520,
   "title": {
     "text": "Grain production density by SA2",
-    "subtitle": "Levied production per km² of SA2 area; grey = none reported"
+    "subtitle": "Levied production per km² of SA2 area"
   },
   "params": [
     {
@@ -91,6 +91,10 @@
       "transform": [
         {
           "filter": "datum.properties.STE_NAME21 != 'Other Territories' && datum.properties.STE_NAME21 != 'Outside Australia'"
+        },
+        {
+          "calculate": "'No ' + lower(crop) + ' production reported for ' + year",
+          "as": "note"
         }
       ],
       "mark": {
@@ -98,6 +102,22 @@
         "fill": "#eeeeee",
         "stroke": "#ffffff",
         "strokeWidth": 0.1
+      },
+      "encoding": {
+        "tooltip": [
+          {
+            "field": "properties.SA2_NAME21",
+            "title": "SA2"
+          },
+          {
+            "field": "properties.STE_NAME21",
+            "title": "State"
+          },
+          {
+            "field": "note",
+            "title": "Data"
+          }
+        ]
       }
     },
     {

@@ -5,8 +5,7 @@
   "title": {
     "text": "Grain yield by country, 2024",
     "subtitle": [
-      "Tonnes harvested per hectare (production \u00f7 area harvested), FAOSTAT; same classes for every crop",
-      "Grey = no data, or under 1,000 hectares harvested (too small for a reliable yield)",
+      "Tonnes harvested per hectare (production ÷ area harvested), FAOSTAT; same classes for every crop",
       "Australia is outlined in black, with its yield labelled for the selected crop"
     ]
   },
@@ -69,6 +68,24 @@
         "fill": "#eeeeee",
         "stroke": "#ffffff",
         "strokeWidth": 0.5
+      },
+      "transform": [
+        {
+          "calculate": "'No ' + lower(crop) + ' yield data, or under 1,000 hectares harvested'",
+          "as": "note"
+        }
+      ],
+      "encoding": {
+        "tooltip": [
+          {
+            "field": "properties.NAME",
+            "title": "Country"
+          },
+          {
+            "field": "note",
+            "title": "Data"
+          }
+        ]
       }
     },
     {
@@ -137,7 +154,7 @@
           },
           "legend": {
             "title": "Tonnes per hectare",
-            "labelExpr": "datum.value == 0 ? 'Under ' + breaks[0] : datum.value == 4 ? breaks[3] + ' and over' : breaks[datum.value - 1] + ' \u2013 ' + breaks[datum.value]"
+            "labelExpr": "datum.value == 0 ? 'Under ' + breaks[0] : datum.value == 4 ? breaks[3] + ' and over' : breaks[datum.value - 1] + ' – ' + breaks[datum.value]"
           }
         },
         "tooltip": [
