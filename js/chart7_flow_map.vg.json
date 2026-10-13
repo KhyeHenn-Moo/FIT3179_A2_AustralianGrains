@@ -13,18 +13,7 @@
   "params": [
     {
       "name": "crop",
-      "value": "All Grains",
-      "bind": {
-        "input": "select",
-        "options": [
-          "All Grains",
-          "Wheat",
-          "Barley",
-          "Oats",
-          "Sorghum"
-        ],
-        "name": "Crop: "
-      }
+      "value": "All Grains"
     },
     {
       "name": "maxT",

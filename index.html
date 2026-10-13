@@ -15,17 +15,69 @@
 <body>
     <h1>Australian Grains</h1>
 
-    <div id="grain_map"></div>
-    <div id="state_symbols"></div>
+
+    <section id="where_it_grows">
+        <div class="section-controls vega-bind">
+            <label class="control-group">Crop:
+                <select id="crop_select_1">
+                    <option value="Wheat" selected>Wheat</option>
+                    <option value="Barley">Barley</option>
+                    <option value="Oats">Oats</option>
+                    <option value="Sorghum">Sorghum</option>
+                </select>
+            </label>
+            <span class="control-group">Year:
+                <label><input type="radio" name="year_1" value="2022-23"> 2022-23</label>
+                <label><input type="radio" name="year_1" value="2023-24"> 2023-24</label>
+                <label><input type="radio" name="year_1" value="2024-25" checked> 2024-25</label>
+            </span>
+        </div>
+
+        <div id="grain_map"></div>
+        <div id="state_symbols"></div>
+    </section>
+
+
     <div id="crop_share"></div>
     <div id="production_history"></div>
     <div id="yield_boxplot"></div>
     <div id="state_change"></div>
-    <div id="flow_map"></div>
-    <div id="bump_chart"></div>
-    <div id="continent_bar"></div>
-    <div id="asia_treemap"></div>
-    <div id="world_yield"></div>
-    <div id="slope_chart"></div>
+
+
+    <section id="where_it_goes">
+        <div class="section-controls vega-bind">
+            <label class="control-group">Crop:
+                <select id="crop_select_3">
+                    <option value="All Grains" selected>All Grains</option>
+                    <option value="Wheat">Wheat</option>
+                    <option value="Barley">Barley</option>
+                    <option value="Oats">Oats</option>
+                    <option value="Sorghum">Sorghum</option>
+                </select>
+            </label>
+        </div>
+
+        <div id="flow_map"></div>
+        <div id="bump_chart"></div>
+        <div id="continent_bar"></div>
+        <div id="asia_treemap"></div>
+    </section>
+
+
+    <section id="australia_in_the_world">
+        <div class="section-controls vega-bind">
+            <label class="control-group">Crop:
+                <select id="crop_select_4">
+                    <option value="Wheat" selected>Wheat</option>
+                    <option value="Barley">Barley</option>
+                    <option value="Oats">Oats</option>
+                    <option value="Sorghum">Sorghum</option>
+                </select>
+            </label>
+        </div>
+
+        <div id="world_yield"></div>
+        <div id="slope_chart"></div>
+    </section>
 </body>
 </html>

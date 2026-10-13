@@ -11,6 +11,8 @@ var vg_9b = "js/chart9b_asia_treemap.vg.json";
 var vg_10 = "js/chart10_world_yield.vg.json";
 var vg_11 = "js/chart11_slope_chart.vg.json";
 
+
+
 // font type for every chart: Helvetica, with Arial as the fallback on computers that do not have it
 var FONT = "Helvetica, Arial, sans-serif";
 
@@ -28,10 +30,33 @@ var vegaOptions = {
     }
 };
 
-vegaEmbed("#grain_map", vg_1, vlOptions).then(function(result) {
+
+
+// section 1 (charts 1 and 2) shares one crop control and one year control, which are in index.html
+var section1Views = [];
+
+function applySection1Controls() {
+    var crop = document.getElementById("crop_select_1").value;
+    var year = document.querySelector('input[name="year_1"]:checked').value;
+    section1Views.forEach(function(view) {
+        view.signal("crop", crop).signal("year", year).run();
+    });
+}
+
+Promise.all([
+    vegaEmbed("#grain_map", vg_1, vlOptions),
+    vegaEmbed("#state_symbols", vg_2, vlOptions)
+]).then(function(results) {
+    section1Views = results.map(function(result) { return result.view; });
+    document.getElementById("crop_select_1").addEventListener("change", applySection1Controls);
+    document.querySelectorAll('input[name="year_1"]').forEach(function(radio) {
+        radio.addEventListener("change", applySection1Controls);
+    });
+    applySection1Controls();  // also covers a browser that restores the old control value on reload
 }).catch(console.error);
-vegaEmbed("#state_symbols", vg_2, vlOptions).then(function(result) {
-}).catch(console.error);
+
+
+// section 2 (charts 3, 4, 5, 6)
 vegaEmbed("#crop_share", vg_3, vlOptions).then(function(result) {
 }).catch(console.error);
 vegaEmbed("#production_history", vg_4, vlOptions).then(function(result) {
@@ -40,15 +65,45 @@ vegaEmbed("#yield_boxplot", vg_5, vlOptions).then(function(result) {
 }).catch(console.error);
 vegaEmbed("#state_change", vg_6, vlOptions).then(function(result) {
 }).catch(console.error);
-vegaEmbed("#flow_map", vg_7, vlOptions).then(function(result) {
+
+
+// section 3 (charts 7, 8, 9a and 9b) shares one crop control, which is in index.html
+var section3Views = [];
+
+function applySection3Controls() {
+    var crop = document.getElementById("crop_select_3").value;
+    section3Views.forEach(function(view) {
+        view.signal("crop", crop).run();
+    });
+}
+
+Promise.all([
+    vegaEmbed("#flow_map", vg_7, vlOptions),
+    vegaEmbed("#bump_chart", vg_8, vlOptions),
+    vegaEmbed("#continent_bar", vg_9a, vlOptions),
+    vegaEmbed("#asia_treemap", vg_9b, vegaOptions)
+]).then(function(results) {
+    section3Views = results.map(function(result) { return result.view; });
+    document.getElementById("crop_select_3").addEventListener("change", applySection3Controls);
+    applySection3Controls();   // also covers a browser that restores the old control value on reload
 }).catch(console.error);
-vegaEmbed("#bump_chart", vg_8, vlOptions).then(function(result) {
-}).catch(console.error);
-vegaEmbed("#continent_bar", vg_9a, vlOptions).then(function(result) {
-}).catch(console.error);
-vegaEmbed("#asia_treemap", vg_9b, vegaOptions).then(function(result) {
-}).catch(console.error);
-vegaEmbed("#world_yield", vg_10, vlOptions).then(function(result) {
-}).catch(console.error);
-vegaEmbed("#slope_chart", vg_11, vlOptions).then(function(result) {
+
+
+// section 4 (charts 10 and 11) shares one crop control, which is in index.html
+var section4Views = [];
+
+function applySection4Controls() {
+    var crop = document.getElementById("crop_select_4").value;
+    section4Views.forEach(function(view) {
+        view.signal("crop", crop).run();
+    });
+}
+
+Promise.all([
+    vegaEmbed("#world_yield", vg_10, vlOptions),
+    vegaEmbed("#slope_chart", vg_11, vlOptions)
+]).then(function(results) {
+    section4Views = results.map(function(result) { return result.view; });
+    document.getElementById("crop_select_4").addEventListener("change", applySection4Controls);
+    applySection4Controls();   // also covers a browser that restores the old control value on reload
 }).catch(console.error);

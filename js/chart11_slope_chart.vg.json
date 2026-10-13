@@ -13,17 +13,7 @@
   "params": [
     {
       "name": "crop",
-      "value": "Wheat",
-      "bind": {
-        "input": "select",
-        "options": [
-          "Wheat",
-          "Barley",
-          "Oats",
-          "Sorghum"
-        ],
-        "name": "Crop: "
-      }
+      "value": "Wheat"
     }
   ],
   "data": {

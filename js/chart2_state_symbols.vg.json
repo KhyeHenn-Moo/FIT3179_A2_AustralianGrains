@@ -12,30 +12,11 @@
   "params": [
     {
       "name": "crop",
-      "value": "Wheat",
-      "bind": {
-        "input": "select",
-        "options": [
-          "Wheat",
-          "Barley",
-          "Oats",
-          "Sorghum"
-        ],
-        "name": "Crop: "
-      }
+      "value": "Wheat"
     },
     {
       "name": "year",
-      "value": "2024-25",
-      "bind": {
-        "input": "radio",
-        "options": [
-          "2022-23",
-          "2023-24",
-          "2024-25"
-        ],
-        "name": "Year: "
-      }
+      "value": "2024-25"
     },
     {
       "name": "maxT",

@@ -24,18 +24,7 @@
   "signals": [
     {
       "name": "crop",
-      "value": "All Grains",
-      "bind": {
-        "input": "select",
-        "options": [
-          "All Grains",
-          "Wheat",
-          "Barley",
-          "Oats",
-          "Sorghum"
-        ],
-        "name": "Grain: "
-      }
+      "value": "All Grains"
     }
   ],
   "data": [

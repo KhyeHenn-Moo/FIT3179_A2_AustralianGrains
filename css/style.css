@@ -31,3 +31,21 @@ body,
     border-radius: 4px;
     background: #ffffff url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path d='M0 0l5 6 5-6z' fill='%23555555'/></svg>") no-repeat right 8px center;
 }
+
+.section-controls {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #ffffff;
+    padding: 10px 0;
+    border-bottom: 1px solid #dddddd;
+}
+
+.section-controls .control-group {
+    display: inline-block;
+    margin-right: 28px;
+}
+
+.section-controls .control-group label {
+    margin-right: 10px;
+}
