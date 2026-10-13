@@ -42,6 +42,14 @@
   "transform": [
     {
       "filter": "datum.crop === crop"
+    },
+    {
+      "calculate": "datum.partner === 'USSR' ? 'Soviet Union' : datum.partner === 'China, Hong Kong SAR' ? 'Hong Kong' : datum.partner === 'China, Macao SAR' ? 'Macao' : datum.partner === 'China, mainland' ? 'China' : datum.partner === 'Republic of Korea' ? 'South Korea' : datum.partner === 'China, Taiwan Province of' ? 'Taiwan' : datum.partner === 'Viet Nam' ? 'Vietnam' : datum.partner === 'United States of America' ? 'United States' : datum.partner",
+      "as": "buyer"
+    },
+    {
+      "calculate": "datum.buyer",
+      "as": "label"
     }
   ],
   "layer": [
@@ -119,7 +127,7 @@
         },
         "tooltip": [
           {
-            "field": "partner",
+            "field": "buyer",
             "title": "Buyer"
           },
           {
@@ -213,7 +221,7 @@
         },
         "tooltip": [
           {
-            "field": "partner",
+            "field": "buyer",
             "title": "Buyer"
           },
           {
@@ -370,7 +378,7 @@
           "filter": "(datum.is_malaysia === 'True' || datum.is_malaysia === true) && datum.rank > 10"
         },
         {
-          "calculate": "'Malaysia: #' + datum.rank",
+          "calculate": "'Malaysia: rank ' + datum.rank",
           "as": "my_text"
         },
         {

@@ -3,9 +3,10 @@
   "title": {
     "text": "Crop share of each state's grain production",
     "subtitle": [
-      "Share of wheat, barley, oats and sorghum tonnes (levied production), each row adds up to 100%",
-      "ACT and Northern Territory are left out: each has only one wheat record, in a single year",
-      "Grey = no record (not zero); <1% = recorded but tiny"
+      "Share of wheat, barley, oats and sorghum tonnes (levied production), each row adds up to 100 percent",
+      "Australian Capital Territory and Northern Territory are left out: each has only one wheat record, in a single year",
+      "Grey = no record (not zero); \"<1%\" = recorded but under 1%",
+      "The Total column shows each state's four-grain total in million tonnes"
     ]
   },
   "data": {
@@ -216,7 +217,7 @@
             "as": "col"
           },
           {
-            "calculate": "datum.state_total >= 1000000 ? format(datum.state_total / 1000000, '.1f') + ' Mt' : format(datum.state_total / 1000, '.0f') + ' kt'",
+            "calculate": "format(datum.state_total / 1000000, '.2f')",
             "as": "total_label"
           }
         ],
@@ -239,7 +240,7 @@
             ],
             "scale": {
               "domain": [
-                "Wheat",
+                "Wheat", 
                 "Barley",
                 "Oats",
                 "Sorghum",

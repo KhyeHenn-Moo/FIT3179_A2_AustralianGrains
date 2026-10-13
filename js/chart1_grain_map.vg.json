@@ -3,8 +3,8 @@
   "width": 700,
   "height": 520,
   "title": {
-    "text": "Grain production density by SA2",
-    "subtitle": "Levied production per km² of SA2 area"
+    "text": "Grain production density by Statistical Area Level 2",
+    "subtitle": "Levied production per square kilometre of Statistical Area Level 2 area"
   },
   "params": [
     {
@@ -107,7 +107,7 @@
         "tooltip": [
           {
             "field": "properties.SA2_NAME21",
-            "title": "SA2"
+            "title": "Statistical Area Level 2"
           },
           {
             "field": "properties.STE_NAME21",
@@ -186,14 +186,14 @@
             ]
           },
           "legend": {
-            "title": "Tonnes per km²",
+            "title": "Tonnes per square kilometre",
             "labelExpr": "datum.value == 0 ? 'Under ' + breaks[crop][0] : datum.value == 4 ? breaks[crop][3] + ' and over' : breaks[crop][datum.value - 1] + ' – ' + breaks[crop][datum.value]"
           }
         },
         "tooltip": [
           {
             "field": "SA2_NAME21",
-            "title": "SA2"
+            "title": "Statistical Area Level 2"
           },
           {
             "field": "crop",
@@ -205,7 +205,7 @@
           },
           {
             "field": "tonnes_per_km2",
-            "title": "Tonnes per km²",
+            "title": "Tonnes per square kilometre",
             "format": ",.2f"
           },
           {
@@ -215,7 +215,7 @@
           },
           {
             "field": "km2",
-            "title": "SA2 area (km²)",
+            "title": "Area (square kilometres)",
             "format": ",.0f"
           }
         ]

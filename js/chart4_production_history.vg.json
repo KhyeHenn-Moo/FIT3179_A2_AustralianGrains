@@ -106,17 +106,17 @@
             },
             {
               "field": "production_mt",
-              "title": "Production (million t)",
+              "title": "Production (million tonnes)",
               "format": ",.2f"
             },
             {
               "field": "area_mha",
-              "title": "Area harvested (million ha)",
+              "title": "Area harvested (million hectares)",
               "format": ",.2f"
             },
             {
               "field": "yield_t_ha",
-              "title": "Yield (t/ha)",
+              "title": "Yield (tonnes per hectare)",
               "format": ",.2f"
             }
           ]
@@ -144,7 +144,7 @@
             "filter": "datum.note === 'Record high' && datum.year <= 2005"
           },
           {
-            "calculate": "'Record high ' + datum.year + ': ' + format(datum.production_mt, ',.1f') + ' Mt'",
+            "calculate": "'Record high ' + datum.year + ': ' + format(datum.production_mt, ',.1f') + ' million tonnes'",
             "as": "lbl"
           }
         ],
@@ -168,7 +168,7 @@
             "filter": "datum.note === 'Record high' && datum.year > 2005"
           },
           {
-            "calculate": "'Record high ' + datum.year + ': ' + format(datum.production_mt, ',.1f') + ' Mt'",
+            "calculate": "'Record high ' + datum.year + ': ' + format(datum.production_mt, ',.1f') + ' million tonnes'",
             "as": "lbl"
           }
         ],
@@ -192,7 +192,7 @@
             "filter": "datum.note !== '' && datum.note !== 'Record high' && datum.year <= 2005"
           },
           {
-            "calculate": "'Low ' + datum.year + ': ' + format(datum.production_mt, ',.1f') + ' Mt'",
+            "calculate": "'Low ' + datum.year + ': ' + format(datum.production_mt, ',.1f') + ' million tonnes'",
             "as": "lbl"
           }
         ],
@@ -216,7 +216,7 @@
             "filter": "datum.note !== '' && datum.note !== 'Record high' && datum.year > 2005"
           },
           {
-            "calculate": "'Low ' + datum.year + ': ' + format(datum.production_mt, ',.1f') + ' Mt'",
+            "calculate": "'Low ' + datum.year + ': ' + format(datum.production_mt, ',.1f') + ' million tonnes'",
             "as": "lbl"
           }
         ],

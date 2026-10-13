@@ -44,8 +44,12 @@
       "filter": "datum.crop === crop"
     },
     {
-      "calculate": "datum.label + '  ' + format(datum.production_mt, ',.1f')",
+      "calculate": "(datum.label === 'USA' ? 'United States' : datum.label === 'UK' ? 'United Kingdom' : replace(datum.label, 'incl.', 'including')) + '  ' + format(datum.production_mt, ',.1f')",
       "as": "lbl"
+    },
+    {
+      "calculate": "replace(datum.country, 'incl.', 'including')",
+      "as": "country_name"
     }
   ],
   "layer": [
@@ -75,6 +79,7 @@
             "labelAngle": 0,
             "labelFontSize": 14,
             "labelFontWeight": "bold",
+            "labelExpr": "datum.label + ' (million tonnes)'",
             "grid": false,
             "domain": false,
             "ticks": false
@@ -100,7 +105,7 @@
         },
         "tooltip": [
           {
-            "field": "country",
+            "field": "country_name",
             "title": "Country"
           },
           {
@@ -113,7 +118,7 @@
           },
           {
             "field": "production_mt",
-            "title": "Production (million t)",
+            "title": "Production (million tonnes)",
             "format": ",.2f"
           },
           {
@@ -152,8 +157,9 @@
             "title": null,
             "orient": "top",
             "labelAngle": 0,
-            "labelFontSize": 14,
+            "labelFontSize": 13,
             "labelFontWeight": "bold",
+            "labelExpr": "datum.label + ' (million tonnes)'",
             "grid": false,
             "domain": false,
             "ticks": false
@@ -179,7 +185,7 @@
         },
         "tooltip": [
           {
-            "field": "country",
+            "field": "country_name",
             "title": "Country"
           },
           {
@@ -192,7 +198,7 @@
           },
           {
             "field": "production_mt",
-            "title": "Production (million t)",
+            "title": "Production (million tonnes)",
             "format": ",.2f"
           },
           {
@@ -227,8 +233,9 @@
             "title": null,
             "orient": "top",
             "labelAngle": 0,
-            "labelFontSize": 14,
+            "labelFontSize": 13,
             "labelFontWeight": "bold",
+            "labelExpr": "datum.label + ' (million tonnes)'",
             "grid": false,
             "domain": false,
             "ticks": false
@@ -287,8 +294,9 @@
             "title": null,
             "orient": "top",
             "labelAngle": 0,
-            "labelFontSize": 14,
+            "labelFontSize": 13,
             "labelFontWeight": "bold",
+            "labelExpr": "datum.label + ' (million tonnes)'",
             "grid": false,
             "domain": false,
             "ticks": false
@@ -334,8 +342,8 @@
     }
   },
   "padding": {
-    "left": 120,
-    "right": 170,
+    "left": 215,
+    "right": 215,
     "top": 5,
     "bottom": 5
   }

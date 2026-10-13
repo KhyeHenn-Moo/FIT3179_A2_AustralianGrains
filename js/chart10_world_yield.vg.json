@@ -71,6 +71,10 @@
       },
       "transform": [
         {
+          "calculate": "datum.properties.NAME_LONG === 'Lao PDR' ? 'Laos' : datum.properties.NAME_LONG === 'Dem. Rep. Korea' ? 'North Korea' : datum.properties.NAME_LONG",
+          "as": "nm"
+        },
+        {
           "calculate": "'No ' + lower(crop) + ' yield data, or under 1,000 hectares harvested'",
           "as": "note"
         }
@@ -78,7 +82,7 @@
       "encoding": {
         "tooltip": [
           {
-            "field": "properties.NAME",
+            "field": "nm",
             "title": "Country"
           },
           {
@@ -121,6 +125,10 @@
             "key": "properties.ADM0_A3"
           },
           "as": "geo"
+        },
+        {
+          "calculate": "datum.country === 'China, Taiwan Province of' ? 'Taiwan' : datum.country",
+          "as": "cname"
         }
       ],
       "mark": {
@@ -159,7 +167,7 @@
         },
         "tooltip": [
           {
-            "field": "country",
+            "field": "cname",
             "title": "Country"
           },
           {
@@ -168,17 +176,17 @@
           },
           {
             "field": "yield_t_ha",
-            "title": "Yield (t/ha)",
+            "title": "Yield (tonnes / hectare)",
             "format": ",.2f"
           },
           {
             "field": "production_t",
-            "title": "Production (t)",
+            "title": "Production (tonnes)",
             "format": ","
           },
           {
             "field": "area_ha",
-            "title": "Area harvested (ha)",
+            "title": "Area harvested (hectares)",
             "format": ","
           }
         ]
@@ -236,7 +244,7 @@
           "filter": "datum.crop === crop && datum.adm0_a3 === 'AUS'"
         },
         {
-          "calculate": "'Australia: ' + format(datum.yield_t_ha, '.2f') + ' t/ha'",
+          "calculate": "'Australia: ' + format(datum.yield_t_ha, '.2f') + ' tonnes / hectare'",
           "as": "txt"
         },
         {

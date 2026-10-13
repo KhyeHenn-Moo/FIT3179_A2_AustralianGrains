@@ -4,7 +4,7 @@
     "text": "How each state's grain production changed from one year to the next",
     "subtitle": [
       "Change in the four-grain total (wheat, barley, oats and sorghum), in million tonnes; % change in brackets",
-      "ACT and Northern Territory are left out (see the crop share chart). Three years of data show recent swings, not a long-term trend"
+      "Australian Capital Territory and Northern Territory are left out (see the crop share chart). Three years of data show recent swings, not a long-term trend"
     ]
   },
   "data": {
@@ -32,7 +32,7 @@
       "as": "direction"
     },
     {
-      "calculate": "(datum.change_tonnes < 0 ? '−' : '+') + (abs(datum.change_tonnes) < 100000 ? format(abs(datum.change_tonnes) / 1000, '.0f') + ' kt' : format(abs(datum.change_mt), '.1f') + ' Mt') + ' (' + (datum.change_pct < 0 ? '−' : '+') + format(abs(datum.change_pct), '.0f') + '%)'",
+      "calculate": "(abs(datum.change_mt) < 0.01 ? 'Under 0.01 million tonnes' : (datum.change_tonnes < 0 ? '−' : '+') + format(abs(datum.change_mt), '.2f') + ' million tonnes') + ' (' + (datum.change_pct < 0 ? '−' : '+') + format(abs(datum.change_pct), '.0f') + '%)'",
       "as": "label"
     }
   ],
@@ -50,7 +50,7 @@
     }
   },
   "spec": {
-    "width": 330,
+    "width": 430,
     "height": 240,
     "layer": [
       {
@@ -63,8 +63,8 @@
             "type": "quantitative",
             "scale": {
               "domain": [
-                -14,
-                11
+                -17,
+                14
               ]
             },
             "axis": {

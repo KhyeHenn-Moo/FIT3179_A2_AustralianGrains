@@ -5,9 +5,9 @@
   "title": {
     "text": "Where Australian grain was exported in 2024",
     "subtitle": [
-      "Line width is proportional to tonnes exported (FAOSTAT); only flows of 1,000 t or more are shown",
+      "Line width is proportional to tonnes exported (FAOSTAT); only flows of 1,000 tonnes or more are shown",
       "Lines run from the middle of Australia to each destination's capital city, not along real shipping routes",
-      "Malaysia is highlighted in blue; no blue line means no Malaysian exports of that crop at 1,000 t or more"
+      "Malaysia is highlighted in blue; no blue line means no Malaysian exports of that crop at 1,000 tonnes or more"
     ]
   },
   "params": [
@@ -110,7 +110,7 @@
           "as": "share_of_max"
         },
         {
-          "calculate": "datum.partner === 'China, mainland' ? 'China' : datum.partner === 'Republic of Korea' ? 'South Korea' : datum.partner === 'China, Taiwan Province of' ? 'Taiwan' : datum.partner === 'Viet Nam' ? 'Vietnam' : datum.partner",
+          "calculate": "datum.partner === 'USSR' ? 'Soviet Union' : datum.partner === 'China, Hong Kong SAR' ? 'Hong Kong' : datum.partner === 'China, Macao SAR' ? 'Macao' : datum.partner === 'China, mainland' ? 'China' : datum.partner === 'Republic of Korea' ? 'South Korea' : datum.partner === 'China, Taiwan Province of' ? 'Taiwan' : datum.partner === 'Viet Nam' ? 'Vietnam' : datum.partner === 'United States of America' ? 'United States' : datum.partner",
           "as": "label"
         }
       ],
@@ -167,7 +167,7 @@
             },
             "tooltip": [
               {
-                "field": "partner",
+                "field": "label",
                 "title": "Destination"
               },
               {
@@ -230,7 +230,7 @@
             },
             "tooltip": [
               {
-                "field": "partner",
+                "field": "label",
                 "title": "Destination"
               },
               {

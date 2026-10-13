@@ -15,7 +15,13 @@
       "value": "All Grains",
       "bind": {
         "input": "select",
-        "options": ["All Grains", "Wheat", "Barley", "Oats", "Sorghum"],
+        "options": [
+          "All Grains",
+          "Wheat",
+          "Barley",
+          "Oats",
+          "Sorghum"
+        ],
         "name": "Grain: "
       }
     }
@@ -24,47 +30,105 @@
     "url": "../data/exports_continent.csv",
     "format": {
       "type": "csv",
-      "parse": {"tonnes": "number", "tonnes_kt": "number", "share_pct": "number", "n_buyers": "number"}
+      "parse": {
+        "tonnes": "number",
+        "tonnes_kt": "number",
+        "share_pct": "number",
+        "n_buyers": "number"
+      }
     }
   },
   "transform": [
-    {"filter": "datum.crop === crop"},
-    {"calculate": "(datum.tonnes_kt < 1 ? '<1' : format(datum.tonnes_kt, ',.0f')) + ' kt  (' + (datum.share_pct < 0.1 ? '<0.1' : format(datum.share_pct, '.1f')) + '%)'", "as": "lbl"}
+    {
+      "filter": "datum.crop === crop"
+    },
+    {
+      "calculate": "(datum.tonnes_kt < 1 ? 'under 1' : format(datum.tonnes_kt, ',.0f')) + 'k tonnes  (' + (datum.share_pct < 0.1 ? 'under 0.1' : format(datum.share_pct, '.1f')) + '%)'",
+      "as": "lbl"
+    }
   ],
   "encoding": {
     "y": {
       "field": "continent",
       "type": "nominal",
       "sort": "-x",
-      "axis": {"title": null, "labelFontSize": 12, "ticks": false, "domain": false}
+      "axis": {
+        "title": null,
+        "labelFontSize": 12,
+        "ticks": false,
+        "domain": false
+      }
     },
     "x": {
       "field": "tonnes_kt",
       "type": "quantitative",
-      "axis": {"title": "Exports in 2024 (thousand tonnes)", "grid": true, "format": ",.0f"}
+      "axis": {
+        "title": "Exports in 2024 (thousand tonnes)",
+        "grid": true,
+        "format": ",.0f"
+      }
     }
   },
   "layer": [
     {
-      "mark": {"type": "bar", "height": {"band": 0.7}},
+      "mark": {
+        "type": "bar",
+        "height": {
+          "band": 0.7
+        }
+      },
       "encoding": {
         "color": {
-          "condition": {"test": "datum.continent === 'Asia'", "value": "#d94801"},
+          "condition": {
+            "test": "datum.continent === 'Asia'",
+            "value": "#d94801"
+          },
           "value": "#bdbdbd"
         },
         "tooltip": [
-          {"field": "continent", "title": "Continent"},
-          {"field": "crop", "title": "Grain"},
-          {"field": "tonnes", "title": "Exports 2024 (t)", "format": ",.0f"},
-          {"field": "share_pct", "title": "Share of grain exports (%)", "format": ".1f"},
-          {"field": "n_buyers", "title": "Buyer countries"}
+          {
+            "field": "continent",
+            "title": "Continent"
+          },
+          {
+            "field": "crop",
+            "title": "Grain"
+          },
+          {
+            "field": "tonnes",
+            "title": "Exports 2024 (tonnes)",
+            "format": ",.0f"
+          },
+          {
+            "field": "share_pct",
+            "title": "Share of grain exports (percent)",
+            "format": ".1f"
+          },
+          {
+            "field": "n_buyers",
+            "title": "Buyer countries"
+          }
         ]
       }
     },
     {
-      "mark": {"type": "text", "align": "left", "dx": 5, "fontSize": 11, "color": "#333333"},
-      "encoding": {"text": {"field": "lbl"}}
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 5,
+        "fontSize": 11,
+        "color": "#333333"
+      },
+      "encoding": {
+        "text": {
+          "field": "lbl"
+        }
+      }
     }
   ],
-  "config": {"view": {"stroke": null}}
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
 }

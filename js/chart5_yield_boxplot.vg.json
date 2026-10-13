@@ -155,12 +155,12 @@
           },
           {
             "field": "prev_yield_t_ha",
-            "title": "Yield the year before (t/ha)",
+            "title": "Yield the year before (tonnes / hectare)",
             "format": ".2f"
           },
           {
             "field": "yield_t_ha",
-            "title": "Yield that year (t/ha)",
+            "title": "Yield that year (tonnes / hectare)",
             "format": ".2f"
           },
           {

@@ -193,7 +193,7 @@
               0.5,
               1
             ],
-            "labelExpr": "format(datum.value * maxT[crop], '~s')"
+            "labelExpr": "format(datum.value * maxT[crop], ',.0f')"
           }
         },
         "order": {
