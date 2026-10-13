@@ -286,9 +286,6 @@
   "config": {
     "view": {
       "stroke": null
-    },
-    "axis": {
-      "labelFont": "sans-serif"
     }
   }
 }

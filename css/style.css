@@ -1,9 +1,33 @@
 body {
-    font-family: sans-serif;
     margin: 20px;
 }
 
 #grain_map {
     width: 100%;
     max-width: 900px;
+}
+
+body,
+.vega-embed,
+.vega-bind,
+.vega-bind select,
+.vega-bind input,
+#vg-tooltip-element {
+    font-family: Helvetica, Arial, sans-serif !important;
+}
+
+.vega-bind,
+.vega-bind label,
+.vega-bind select,
+.vega-bind input {
+    font-size: 14px;
+}
+
+.vega-bind select {
+    -webkit-appearance: none;
+    appearance: none;
+    padding: 3px 26px 3px 8px;
+    border: 1px solid #999999;
+    border-radius: 4px;
+    background: #ffffff url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path d='M0 0l5 6 5-6z' fill='%23555555'/></svg>") no-repeat right 8px center;
 }
