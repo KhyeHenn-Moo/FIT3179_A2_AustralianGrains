@@ -13,10 +13,11 @@
   "params": [
     {
       "name": "crop",
-      "value": "Wheat",
+      "value": "All Grains",
       "bind": {
         "input": "select",
         "options": [
+          "All Grains",
           "Wheat",
           "Barley",
           "Oats",
@@ -31,7 +32,8 @@
         "Wheat": 3500000,
         "Barley": 5000000,
         "Oats": 300000,
-        "Sorghum": 2100000
+        "Sorghum": 2100000,
+        "All Grains": 10500000
       }
     }
   ],
@@ -162,7 +164,7 @@
                   0.5,
                   1
                 ],
-                "labelExpr": "format(datum.value * maxT[crop], '~s')"
+                "labelExpr": "format(datum.value * maxT[crop], ',.0f')"
               }
             },
             "tooltip": [

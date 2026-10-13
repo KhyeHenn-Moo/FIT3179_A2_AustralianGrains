@@ -1,4 +1,46 @@
 year,crop,partner,dest_city,tonnes,rank_in_crop,is_malaysia,origin_lon,origin_lat,dest_lon,dest_lat
+2024,All Grains,"China, mainland",Beijing,10376860.63,1,False,134.0,-25.0,116.38634,39.930838
+2024,All Grains,Indonesia,Jakarta,3456992.1799999997,2,False,134.0,-25.0,106.827492,-6.172472
+2024,All Grains,Philippines,Manila,2554867.75,3,False,134.0,-25.0,120.980271,14.606105
+2024,All Grains,Japan,Tokyo,1853368.6400000001,4,False,134.0,-25.0,139.749462,35.686963
+2024,All Grains,Yemen,Sanaa,1583928.6,5,False,134.0,-25.0,44.204648,15.356679
+2024,All Grains,Republic of Korea,Seoul,1342772.83,6,False,134.0,-25.0,126.997785,37.568295
+2024,All Grains,Viet Nam,Hanoi,1322222.65,7,False,134.0,-25.0,105.848068,21.035273
+2024,All Grains,Malaysia,Kuala Lumpur,794722.92,8,True,134.0,-25.0,101.698037,3.168612
+2024,All Grains,Thailand,Bangkok,710979.0,9,False,134.0,-25.0,100.514699,13.751945
+2024,All Grains,New Zealand,Wellington,620773.36,10,False,134.0,-25.0,174.783266,-41.299988
+2024,All Grains,South Africa,Bloemfontein,460802.68,11,False,134.0,-25.0,26.229913,-29.119994
+2024,All Grains,Kuwait,Kuwait City,408664.63,12,False,134.0,-25.0,47.976355,29.371664
+2024,All Grains,United Arab Emirates,Abu Dhabi,326343.46,13,False,134.0,-25.0,54.366593,24.466684
+2024,All Grains,"China, Taiwan Province of",Taipei,310519.28,14,False,134.0,-25.0,121.568333,25.035833
+2024,All Grains,Papua New Guinea,Port Moresby,271642.47000000003,15,False,134.0,-25.0,147.192504,-9.464708
+2024,All Grains,Myanmar,Naypyidaw,230392.52,16,False,134.0,-25.0,96.116673,19.768503
+2024,All Grains,Fiji,Suva,204736.4,17,False,134.0,-25.0,178.441707,-18.133016
+2024,All Grains,Oman,Muscat,197714.8,18,False,134.0,-25.0,58.593312,23.613325
+2024,All Grains,Mexico,Mexico City,161678.5,19,False,134.0,-25.0,-99.132934,19.444388
+2024,All Grains,Saudi Arabia,Riyadh,153944.6,20,False,134.0,-25.0,46.770796,24.642779
+2024,All Grains,Bahrain,Manama,135651.2,21,False,134.0,-25.0,50.5831,26.2361
+2024,All Grains,India,New Delhi,131094.13,22,False,134.0,-25.0,77.19998,28.600023
+2024,All Grains,Singapore,Singapore,126242.63,23,False,134.0,-25.0,103.8539,1.295
+2024,All Grains,Peru,Lima,117154.7,24,False,134.0,-25.0,-77.052008,-12.046067
+2024,All Grains,Algeria,Algiers,114349.2,25,False,134.0,-25.0,3.048607,36.765011
+2024,All Grains,Qatar,Doha,83649.2,26,False,134.0,-25.0,51.532968,25.286556
+2024,All Grains,Kenya,Nairobi,80017.81,27,False,134.0,-25.0,36.814711,-1.281401
+2024,All Grains,Iraq,Baghdad,77722.6,28,False,134.0,-25.0,44.391923,33.340594
+2024,All Grains,Netherlands (Kingdom of the),Amsterdam,69995.0,29,False,134.0,-25.0,4.914694,52.351915
+2024,All Grains,Zambia,Lusaka,69218.0,30,False,134.0,-25.0,28.281382,-15.414698
+2024,All Grains,Mozambique,Maputo,61577.7,31,False,134.0,-25.0,32.587217,-25.953332
+2024,All Grains,Mauritius,Port Louis,46498.1,32,False,134.0,-25.0,57.5,-20.1666
+2024,All Grains,Ecuador,Quito,42045.8,33,False,134.0,-25.0,-78.501997,-0.213042
+2024,All Grains,Sri Lanka,Colombo,39784.61,34,False,134.0,-25.0,79.857751,6.931966
+2024,All Grains,Italy,Rome,33579.37,35,False,134.0,-25.0,12.481313,41.897902
+2024,All Grains,Malawi,Lilongwe,19800.0,36,False,134.0,-25.0,33.783302,-13.983295
+2024,All Grains,Solomon Islands,Honiara,16395.04,37,False,134.0,-25.0,159.949766,-9.437994
+2024,All Grains,United Kingdom of Great Britain and Northern Ireland,London,12330.97,38,False,134.0,-25.0,-0.118668,51.501941
+2024,All Grains,Egypt,Cairo,12166.94,39,False,134.0,-25.0,31.248022,30.051906
+2024,All Grains,Bangladesh,Dhaka,5409.69,40,False,134.0,-25.0,90.406634,23.725006
+2024,All Grains,"China, Hong Kong SAR",Hong Kong,1827.63,41,False,134.0,-25.0,114.1831,22.3069
+2024,All Grains,United Republic of Tanzania,Dar es Salaam,1183.88,42,False,134.0,-25.0,39.266396,-6.798067
 2024,Barley,"China, mainland",Beijing,4831298.12,1,False,134.0,-25.0,116.38634,39.930838
 2024,Barley,Japan,Tokyo,668028.02,2,False,134.0,-25.0,139.749462,35.686963
 2024,Barley,Viet Nam,Hanoi,173461.3,3,False,134.0,-25.0,105.848068,21.035273

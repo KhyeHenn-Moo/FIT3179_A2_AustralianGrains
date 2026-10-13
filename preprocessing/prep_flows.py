@@ -5,13 +5,13 @@ YEAR = 2024
 MIN_TONNES = 1000          # drop tiny flows so the map stays readable
 ORIGIN = (134.0, -25.0)    # one neutral origin near the middle of Australia (exports leave from many ports)
 
-# 1) load FAO export quantities for 2024 and keep only flows of at least MIN_TONNES
+# 1) load FAO export quantities for 2024 (the MIN_TONNES cut-off is applied later, after the "All Grains" totals are built)
 fao = pd.read_csv("../raw_data/FAOSTAT_data.csv", encoding="utf-8-sig")
 fao = fao[(fao["Element"] == "Export quantity") & (fao["Year"] == YEAR)]
 fao = fao.rename(columns={"Partner Countries": "partner", "Item": "crop",
                           "Value": "tonnes", "Partner Country Code (M49)": "m49"})
 fao["m49"] = fao["m49"].astype(str).str.zfill(3)
-fao = fao[fao["tonnes"] >= MIN_TONNES][["m49", "partner", "crop", "tonnes"]]
+fao = fao[["m49", "partner", "crop", "tonnes"]]
 
 # 2) match each FAO partner (M49 code) to a Natural Earth country, via its ISO numeric code
 topo = json.load(open("../js/ne_110m_countries.topojson", encoding="utf-8"))
@@ -50,9 +50,16 @@ loc = pd.DataFrame(rows, columns=["m49", "dest_lon", "dest_lat", "dest_city"])
 df = fao.merge(loc, on="m49", how="left")
 missing = df[df.dest_lon.isna()]
 print("Partners with no coordinates (dropped):")
-print(missing.groupby("partner").tonnes.sum().sort_values(ascending=False))
+missing_t = missing.groupby("partner").tonnes.sum().sort_values(ascending=False)
+print(missing_t[missing_t >= MIN_TONNES])   # only list the ones large enough to matter
 df = df.dropna(subset=["dest_lon"]).copy()
-# 6) add the Australian origin point, Malaysia flag and rank within each crop
+
+# 5b) add an "All Grains" crop: sum the four crops per partner, then apply the MIN_TONNES cut-off to every crop
+keys = ["m49", "partner", "dest_city", "dest_lon", "dest_lat"]
+total = df.groupby(keys, as_index=False)["tonnes"].sum().assign(crop="All Grains")
+df = pd.concat([df, total], ignore_index=True)
+df = df[df["tonnes"] >= MIN_TONNES].copy()
+# 6) add the Australian origin point, Malaysia flag and rank within each crop (including All Grains)
 df["origin_lon"], df["origin_lat"] = ORIGIN
 df["is_malaysia"] = df["partner"].eq("Malaysia")
 df["year"] = YEAR
