@@ -1,4 +1,3 @@
-# Run from the project root:  python cleaning/prep_grain_sa2.py
 import json
 import pandas as pd
 
