@@ -37,7 +37,7 @@
   "layer": [
     {
       "data": {
-        "url": "../js/ne_110m_countries.topojson",
+        "url": "js/ne_110m_countries.topojson",
         "format": {
           "type": "topojson",
           "feature": "ne_110m_admin_0_countries"
@@ -52,7 +52,7 @@
     },
     {
       "data": {
-        "url": "../js/oceans.topojson",
+        "url": "js/oceans.topojson",
         "format": {
           "type": "topojson",
           "feature": "oceans"
@@ -65,7 +65,7 @@
     },
     {
       "data": {
-        "url": "../js/WorldMapWithGraticules.topojson",
+        "url": "js/WorldMapWithGraticules.topojson",
         "format": {
           "type": "topojson",
           "feature": "ne_110m_graticules_30"
@@ -80,7 +80,7 @@
     },
     {
       "data": {
-        "url": "../data/flows.csv",
+        "url": "data/flows.csv",
         "format": {
           "type": "csv",
           "parse": {

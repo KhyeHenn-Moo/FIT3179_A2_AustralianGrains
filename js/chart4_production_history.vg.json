@@ -10,7 +10,7 @@
     "frame": "bounds"
   },
   "data": {
-    "url": "../data/production_history.csv",
+    "url": "data/production_history.csv",
     "format": {
       "type": "csv",
       "parse": {

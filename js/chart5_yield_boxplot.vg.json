@@ -12,7 +12,7 @@
     "frame": "bounds"
   },
   "data": {
-    "url": "../data/yield_change.csv",
+    "url": "data/yield_change.csv",
     "format": {
       "type": "csv",
       "parse": {

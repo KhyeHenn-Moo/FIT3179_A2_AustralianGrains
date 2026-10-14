@@ -68,7 +68,7 @@
   "layer": [
     {
       "data": {
-        "url": "../js/sa2_2021.topojson",
+        "url": "js/sa2_2021.topojson",
         "format": {
           "type": "topojson",
           "feature": "SA2_2021_AUST_GDA2020"
@@ -108,7 +108,7 @@
     },
     {
       "data": {
-        "url": "../data/grain_sa2.csv",
+        "url": "data/grain_sa2.csv",
         "format": {
           "type": "csv",
           "parse": {
@@ -131,7 +131,7 @@
           "lookup": "SA2_CODE21",
           "from": {
             "data": {
-              "url": "../js/sa2_2021.topojson",
+              "url": "js/sa2_2021.topojson",
               "format": {
                 "type": "topojson",
                 "feature": "SA2_2021_AUST_GDA2020"

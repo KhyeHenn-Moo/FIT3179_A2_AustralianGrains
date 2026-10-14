@@ -10,7 +10,7 @@
     "frame": "bounds"
   },
   "data": {
-    "url": "../data/state_crop_share.csv",
+    "url": "data/state_crop_share.csv",
     "format": {
       "type": "csv",
       "parse": {

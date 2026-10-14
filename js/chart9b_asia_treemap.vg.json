@@ -27,7 +27,7 @@
   "data": [
     {
       "name": "leaves",
-      "url": "../data/exports_asia.csv",
+      "url": "data/exports_asia.csv",
       "format": {
         "type": "csv",
         "parse": {

@@ -48,7 +48,7 @@
   "layer": [
     {
       "data": {
-        "url": "../js/states_2021.geojson",
+        "url": "js/states_2021.geojson",
         "format": {
           "type": "json",
           "property": "features"
@@ -63,7 +63,7 @@
     },
     {
       "data": {
-        "url": "../js/states_2021.geojson",
+        "url": "js/states_2021.geojson",
         "format": {
           "type": "json",
           "property": "features"
@@ -78,7 +78,7 @@
           "lookup": "key",
           "from": {
             "data": {
-              "url": "../data/state_grain.csv",
+              "url": "data/state_grain.csv",
               "format": {
                 "type": "csv"
               }
@@ -121,7 +121,7 @@
     },
     {
       "data": {
-        "url": "../data/state_grain.csv",
+        "url": "data/state_grain.csv",
         "format": {
           "type": "csv",
           "parse": {

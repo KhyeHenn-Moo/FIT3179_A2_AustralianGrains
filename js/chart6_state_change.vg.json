@@ -10,7 +10,7 @@
     "frame": "bounds"
   },
   "data": {
-    "url": "../data/state_change.csv",
+    "url": "data/state_change.csv",
     "format": {
       "type": "csv",
       "parse": {

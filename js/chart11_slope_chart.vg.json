@@ -18,7 +18,7 @@
     }
   ],
   "data": {
-    "url": "../data/production_slope.csv",
+    "url": "data/production_slope.csv",
     "format": {
       "type": "csv",
       "parse": {
