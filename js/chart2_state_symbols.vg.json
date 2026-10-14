@@ -5,7 +5,7 @@
   "title": {
     "text": "Grain production by state",
     "subtitle": [
-      "Levied production in tonnes; circle area is proportional to tonnes",
+      "Levied production in tonnes. Circle size (area) is proportional to tonnes",
       "Source: Australian Bureau of Statistics"
     ],
     "anchor": "start",
