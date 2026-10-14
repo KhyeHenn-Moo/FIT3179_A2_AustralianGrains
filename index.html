@@ -13,10 +13,20 @@
     <script src="js/main.js" defer></script>
 </head>
 <body>
-    <h1>Australian Grains</h1>
+<main class="page">
+
+    <header class="page-header">
+        <h1>Australian Grains</h1>
+        <p class="page-subtitle">Where Australia grows its wheat, barley, oats and sorghum, and where it sends them</p>
+        <p class="text-block">Australia is one of the world's largest grain exporters, yet its harvests swing sharply with the weather, and most of what it grows leaves the country. This dashboard follows four grains (wheat, barley, oats and sorghum) in four steps: where they are grown, how unpredictable the harvests are, which countries buy them, and how Australia compares with the rest of the world. Malaysia, a regular buyer, is highlighted in blue throughout. Each section has its own Crop selector, which stays at the top of the screen as you scroll through that section.</p>
+    </header>
 
 
-    <section id="where_it_grows">
+    <section id="where_it_grows" class="story-section">
+        <h2>Where it grows</h2>
+        <p class="section-subtitle">Production is concentrated in a few regions, and each state has its own mix of crops</p>
+        <p class="text-block">Grain growing is not spread evenly across Australia. The map shows which local areas produce the most for their size, and the circles show how each state compares in total tonnes. Use the selectors to switch crop and year.</p>
+
         <div class="section-controls vega-bind">
             <label class="control-group">Crop:
                 <select id="crop_select_1">
@@ -33,18 +43,50 @@
             </span>
         </div>
 
-        <div id="grain_map"></div>
-        <div id="state_symbols"></div>
+        <figure class="chart-block">
+            <div id="grain_map"></div>
+            <p class="chart-note"><strong>Note:</strong> Grey areas had no production reported for the selected crop and year. Hover over any area for details.</p>
+        </figure>
+
+        <figure class="chart-block">
+            <div id="state_symbols"></div>
+            <p class="chart-note"><strong>Note:</strong> Each circle sits at the geometric centre of its state, not where the crop is grown. A state without a circle has no recorded production of the selected crop for that year (not zero).</p>
+        </figure>
     </section>
 
 
-    <div id="crop_share"></div>
-    <div id="production_history"></div>
-    <div id="yield_boxplot"></div>
-    <div id="state_change"></div>
+    <section id="boom_and_bust" class="story-section">
+        <h2>Boom and bust</h2>
+        <p class="section-subtitle">What each state grows, and how much a harvest can change from one year to the next</p>
+        <p class="text-block">Australian harvests depend heavily on rainfall, so output can jump or collapse within a single year. These four charts show what each state grows, the long history of national production, how large the swings in yield are, and how each state's total moved in the latest years.</p>
+
+        <figure class="chart-block">
+            <div id="crop_share"></div>
+            <p class="chart-note"><strong>Note:</strong> The Australian Capital Territory and Northern Territory are left out because each has only one wheat record. Grey means no record (not zero); "&lt;1%" means recorded but under 1 percent. The Total column shows each state's four-grain total in million tonnes.</p>
+        </figure>
+
+        <figure class="chart-block">
+            <div id="production_history"></div>
+            <p class="chart-note"><strong>Note:</strong> Each panel has its own vertical scale. Marked years are each crop's record high and its lowest year since 1990.</p>
+        </figure>
+
+        <figure class="chart-block">
+            <div id="yield_boxplot"></div>
+            <p class="chart-note"><strong>Note:</strong> There are 63 changes per crop. The box covers the middle 50 percent of years and the line is the median; dots are unusually large swings (hover for the year). Crops are ordered from most to least variable.</p>
+        </figure>
+
+        <figure class="chart-block">
+            <div id="state_change"></div>
+            <p class="chart-note"><strong>Note:</strong> The Australian Capital Territory and Northern Territory are left out (see the crop share chart). Three years of data show recent swings, not a long-term trend.</p>
+        </figure>
+    </section>
 
 
-    <section id="where_it_goes">
+    <section id="where_it_goes" class="story-section">
+        <h2>Where it goes</h2>
+        <p class="section-subtitle">Most Australian grain is exported, and nearly all of it goes to Asia</p>
+        <p class="text-block">Australia sells most of its grain abroad. Start with the routes on the map, then see how the biggest buyers have changed over three decades, how the continents compare, and which Asian regions and countries (including Malaysia) take the most. Choose All Grains to see the combined picture.</p>
+
         <div class="section-controls vega-bind">
             <label class="control-group">Crop:
                 <select id="crop_select_3">
@@ -57,14 +99,33 @@
             </label>
         </div>
 
-        <div id="flow_map"></div>
-        <div id="bump_chart"></div>
-        <div id="continent_bar"></div>
-        <div id="asia_treemap"></div>
+        <figure class="chart-block">
+            <div id="flow_map"></div>
+            <p class="chart-note"><strong>Note:</strong> Lines run from the middle of Australia to each destination's capital city, not along real shipping routes. Malaysia is highlighted in blue; no blue line means Malaysia imported less than 1,000 tonnes of that crop.</p>
+        </figure>
+
+        <figure class="chart-block">
+            <div id="bump_chart"></div>
+            <p class="chart-note"><strong>Note:</strong> A dot with no line means the buyer was in the top 10 in that period only. The gap before 1996-00 is there because the 1992-95 trade records are incomplete. Malaysia is in blue; where it ranks below 10th, its rank is written under the chart.</p>
+        </figure>
+
+        <figure class="chart-block">
+            <div id="continent_bar"></div>
+            <p class="chart-note"><strong>Note:</strong> Labels show each continent's share of the selected grain's exports.</p>
+        </figure>
+
+        <figure class="chart-block">
+            <div id="asia_treemap"></div>
+            <p class="chart-note"><strong>Note:</strong> Numbers on the tiles are thousand tonnes. Buyers under 1,000 tonnes are left out, so Malaysia does not appear for sorghum.</p>
+        </figure>
     </section>
 
 
-    <section id="australia_in_the_world">
+    <section id="australia_in_the_world" class="story-section">
+        <h2>Australia in the world</h2>
+        <p class="section-subtitle">How Australian yields and production compare with the other major grain producers</p>
+        <p class="text-block">Australia is rarely the largest producer, so its place in the world depends on both how much land it farms and how much each hectare yields. The map compares yields country by country, and the slope chart shows how the leading producers have moved over twenty years.</p>
+
         <div class="section-controls vega-bind">
             <label class="control-group">Crop:
                 <select id="crop_select_4">
@@ -76,8 +137,42 @@
             </label>
         </div>
 
-        <div id="world_yield"></div>
-        <div id="slope_chart"></div>
+        <figure class="chart-block">
+            <div id="world_yield"></div>
+            <p class="chart-note"><strong>Note:</strong> Every crop uses the same colour classes. Grey countries have no yield data, or under 1,000 hectares harvested. Hover over a country for production and area.</p>
+        </figure>
+
+        <figure class="chart-block">
+            <div id="slope_chart"></div>
+            <p class="chart-note"><strong>Note:</strong> The vertical axis is a log scale, so equal slopes mean equal percentage changes. For sorghum, Sudan includes South Sudan, which was part of Sudan in 2004.</p>
+        </figure>
     </section>
+
+
+    <section id="conclusion" class="story-section">
+        <h2>Conclusion</h2>
+        <p class="text-block">Australian grain is shaped by two forces. At home, a handful of regions grow most of it, and harvests rise and fall sharply with the weather. Abroad, almost all of it is sold to Asian buyers, with Malaysia a steady customer rather than a giant one. Australia seldom leads the world in production or yield, but its role as an exporter is large and concentrated, which means a bad season at home is felt across the buying countries too.</p>
+    </section>
+
+
+    <footer id="data_sources" class="story-section">
+        <h2>Data sources</h2>
+
+        <p class="source-entry"><strong>1) Australian Bureau of Statistics (ABS)</strong><br>
+            <em>Agricultural commodities: area and levied production of wheat, barley, oats and sorghum by Statistical Area Level 2, 2022-23 to 2024-25</em> ()<br>
+            <em>Statistical Area Level 2 and state boundaries, 2021</em> ()<br>
+
+        <p class="source-entry"><strong>2) Food and Agriculture Organization of the United Nations (FAOSTAT)</strong><br>
+            <em>Crops and livestock products: area harvested, production and yield</em> ()<br>
+            <em>Trade: detailed trade matrix, Australian exports by destination country</em> ()<br>
+
+        <p class="source-entry"><strong>3) XXX</strong><br>
+            <em>xxx</em> ()<br>
+
+        <p class="source-entry"><strong>Author:</strong> Moo Khye Henn · <strong>Date:</strong> 15 October 2026</p>
+        <p class="source-entry"><strong>Use of AI:</strong> XXX</p>
+    </footer>
+
+</main>
 </body>
 </html>

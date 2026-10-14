@@ -1,14 +1,15 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 440,
+  "width": 870,
   "height": 560,
   "title": {
     "text": "How the leading grain producers changed, 2004 to 2024",
     "subtitle": [
-      "Production in million tonnes (FAOSTAT) of each crop's ten largest producers in 2024; Australia in red",
-      "Vertical axis uses a log scale, so equal slopes mean equal percentage changes",
-      "Sorghum: Sudan includes South Sudan, which was part of Sudan in 2004"
-    ]
+      "Production in million tonnes of each crop's ten largest producers in 2024; Australia in red",
+      "Source: Food and Agriculture Organization of the United Nations"
+    ],
+    "anchor": "start",
+    "frame": "bounds"
   },
   "params": [
     {
@@ -75,7 +76,7 @@
             "ticks": false
           },
           "scale": {
-            "padding": 0.5
+            "padding": 1.475
           }
         },
         "y": {
@@ -155,7 +156,7 @@
             "ticks": false
           },
           "scale": {
-            "padding": 0.5
+            "padding": 1.475
           }
         },
         "y": {
@@ -231,7 +232,7 @@
             "ticks": false
           },
           "scale": {
-            "padding": 0.5
+            "padding": 1.475
           }
         },
         "y": {
@@ -292,7 +293,7 @@
             "ticks": false
           },
           "scale": {
-            "padding": 0.5
+            "padding": 1.475
           }
         },
         "y": {
@@ -332,8 +333,8 @@
     }
   },
   "padding": {
-    "left": 215,
-    "right": 215,
+    "left": 5,
+    "right": 5,
     "top": 5,
     "bottom": 5
   }

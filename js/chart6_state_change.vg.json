@@ -3,9 +3,11 @@
   "title": {
     "text": "How each state's grain production changed from one year to the next",
     "subtitle": [
-      "Change in the four-grain total (wheat, barley, oats and sorghum), in million tonnes; % change in brackets",
-      "Australian Capital Territory and Northern Territory are left out (see the crop share chart). Three years of data show recent swings, not a long-term trend"
-    ]
+      "Change in the four-grain total in million tonnes, with percent change in brackets",
+      "Source: Australian Bureau of Statistics"
+    ],
+    "anchor": "start",
+    "frame": "bounds"
   },
   "data": {
     "url": "../data/state_change.csv",

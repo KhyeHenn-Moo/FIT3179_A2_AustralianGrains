@@ -5,9 +5,11 @@
   "title": {
     "text": "Grain yield by country, 2024",
     "subtitle": [
-      "Tonnes harvested per hectare (production ÷ area harvested), FAOSTAT; same classes for every crop",
-      "Australia is outlined in black, with its yield labelled for the selected crop"
-    ]
+      "Tonnes harvested per hectare; Australia is outlined in black and labelled",
+      "Source: Food and Agriculture Organization of the United Nations"
+    ],
+    "anchor": "start",
+    "frame": "bounds"
   },
   "params": [
     {

@@ -3,11 +3,11 @@
   "title": {
     "text": "Crop share of each state's grain production",
     "subtitle": [
-      "Share of wheat, barley, oats and sorghum tonnes (levied production), each row adds up to 100 percent",
-      "Australian Capital Territory and Northern Territory are left out: each has only one wheat record, in a single year",
-      "Grey = no record (not zero); \"<1%\" = recorded but under 1%",
-      "The Total column shows each state's four-grain total in million tonnes"
-    ]
+      "Share of wheat, barley, oats and sorghum tonnes in each state; every row adds up to 100 percent",
+      "Source: Australian Bureau of Statistics"
+    ],
+    "anchor": "start",
+    "frame": "bounds"
   },
   "data": {
     "url": "../data/state_crop_share.csv",
@@ -240,7 +240,7 @@
             ],
             "scale": {
               "domain": [
-                "Wheat", 
+                "Wheat",
                 "Barley",
                 "Oats",
                 "Sorghum",

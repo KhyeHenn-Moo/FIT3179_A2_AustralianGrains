@@ -4,7 +4,12 @@
   "height": 520,
   "title": {
     "text": "Grain production density by Statistical Area Level 2",
-    "subtitle": "Levied production per square kilometre of Statistical Area Level 2 area"
+    "subtitle": [
+      "Levied production per square kilometre, for the selected crop and year",
+      "Source: Australian Bureau of Statistics"
+    ],
+    "anchor": "start",
+    "frame": "bounds"
   },
   "params": [
     {

@@ -5,11 +5,11 @@
   "title": {
     "text": "Australia's biggest grain buyers, ranked by period",
     "subtitle": [
-      "Each line follows one buyer's rank by average annual tonnes taken from Australia (top 10 per period, rank 1 at the top)",
-      "A dot with no line = in the top 10 in that period only",
-      "Gap before 1996-00: FAOSTAT's 1992-95 trade records are incomplete, so those years are left out",
-      "Malaysia in blue; where it ranks below 10th, its rank is written under the chart instead"
-    ]
+      "Each line follows one buyer's rank by average annual tonnes taken from Australia; top 10 in each period",
+      "Source: Food and Agriculture Organization of the United Nations"
+    ],
+    "anchor": "start",
+    "frame": "bounds"
   },
   "params": [
     {

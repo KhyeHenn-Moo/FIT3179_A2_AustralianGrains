@@ -5,9 +5,11 @@
   "title": {
     "text": "Asia buys almost all of Australia's grain exports",
     "subtitle": [
-      "Australian exports in 2024 (FAOSTAT trade matrix) by the continent of the buyer, in thousand tonnes",
-      "Labels show each continent's share of the selected grain's exports"
-    ]
+      "Australian exports in 2024 by the continent of the buyer, in thousand tonnes",
+      "Source: Food and Agriculture Organization of the United Nations"
+    ],
+    "anchor": "start",
+    "frame": "bounds"
   },
   "params": [
     {

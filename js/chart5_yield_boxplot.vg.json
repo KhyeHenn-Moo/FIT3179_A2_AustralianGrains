@@ -5,9 +5,11 @@
   "title": {
     "text": "Yields can fall by half or double from one year to the next",
     "subtitle": [
-      "Year-to-year % change in Australian yield (tonnes per hectare), 1962 to 2024 (FAOSTAT); 63 changes per crop",
-      "Box = middle 50% of years, line = median; dots = unusually large swings (hover for the year); ordered from most to least variable"
-    ]
+      "Year-to-year percent change in yield (tonnes per hectare), 1962 to 2024",
+      "Source: Food and Agriculture Organization of the United Nations"
+    ],
+    "anchor": "start",
+    "frame": "bounds"
   },
   "data": {
     "url": "../data/yield_change.csv",

@@ -2,9 +2,9 @@ body {
     margin: 20px;
 }
 
-#grain_map {
-    width: 100%;
-    max-width: 900px;
+.page {
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 body,
@@ -32,6 +32,59 @@ body,
     background: #ffffff url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path d='M0 0l5 6 5-6z' fill='%23555555'/></svg>") no-repeat right 8px center;
 }
 
+
+/* dashboard title and section titles: Georgia (serif), with fallbacks for computers that do not have it */
+h1,
+.story-section h2 {
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+
+/* page header, section headings and text. Text blocks are capped at 700px but share the same left edge as the charts */
+.page-subtitle {
+    margin: 0 0 16px 0;
+}
+
+.text-block,
+.chart-note {
+    max-width: 700px;
+}
+
+.story-section {
+    margin-top: 48px;
+    padding-top: 28px;
+    border-top: 2px solid #999999;
+}
+
+.story-section h2 {
+    margin: 0 0 4px 0;
+}
+
+.section-subtitle {
+    margin: 0 0 12px 0;
+}
+
+.chart-block {
+    margin: 0 0 36px 0;
+}
+
+.chart-note {
+    margin: 8px 0 0 0;
+    font-size: 13px;
+    color: #555555;
+}
+
+#grain_map {
+    width: 100%;
+    max-width: 900px;
+}
+
+.source-entry {
+    max-width: 900px;
+}
+
+
+/* the control bar of each section stays at the top of the screen while that section is on screen */
 .section-controls {
     position: sticky;
     top: 0;
@@ -39,6 +92,7 @@ body,
     background: #ffffff;
     padding: 10px 0;
     border-bottom: 1px solid #dddddd;
+    margin-bottom: 20px;
 }
 
 .section-controls .control-group {
@@ -48,4 +102,10 @@ body,
 
 .section-controls .control-group label {
     margin-right: 10px;
+}
+
+
+/* Vega-Lite adds 5px of padding inside each chart; pulling it back lines the chart titles up with the section text */
+.chart-block .vega-embed {
+    margin-left: -5px;
 }

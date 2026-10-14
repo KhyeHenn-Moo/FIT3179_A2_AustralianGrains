@@ -12,8 +12,8 @@
   "title": {
     "text": "Who buys Australian grain in Asia, and where Malaysia fits",
     "subtitle": [
-      "Tile area = Australian exports in 2024 (FAOSTAT trade matrix), grouped by UN sub-region; Malaysia is outlined in black",
-      "Buyers under 1,000 tonnes are left out, so Malaysia does not appear for sorghum (no purchases of 1,000 tonnes or more)"
+      "Tile area is Australian exports in 2024, grouped by United Nations sub-region; Malaysia is outlined in black",
+      "Source: Food and Agriculture Organization of the United Nations"
     ],
     "anchor": "start",
     "fontSize": 15,

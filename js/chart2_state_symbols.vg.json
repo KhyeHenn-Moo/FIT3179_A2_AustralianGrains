@@ -5,9 +5,11 @@
   "title": {
     "text": "Grain production by state",
     "subtitle": [
-      "Levied production (tonnes); symbol area is proportional to tonnes",
-      "Circles sit at each state's geometric centre, not where the crop is grown"
-    ]
+      "Levied production in tonnes; circle area is proportional to tonnes",
+      "Source: Australian Bureau of Statistics"
+    ],
+    "anchor": "start",
+    "frame": "bounds"
   },
   "params": [
     {
