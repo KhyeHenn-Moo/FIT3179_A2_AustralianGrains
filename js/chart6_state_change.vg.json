@@ -52,7 +52,7 @@
     }
   },
   "spec": {
-    "width": 430,
+    "width": 320,
     "height": 240,
     "layer": [
       {
@@ -120,7 +120,7 @@
             },
             "legend": {
               "title": "Change",
-              "orient": "right"
+              "orient": "bottom"
             }
           },
           "tooltip": [

@@ -134,15 +134,57 @@ h1 {
 }
 
 
-/* chart blocks */
+/* chart blocks: a short insight text on the left (fixed 320px column) and the chart on the right.
+   Every chart block uses the same two columns, so the insight texts and the charts line up down the page */
 .chart-block {
+    display: grid;
+    grid-template-columns: 320px minmax(0, 1fr);
+    gap: 28px;
     margin: 0 0 32px 0;
     padding: 26px 30px 20px 30px;
     background: #ffffff;
     border: 1px solid #eadfba;
     border-radius: 16px;
     box-shadow: 0 2px 12px rgba(61, 43, 15, 0.07);
+}
+
+.chart-area {
+    min-width: 0;
     overflow-x: auto;
+}
+
+.insight {
+    padding-right: 24px;
+    border-right: 3px solid var(--box);
+}
+
+.insight-label {
+    margin: 6px 0 10px 0;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--bronze);
+}
+
+.insight-text {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink);
+}
+
+@media (max-width: 1100px) {
+    .chart-block {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    .insight {
+        padding: 0 0 18px 0;
+        border-right: none;
+        border-bottom: 3px solid var(--box);
+    }
 }
 
 .chart-note {
