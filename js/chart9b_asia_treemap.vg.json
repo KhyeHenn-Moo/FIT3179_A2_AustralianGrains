@@ -16,9 +16,6 @@
       "Source: Food and Agriculture Organization of the United Nations"
     ],
     "anchor": "start",
-    "fontSize": 15,
-    "subtitleFontSize": 11,
-    "subtitlePadding": 4,
     "offset": 8
   },
   "signals": [

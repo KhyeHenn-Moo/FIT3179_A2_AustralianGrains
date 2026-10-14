@@ -16,15 +16,20 @@ var vg_11 = "js/chart11_slope_chart.vg.json";
 // font type for every chart: Helvetica, with Arial as the fallback on computers that do not have it
 var FONT = "Helvetica, Arial, sans-serif";
 
+// chart title and subtitle: one size and colour for every chart, so the hierarchy is the same everywhere
+var TITLE_STYLE = {fontSize: 22, color: "#2b2418", subtitleFontSize: 14, subtitleColor: "#5c5444", subtitlePadding: 6};
+
 // for Vega-Lite charts: "font" covers titles, subtitles, axes, legends and text labels
-var vlOptions = {actions: false, config: {font: FONT}};
+// background "transparent" lets the light page colour show through behind every chart
+var vlOptions = {actions: false, config: {font: FONT, background: "transparent", title: TITLE_STYLE}};
 
 // for chart 9b (plain Vega chart), which has no single "font" setting
 var vegaOptions = {
     actions: false,
     config: {
+        background: "transparent",
         text: {font: FONT},
-        title: {font: FONT, subtitleFont: FONT},
+        title: {font: FONT, subtitleFont: FONT, fontSize: TITLE_STYLE.fontSize, color: TITLE_STYLE.color, subtitleFontSize: TITLE_STYLE.subtitleFontSize, subtitleColor: TITLE_STYLE.subtitleColor, subtitlePadding: TITLE_STYLE.subtitlePadding},
         axis: {labelFont: FONT, titleFont: FONT},
         legend: {labelFont: FONT, titleFont: FONT}
     }

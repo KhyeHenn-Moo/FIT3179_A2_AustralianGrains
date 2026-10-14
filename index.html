@@ -17,17 +17,27 @@
 
     <header class="page-header">
         <h1>Australian Grains</h1>
-        <p class="page-subtitle">Where Australia grows its wheat, barley, oats and sorghum, and where it sends them</p>
-        <p class="text-block">Australia is one of the world's largest grain exporters, yet its harvests swing sharply with the weather, and most of what it grows leaves the country. This dashboard follows four grains (wheat, barley, oats and sorghum) in four steps: where they are grown, how unpredictable the harvests are, which countries buy them, and how Australia compares with the rest of the world. Malaysia, a regular buyer, is highlighted in blue throughout. Each section has its own Crop selector, which stays at the top of the screen as you scroll through that section.</p>
+        <p class="page-subtitle">Where Australia grows its grain, and where it sends it</p>
+        <div class="text-pair">
+            <div class="text-card">
+                <h2>Why Australian grain matters</h2>
+                <p>Australia is one of the world's largest grain exporters, yet its harvests swing sharply with the weather, and most of what it grows leaves the country. Four grains are followed here: wheat, barley, oats and sorghum.</p>
+            </div>
+            <div class="text-card">
+                <h2>How to read this dashboard</h2>
+                <p>The dashboard moves in four steps: where the grains are grown, how unpredictable the harvests are, which countries buy them, and how Australia compares with the rest of the world. Malaysia, a regular buyer, is picked out in the charts where it appears. Each section has its own Crop selector, which stays at the top of the screen as you scroll through that section.</p>
+            </div>
+        </div>
     </header>
 
 
     <section id="where_it_grows" class="story-section">
-        <h2>Where it grows</h2>
+        <h2>01 Where It Grows</h2>
         <p class="section-subtitle">Production is concentrated in a few regions, and each state has its own mix of crops</p>
         <p class="text-block">Grain growing is not spread evenly across Australia. The map shows which local areas produce the most for their size, and the circles show how each state compares in total tonnes. Use the selectors to switch crop and year.</p>
 
         <div class="section-controls vega-bind">
+            <span class="controls-title">Applies to every chart below:</span>
             <label class="control-group">Crop:
                 <select id="crop_select_1">
                     <option value="Wheat" selected>Wheat</option>
@@ -56,7 +66,7 @@
 
 
     <section id="boom_and_bust" class="story-section">
-        <h2>Boom and bust</h2>
+        <h2>02 Boom and Bust</h2>
         <p class="section-subtitle">What each state grows, and how much a harvest can change from one year to the next</p>
         <p class="text-block">Australian harvests depend heavily on rainfall, so output can jump or collapse within a single year. These four charts show what each state grows, the long history of national production, how large the swings in yield are, and how each state's total moved in the latest years.</p>
 
@@ -83,11 +93,12 @@
 
 
     <section id="where_it_goes" class="story-section">
-        <h2>Where it goes</h2>
+        <h2>03 Where It Goes</h2>
         <p class="section-subtitle">Most Australian grain is exported, and nearly all of it goes to Asia</p>
         <p class="text-block">Australia sells most of its grain abroad. Start with the routes on the map, then see how the biggest buyers have changed over three decades, how the continents compare, and which Asian regions and countries (including Malaysia) take the most. Choose All Grains to see the combined picture.</p>
 
         <div class="section-controls vega-bind">
+            <span class="controls-title">Applies to every chart below:</span>
             <label class="control-group">Crop:
                 <select id="crop_select_3">
                     <option value="All Grains" selected>All Grains</option>
@@ -122,11 +133,12 @@
 
 
     <section id="australia_in_the_world" class="story-section">
-        <h2>Australia in the world</h2>
+        <h2>04 Australia in the World</h2>
         <p class="section-subtitle">How Australian yields and production compare with the other major grain producers</p>
         <p class="text-block">Australia is rarely the largest producer, so its place in the world depends on both how much land it farms and how much each hectare yields. The map compares yields country by country, and the slope chart shows how the leading producers have moved over twenty years.</p>
 
         <div class="section-controls vega-bind">
+            <span class="controls-title">Applies to every chart below:</span>
             <label class="control-group">Crop:
                 <select id="crop_select_4">
                     <option value="Wheat" selected>Wheat</option>
@@ -150,29 +162,49 @@
 
 
     <section id="conclusion" class="story-section">
-        <h2>Conclusion</h2>
-        <p class="text-block">Australian grain is shaped by two forces. At home, a handful of regions grow most of it, and harvests rise and fall sharply with the weather. Abroad, almost all of it is sold to Asian buyers, with Malaysia a steady customer rather than a giant one. Australia seldom leads the world in production or yield, but its role as an exporter is large and concentrated, which means a bad season at home is felt across the buying countries too.</p>
+        <div class="text-pair">
+            <div class="text-card">
+                <h2>What the data shows</h2>
+                <p>At home, a handful of regions grow most of Australia's grain, and harvests rise and fall sharply with the weather. Abroad, almost all of it is sold to Asian buyers. Australia seldom leads the world in production or yield, but its role as an exporter is large and concentrated.</p>
+            </div>
+            <div class="text-card">
+                <h2>What it means for buyers like Malaysia</h2>
+                <p>Malaysia is a mid-sized customer, usually ranking around Australia's top ten buyers. Because so much Australian grain goes to a few Asian markets, a poor harvest at home is felt across the buying countries too.</p>
+            </div>
+        </div>
     </section>
-
-
-    <footer id="data_sources" class="story-section">
-        <h2>Data sources</h2>
-
-        <p class="source-entry"><strong>1) Australian Bureau of Statistics (ABS)</strong><br>
-            <em>Agricultural commodities: area and levied production of wheat, barley, oats and sorghum by Statistical Area Level 2, 2022-23 to 2024-25</em> ()<br>
-            <em>Statistical Area Level 2 and state boundaries, 2021</em> ()<br>
-
-        <p class="source-entry"><strong>2) Food and Agriculture Organization of the United Nations (FAOSTAT)</strong><br>
-            <em>Crops and livestock products: area harvested, production and yield</em> ()<br>
-            <em>Trade: detailed trade matrix, Australian exports by destination country</em> ()<br>
-
-        <p class="source-entry"><strong>3) XXX</strong><br>
-            <em>xxx</em> ()<br>
-
-        <p class="source-entry"><strong>Author:</strong> Moo Khye Henn · <strong>Date:</strong> 15 October 2026</p>
-        <p class="source-entry"><strong>Use of AI:</strong> XXX</p>
-    </footer>
-
 </main>
+
+<footer id="data_sources" class="site-footer">
+    <div class="footer-top">
+        <div class="footer-sources">
+            <h2 class="footer-label">Data sources</h2>
+            <div class="footer-cols">
+                <div class="footer-col">
+                    <h3>Australian Bureau of Statistics</h3>
+                    <p><em>Agricultural commodities: area and levied production of wheat, barley, oats and sorghum by Statistical Area Level 2, 2022-23 to 2024-25</em> ()</p>
+                    <p><em>Statistical Area Level 2 and state boundaries, 2021</em> ()</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Food and Agriculture Organization of the United Nations (FAOSTAT)</h3>
+                    <p><em>Crops and livestock products: area harvested, production and yield</em> ()</p>
+                    <p><em>Trade: detailed trade matrix, Australian exports by destination country</em> ()</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Natural Earth</h3>
+                    <p><em>World country boundaries, oceans and graticules</em> ()</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-ai">
+            <h2 class="footer-label">Use of artificial intelligence</h2>
+            <p>xxx</p>
+        </div>
+    </div>
+
+    <p class="footer-author"><strong>Author:</strong> Moo Khye Henn · <strong>Date:</strong> 15 October 2026</p>
+</footer>
+
 </body>
 </html>

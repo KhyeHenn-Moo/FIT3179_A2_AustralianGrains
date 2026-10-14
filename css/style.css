@@ -1,10 +1,27 @@
-body {
-    margin: 20px;
+/* colour theme: grain fields (light straw page, deeper wheat boxes, wheat-gold rules, dark brown text) */
+:root {
+    --bg: #fbf6e9;
+    --box: #f5ebc6;
+    --wheat: #c9a24a;
+    --wheat-dark: #a8791f;
+    --ink: #2b2418;
+    --brown: #3d2b0f;
+    --bronze: #74561a;
+    --muted: #5c5444;
 }
 
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 18px;
+    line-height: 1.6;
+    border-top: 8px solid var(--wheat);
+}
+
+/* the dashboard uses the whole width of the page, only the side margins grow with the screen */
 .page {
-    max-width: 1100px;
-    margin: 0 auto;
+    padding: 56px clamp(24px, 5vw, 96px) 80px clamp(24px, 5vw, 96px);
 }
 
 body,
@@ -16,62 +33,132 @@ body,
     font-family: Helvetica, Arial, sans-serif !important;
 }
 
-.vega-bind,
-.vega-bind label,
-.vega-bind select,
-.vega-bind input {
-    font-size: 14px;
-}
 
-.vega-bind select {
-    -webkit-appearance: none;
-    appearance: none;
-    padding: 3px 26px 3px 8px;
-    border: 1px solid #999999;
-    border-radius: 4px;
-    background: #ffffff url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path d='M0 0l5 6 5-6z' fill='%23555555'/></svg>") no-repeat right 8px center;
-}
-
-
-/* dashboard title and section titles: Georgia (serif), with fallbacks for computers that do not have it */
+/* type scale: big jumps between levels, so each level is easy to tell apart
+   dashboard title 84, section title 52, card title 26, subtitles 22 and 20, body 18, chart title 22 (set in main.js), chart subtitle 14, notes 14 */
 h1,
-.story-section h2 {
+.story-section h2,
+.text-card h2 {
     font-family: Georgia, "Times New Roman", serif;
+    color: var(--brown);
 }
 
+h1 {
+    margin: 0 0 14px 0;
+    font-size: 84px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
 
-/* page header, section headings and text. Text blocks are capped at 700px but share the same left edge as the charts */
 .page-subtitle {
-    margin: 0 0 16px 0;
-}
-
-.text-block,
-.chart-note {
-    max-width: 700px;
-}
-
-.story-section {
-    margin-top: 48px;
-    padding-top: 28px;
-    border-top: 2px solid #999999;
+    margin: 0 0 40px 0;
+    font-size: 22px;
+    color: var(--bronze);
 }
 
 .story-section h2 {
-    margin: 0 0 4px 0;
+    margin: 0 0 8px 0;
+    font-size: 52px;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
 }
 
 .section-subtitle {
-    margin: 0 0 12px 0;
+    margin: 0 0 18px 0;
+    font-size: 20px;
+    color: var(--bronze);
 }
 
+/* line length: about 60 characters (7 to 10 words) per line, as in the typography notes */
+.text-block,
+.chart-note,
+.section-subtitle,
+.page-subtitle {
+    max-width: 31em;
+}
+
+.text-card p {
+    max-width: 31em;
+}
+
+.text-block {
+    margin: 0 0 24px 0;
+}
+
+.story-section {
+    margin-top: 88px;
+    padding-top: 36px;
+    border-top: 3px solid var(--wheat);
+}
+
+#conclusion {
+    padding-top: 44px;
+}
+
+
+/* two text boxes side by side: introduction and conclusion */
+.text-pair {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 660px));
+    gap: 32px;
+}
+
+.text-card {
+    padding: 30px 36px 32px 36px;
+    background: var(--box);
+    border-radius: 20px;
+}
+
+.text-card h2 {
+    margin: 0 0 12px 0;
+    font-size: 26px;
+    line-height: 1.2;
+}
+
+.text-card p {
+    margin: 0;
+}
+
+@media (max-width: 800px) {
+    .text-pair {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 52px;
+    }
+
+    .story-section h2 {
+        font-size: 38px;
+    }
+}
+
+
+/* chart blocks */
 .chart-block {
-    margin: 0 0 36px 0;
+    margin: 0 0 32px 0;
+    padding: 26px 30px 20px 30px;
+    background: #ffffff;
+    border: 1px solid #eadfba;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(61, 43, 15, 0.07);
+    overflow-x: auto;
 }
 
 .chart-note {
-    margin: 8px 0 0 0;
-    font-size: 13px;
-    color: #555555;
+    margin: 10px 0 0 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--muted);
+}
+
+.chart-note strong {
+    color: var(--ink);
+}
+
+/* Vega-Lite adds 5px of padding inside each chart; pulling it back lines the chart titles up with the section text */
+.chart-block .vega-embed {
+    margin-left: -5px;
 }
 
 #grain_map {
@@ -79,25 +166,48 @@ h1,
     max-width: 900px;
 }
 
-.source-entry {
-    max-width: 900px;
+
+/* controls */
+.vega-bind,
+.vega-bind label,
+.vega-bind select,
+.vega-bind input {
+    font-size: 15px;
 }
 
+.vega-bind select {
+    -webkit-appearance: none;
+    appearance: none;
+    padding: 4px 28px 4px 10px;
+    border: 1px solid #8a7a58;
+    border-radius: 4px;
+    color: var(--ink);
+    background: #ffffff url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path d='M0 0l5 6 5-6z' fill='%235c5444'/></svg>") no-repeat right 9px center;
+}
 
-/* the control bar of each section stays at the top of the screen while that section is on screen */
+/* the control bar of each section is a tinted panel that stays at the top of the screen while the section is on screen.
+   It is a panel, not a rule, so it does not look like the end of a section */
 .section-controls {
     position: sticky;
     top: 0;
     z-index: 10;
-    background: #ffffff;
-    padding: 10px 0;
-    border-bottom: 1px solid #dddddd;
-    margin-bottom: 20px;
+    margin: 0 0 24px 0;
+    padding: 12px 24px;
+    background: #f1e2b0;
+    border-radius: 14px;
+    box-shadow: 0 3px 10px rgba(61, 43, 15, 0.16);
+    color: var(--ink);
+}
+
+.section-controls .controls-title {
+    display: inline-block;
+    margin-right: 28px;
+    font-weight: bold;
 }
 
 .section-controls .control-group {
     display: inline-block;
-    margin-right: 28px;
+    margin-right: 32px;
 }
 
 .section-controls .control-group label {
@@ -105,7 +215,79 @@ h1,
 }
 
 
-/* Vega-Lite adds 5px of padding inside each chart; pulling it back lines the chart titles up with the section text */
-.chart-block .vega-embed {
-    margin-left: -5px;
+/* data sources, use of artificial intelligence and authorship: a dark bar across the bottom of the page */
+.site-footer {
+    padding: 44px clamp(24px, 5vw, 96px) 36px clamp(24px, 5vw, 96px);
+    background: var(--brown);
+    color: #f1e8d0;
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+.footer-top {
+    display: grid;
+    grid-template-columns: 2.2fr 1fr;
+    gap: 64px;
+}
+
+.footer-label {
+    margin: 0 0 20px 0;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #e3c46f;
+}
+
+.footer-cols {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 36px;
+}
+
+.footer-col h3 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    line-height: 1.3;
+    color: #ffffff;
+}
+
+.footer-col p,
+.footer-ai p {
+    margin: 0 0 8px 0;
+    max-width: 31em;
+}
+
+.footer-col em {
+    color: #e8dcb8;
+}
+
+.footer-col .used-in {
+    margin-top: 12px;
+    color: #cdbf93;
+}
+
+.footer-author {
+    margin: 36px 0 0 0;
+    padding-top: 18px;
+    border-top: 1px solid rgba(241, 232, 208, 0.25);
+    color: #f1e8d0;
+}
+
+@media (max-width: 1000px) {
+    .footer-top {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .footer-cols {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-cols {
+        grid-template-columns: 1fr;
+    }
 }
