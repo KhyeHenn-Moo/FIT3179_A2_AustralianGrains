@@ -3,7 +3,6 @@
     --bg: #fbf6e9;
     --box: #f5ebc6;
     --wheat: #c9a24a;
-    --wheat-dark: #a8791f;
     --ink: #2b2418;
     --brown: #3d2b0f;
     --bronze: #74561a;
@@ -257,19 +256,13 @@ h1 {
 }
 
 
-/* data sources, use of artificial intelligence and authorship: a dark bar across the bottom of the page */
+/* data sources and authorship: a dark bar across the bottom of the page */
 .site-footer {
     padding: 44px clamp(24px, 5vw, 96px) 36px clamp(24px, 5vw, 96px);
     background: var(--brown);
     color: #f1e8d0;
     font-size: 14px;
     line-height: 1.55;
-}
-
-.footer-top {
-    display: grid;
-    grid-template-columns: 2.2fr 1fr;
-    gap: 64px;
 }
 
 .footer-label {
@@ -295,19 +288,13 @@ h1 {
     color: #ffffff;
 }
 
-.footer-col p,
-.footer-ai p {
+.footer-col p {
     margin: 0 0 8px 0;
     max-width: 31em;
 }
 
 .footer-col em {
     color: #e8dcb8;
-}
-
-.footer-col .used-in {
-    margin-top: 12px;
-    color: #cdbf93;
 }
 
 .footer-author {
@@ -318,11 +305,6 @@ h1 {
 }
 
 @media (max-width: 1000px) {
-    .footer-top {
-        grid-template-columns: 1fr;
-        gap: 36px;
-    }
-
     .footer-cols {
         grid-template-columns: 1fr 1fr;
     }
