@@ -4,7 +4,7 @@
 
 A single-page, scrollable data visualisation dashboard on wheat, barley, oats and sorghum, built with Vega-Lite and Vega.
 
-- **Live dashboard:** `<To Be Added>`
+- **Live dashboard:** https://khyehenn-moo.github.io/FIT3179_A2_AustralianGrains/
 - **Repository:** https://github.com/KhyeHenn-Moo/FIT3179_A2_AustralianGrains
 - **Author:** Moo Khye Henn
 - **Date:** 15 October 2026
