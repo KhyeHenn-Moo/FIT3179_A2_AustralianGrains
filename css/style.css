@@ -293,8 +293,20 @@ h1 {
     max-width: 31em;
 }
 
-.footer-col em {
+.footer-col a,
+.footer-col a:visited {
     color: #e8dcb8;
+    font-style: italic;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.footer-col a:hover {
+    color: #ffffff;
+}
+
+.footer-col h3:not(:first-child) {
+    margin-top: 20px;
 }
 
 .footer-author {
