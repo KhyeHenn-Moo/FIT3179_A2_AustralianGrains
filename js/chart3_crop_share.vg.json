@@ -157,57 +157,6 @@
         }
       },
       {
-        "mark": {
-          "type": "text",
-          "fontSize": 11
-        },
-        "encoding": {
-          "x": {
-            "field": "crop",
-            "type": "ordinal",
-            "sort": [
-              "Wheat",
-              "Barley",
-              "Oats",
-              "Sorghum",
-              "Total"
-            ],
-            "scale": {
-              "domain": [
-                "Wheat",
-                "Barley",
-                "Oats",
-                "Sorghum",
-                "Total"
-              ]
-            }
-          },
-          "y": {
-            "field": "state",
-            "type": "nominal",
-            "sort": [
-              "Western Australia",
-              "New South Wales",
-              "Victoria",
-              "South Australia",
-              "Queensland",
-              "Tasmania"
-            ]
-          },
-          "text": {
-            "field": "label",
-            "type": "nominal"
-          },
-          "color": {
-            "condition": {
-              "test": "datum.recorded && round(datum.share_pct) >= 25",
-              "value": "#ffffff"
-            },
-            "value": "#222222"
-          }
-        }
-      },
-      {
         "transform": [
           {
             "filter": "datum.crop === 'Wheat'"
