@@ -144,8 +144,8 @@
         "type": "circle",
         "fill": "#b30000",
         "fillOpacity": 0.6,
-        "stroke": "#ffffff",
-        "strokeWidth": 0.8
+        "stroke": "#b30000",
+        "strokeWidth": 1
       },
       "encoding": {
         "longitude": {
@@ -166,7 +166,7 @@
             ],
             "range": [
               0,
-              5000
+              9000
             ]
           },
           "legend": {
