@@ -34,7 +34,7 @@
       "filter": "datum.crop === crop"
     },
     {
-      "calculate": "(datum.tonnes_kt < 1 ? 'under 1' : format(datum.tonnes_kt, ',.0f')) + 'k tonnes  (' + (datum.share_pct < 0.1 ? 'under 0.1' : format(datum.share_pct, '.1f')) + '%)'",
+      "calculate": "(datum.tonnes_kt < 1 ? 'under 1' : format(datum.tonnes_kt, ',.0f')) + '  (' + (datum.share_pct < 0.1 ? 'under 0.1' : format(datum.share_pct, '.1f')) + '%)'",
       "as": "lbl"
     }
   ],
