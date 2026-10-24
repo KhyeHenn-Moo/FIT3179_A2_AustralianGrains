@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 720,
+  "width": 800,
   "height": 420,
   "title": {
     "text": "Australia's biggest grain buyers, ranked by period",
@@ -33,11 +33,11 @@
       "filter": "datum.crop === crop"
     },
     {
-      "calculate": "datum.partner === 'USSR' ? 'Soviet Union' : datum.partner === 'China, Hong Kong SAR' ? 'Hong Kong' : datum.partner === 'China, Macao SAR' ? 'Macao' : datum.partner === 'China, mainland' ? 'China' : datum.partner === 'Republic of Korea' ? 'South Korea' : datum.partner === 'China, Taiwan Province of' ? 'Taiwan' : datum.partner === 'Viet Nam' ? 'Vietnam' : datum.partner === 'United States of America' ? 'United States' : datum.partner",
+      "calculate": "datum.partner === 'Iran (Islamic Republic of)' ? 'Iran' : datum.partner === 'Netherlands (Kingdom of the)' ? 'Netherlands' : datum.partner === 'United Republic of Tanzania' ? 'Tanzania' : datum.partner === 'USSR' ? 'Soviet Union' : datum.partner === 'China, Hong Kong SAR' ? 'Hong Kong' : datum.partner === 'China, Macao SAR' ? 'Macao' : datum.partner === 'China, mainland' ? 'China' : datum.partner === 'Republic of Korea' ? 'South Korea' : datum.partner === 'China, Taiwan Province of' ? 'Taiwan' : datum.partner === 'Viet Nam' ? 'Vietnam' : datum.partner === 'United States of America' ? 'United States' : datum.partner",
       "as": "buyer"
     },
     {
-      "calculate": "datum.buyer",
+      "calculate": "datum.buyer === 'United Arab Emirates' ? ['United Arab', 'Emirates'] : datum.buyer",
       "as": "label"
     }
   ],
@@ -93,10 +93,15 @@
             "title": null,
             "labelAngle": 0,
             "grid": false,
-            "orient": "top"
+            "orient": "top",
+            "domain": false
           },
           "scale": {
-            "paddingOuter": 0.1
+            "padding": 1,
+            "range": [
+              40,
+              760
+            ]
           }
         },
         "y": {
@@ -187,10 +192,15 @@
             "title": null,
             "labelAngle": 0,
             "grid": false,
-            "orient": "top"
+            "orient": "top",
+            "domain": false
           },
           "scale": {
-            "paddingOuter": 0.1
+            "padding": 1,
+            "range": [
+              40,
+              760
+            ]
           }
         },
         "y": {
@@ -260,10 +270,15 @@
             "title": null,
             "labelAngle": 0,
             "grid": false,
-            "orient": "top"
+            "orient": "top",
+            "domain": false
           },
           "scale": {
-            "paddingOuter": 0.1
+            "padding": 1,
+            "range": [
+              40,
+              760
+            ]
           }
         },
         "y": {
@@ -325,10 +340,15 @@
             "title": null,
             "labelAngle": 0,
             "grid": false,
-            "orient": "top"
+            "orient": "top",
+            "domain": false
           },
           "scale": {
-            "paddingOuter": 0.1
+            "padding": 1,
+            "range": [
+              40,
+              760
+            ]
           }
         },
         "y": {
@@ -367,11 +387,11 @@
           "filter": "(datum.is_malaysia === 'True' || datum.is_malaysia === true) && datum.rank > 10"
         },
         {
-          "calculate": "'Malaysia: rank ' + datum.rank",
+          "calculate": "['Malaysia:', 'rank ' + datum.rank]",
           "as": "my_text"
         },
         {
-          "calculate": "11.4",
+          "calculate": "11.15",
           "as": "ypos"
         }
       ],
@@ -398,10 +418,15 @@
             "title": null,
             "labelAngle": 0,
             "grid": false,
-            "orient": "top"
+            "orient": "top",
+            "domain": false
           },
           "scale": {
-            "paddingOuter": 0.1
+            "padding": 1,
+            "range": [
+              40,
+              760
+            ]
           }
         },
         "y": {
