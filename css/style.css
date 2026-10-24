@@ -173,7 +173,7 @@ h1 {
     color: var(--ink);
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1439px) {
     .chart-block {
         grid-template-columns: minmax(0, 1fr);
         gap: 20px;
@@ -184,6 +184,7 @@ h1 {
         border-right: none;
         border-bottom: 3px solid var(--box);
     }
+    .insight-text { max-width: 31em; }
 }
 
 .chart-note {
