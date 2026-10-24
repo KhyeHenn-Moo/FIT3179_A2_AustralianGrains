@@ -12,7 +12,8 @@
   "title": {
     "text": "Who buys Australian grain in Asia, and where Malaysia fits",
     "subtitle": [
-      "Tile area is Australian exports in 2024, grouped by United Nations sub-region. Malaysia is outlined in black",
+      "Tile area is Australian exports in 2024, grouped by United Nations sub-region",
+      "Tile numbers are in thousand tonnes. Malaysia is outlined in blue",
       "Source: Food and Agriculture Organization of the United Nations"
     ],
     "anchor": "start",
@@ -129,6 +130,61 @@
         {
           "type": "filter",
           "expr": "datum.depth === 2"
+        },
+        {
+          "type": "formula",
+          "as": "tw",
+          "expr": "datum.x1 - datum.x0"
+        },
+        {
+          "type": "formula",
+          "as": "th",
+          "expr": "datum.y1 - datum.y0"
+        },
+        {
+          "type": "formula",
+          "as": "num",
+          "expr": "format(datum.tonnes / 1000, ',.0f')"
+        },
+        {
+          "type": "formula",
+          "as": "sp",
+          "expr": "lastindexof(datum.country, ' ')"
+        },
+        {
+          "type": "formula",
+          "as": "cwid",
+          "expr": "(datum.is_malaysia === 'True' || datum.is_malaysia === true ? 6.7 : 6.2)"
+        },
+        {
+          "type": "formula",
+          "as": "full_ok",
+          "expr": "length(datum.country) * datum.cwid + 8 <= datum.tw"
+        },
+        {
+          "type": "formula",
+          "as": "num_ok",
+          "expr": "length(datum.num) * datum.cwid + 8 <= datum.tw"
+        },
+        {
+          "type": "formula",
+          "as": "wrap_ok",
+          "expr": "datum.sp > 0 && max(datum.sp, length(datum.country) - datum.sp - 1) * datum.cwid + 8 <= datum.tw"
+        },
+        {
+          "type": "formula",
+          "as": "line1",
+          "expr": "datum.sp > 0 ? substring(datum.country, 0, datum.sp) : datum.country"
+        },
+        {
+          "type": "formula",
+          "as": "line2",
+          "expr": "datum.sp > 0 ? substring(datum.country, datum.sp + 1) : ''"
+        },
+        {
+          "type": "formula",
+          "as": "label",
+          "expr": "datum.full_ok && datum.num_ok && datum.th >= 30 ? [datum.country, datum.num] : datum.wrap_ok && datum.num_ok && datum.th >= 43 ? [datum.line1, datum.line2, datum.num] : datum.full_ok && datum.th >= 17 ? [datum.country] : datum.wrap_ok && datum.th >= 30 ? [datum.line1, datum.line2] : ['']"
         }
       ]
     }
@@ -226,7 +282,7 @@
           "stroke": [
             {
               "test": "datum.is_malaysia === 'True' || datum.is_malaysia === true",
-              "value": "#000000"
+              "value": "#08519c"
             },
             {
               "value": "#ffffff"
@@ -261,7 +317,7 @@
             "value": "top"
           },
           "text": {
-            "signal": "datum.key + '  ·  ' + format(datum.total / 1000, ',.0f') + 'k tonnes'"
+            "signal": "(length(datum.key + '  ·  ' + format(datum.total / 1000, ',.0f') + ' thousand tonnes') * 6.7 + 8 <= datum.x1 - datum.x0) ? datum.key + '  ·  ' + format(datum.total / 1000, ',.0f') + ' thousand tonnes' : (length(datum.key) * 6.7 + 8 <= datum.x1 - datum.x0 ? datum.key : '')"
           },
           "fontSize": {
             "value": 11
@@ -271,12 +327,6 @@
           },
           "fill": {
             "value": "#333333"
-          },
-          "limit": {
-            "signal": "max(datum.x1 - datum.x0 - 8, 1)"
-          },
-          "opacity": {
-            "signal": "datum.x1 - datum.x0 > 60 ? 1 : 0"
           }
         }
       }
@@ -298,7 +348,7 @@
             "value": "top"
           },
           "text": {
-            "signal": "datum.country + (datum.y1 - datum.y0 > 34 ? '\\n' + format(datum.tonnes / 1000, ',.0f') + 'k tonnes' : '')"
+            "field": "label"
           },
           "fontSize": {
             "value": 11
@@ -314,13 +364,7 @@
             {
               "value": "normal"
             }
-          ],
-          "limit": {
-            "signal": "max(datum.x1 - datum.x0 - 6, 1)"
-          },
-          "opacity": {
-            "signal": "(datum.x1 - datum.x0 > 40 && datum.y1 - datum.y0 > 16) ? 1 : 0"
-          }
+          ]
         }
       }
     }
