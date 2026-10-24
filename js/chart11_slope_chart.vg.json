@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 870,
-  "height": 560,
+  "height": 700,
   "title": {
     "text": "How the leading grain producers changed, 2004 to 2024",
     "subtitle": [
@@ -47,6 +47,42 @@
     {
       "transform": [
         {
+          "filter": "abs(log(datum.label_y)-log(datum.production_mt)) > 0.004"
+        }
+      ],
+      "mark": {
+        "type": "rule",
+        "color": "#707070",
+        "strokeWidth": 1.2
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "axis": null,
+          "scale": {
+            "padding": 1.475
+          }
+        },
+        "y": {
+          "field": "production_mt",
+          "type": "quantitative",
+          "scale": {
+            "type": "log",
+            "zero": false,
+            "nice": false,
+            "padding": 12
+          },
+          "axis": null
+        },
+        "y2": {
+          "field": "label_y"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
           "filter": "!(datum.is_australia === 'True' || datum.is_australia === true)"
         }
       ],
@@ -54,8 +90,9 @@
         "type": "line",
         "point": {
           "filled": true,
-          "size": 50,
-          "color": "#b0b0b0"
+          "size": 36,
+          "color": "#b0b0b0",
+          "opacity": 0.7
         },
         "color": "#b0b0b0",
         "strokeWidth": 2

@@ -45,7 +45,7 @@ long = long.sort_values(["crop", "rank_end", "year"])
 # the true values. PLOT_H, SCALE_PAD and GAP_PX must match the chart height, y scale padding and font size
 # in the Vega-Lite file. Both years share one y scale, so the pixel size is worked out per crop.
 import numpy as np
-PLOT_H, SCALE_PAD, GAP_PX = 560, 12, 16
+PLOT_H, SCALE_PAD, GAP_PX = 700, 12, 16
 long["label_y"] = long["production_mt"]
 for crop, cg in long.groupby("crop"):
     logs = np.log10(cg["production_mt"].values)
