@@ -45,6 +45,32 @@
     {
       "transform": [
         {
+          "filter": "datum.crop === 'Barley' && datum.partner === 'China, mainland' && datum.period === '2021-24'"
+        }
+      ],
+      "mark": {
+        "type": "rect",
+        "color": "#9e9e9e",
+        "opacity": 0.18
+      },
+      "encoding": {
+        "x": {
+          "value": 612
+        },
+        "x2": {
+          "value": 728
+        },
+        "y": {
+          "value": 0
+        },
+        "y2": {
+          "value": 420
+        }
+      }
+    },
+    {
+      "transform": [
+        {
           "filter": "datum.rank <= 10 && !(datum.is_malaysia === 'True' || datum.is_malaysia === true)"
         },
         {
@@ -110,7 +136,9 @@
           "scale": {
             "domain": [
               11.8,
-              0.5
+              {
+                "expr": "crop === 'Barley' ? -1 : 0.5"
+              }
             ]
           },
           "axis": null
@@ -209,7 +237,9 @@
           "scale": {
             "domain": [
               11.8,
-              0.5
+              {
+                "expr": "crop === 'Barley' ? -1 : 0.5"
+              }
             ]
           },
           "axis": null
@@ -287,7 +317,9 @@
           "scale": {
             "domain": [
               11.8,
-              0.5
+              {
+                "expr": "crop === 'Barley' ? -1 : 0.5"
+              }
             ]
           },
           "axis": null
@@ -357,7 +389,9 @@
           "scale": {
             "domain": [
               11.8,
-              0.5
+              {
+                "expr": "crop === 'Barley' ? -1 : 0.5"
+              }
             ]
           },
           "axis": null
@@ -435,13 +469,81 @@
           "scale": {
             "domain": [
               11.8,
-              0.5
+              {
+                "expr": "crop === 'Barley' ? -1 : 0.5"
+              }
             ]
           },
           "axis": null
         },
         "text": {
           "field": "my_text"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.crop === 'Barley' && datum.partner === 'China, mainland' && datum.period === '2021-24'"
+        },
+        {
+          "calculate": "-0.5",
+          "as": "ypos"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 10,
+        "color": "#444444",
+        "baseline": "middle"
+      },
+      "encoding": {
+        "x": {
+          "field": "period",
+          "type": "ordinal",
+          "sort": [
+            "1986-91",
+            "1996-00",
+            "2001-05",
+            "2006-10",
+            "2011-15",
+            "2016-20",
+            "2021-24"
+          ],
+          "axis": {
+            "title": null,
+            "labelAngle": 0,
+            "grid": false,
+            "orient": "top",
+            "domain": false
+          },
+          "scale": {
+            "padding": 1,
+            "range": [
+              40,
+              760
+            ]
+          }
+        },
+        "y": {
+          "field": "ypos",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              11.8,
+              {
+                "expr": "crop === 'Barley' ? -1 : 0.5"
+              }
+            ]
+          },
+          "axis": null
+        },
+        "text": {
+          "value": [
+            "China's tariffs on",
+            "Australian barley,",
+            "2020 to 2023"
+          ]
         }
       }
     }

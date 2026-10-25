@@ -3,7 +3,7 @@
   "title": {
     "text": "Australian grain harvests swing widely from year to year",
     "subtitle": [
-      "Annual production in million tonnes, 1961 to 2024",
+      "Annual production in million tonnes, 1961 to 2024. Grey bands mark major drought years",
       "Source: Food and Agriculture Organization of the United Nations"
     ],
     "anchor": "start",
@@ -76,6 +76,49 @@
       }
     },
     "layer": [
+      {
+        "transform": [
+          {
+            "filter": "datum.year === 1967 || datum.year === 1982 || datum.year === 1994 || datum.year === 2002 || datum.year === 2006 || datum.year === 2018 || datum.year === 2019"
+          },
+          {
+            "calculate": "datum.year - 0.5",
+            "as": "b0"
+          },
+          {
+            "calculate": "datum.year + 0.5",
+            "as": "b1"
+          }
+        ],
+        "mark": {
+          "type": "rect",
+          "color": "#9e9e9e",
+          "opacity": 0.3
+        },
+        "encoding": {
+          "x": {
+            "field": "b0",
+            "type": "quantitative"
+          },
+          "x2": {
+            "field": "b1"
+          },
+          "y": {
+            "value": 0
+          },
+          "y2": {
+            "value": 150
+          },
+          "tooltip": [
+            {
+              "field": "year",
+              "type": "quantitative",
+              "title": "Drought year",
+              "format": "d"
+            }
+          ]
+        }
+      },
       {
         "mark": {
           "type": "area",
@@ -233,6 +276,41 @@
         "encoding": {
           "text": {
             "field": "lbl"
+          }
+        }
+      },
+      {
+        "transform": [
+          {
+            "filter": "datum.crop === 'Wheat' && (datum.year === 1967 || datum.year === 1982 || datum.year === 1994 || datum.year === 2002 || datum.year === 2006 || datum.year === 2018)"
+          },
+          {
+            "calculate": "datum.year === 2018 ? datum.year + 0.5 : datum.year",
+            "as": "xc"
+          },
+          {
+            "calculate": "datum.year === 2018 ? '2018–19 drought' : datum.year + ' drought'",
+            "as": "dl"
+          }
+        ],
+        "mark": {
+          "type": "text",
+          "angle": 270,
+          "align": "right",
+          "baseline": "middle",
+          "fontSize": 9,
+          "color": "#555555"
+        },
+        "encoding": {
+          "x": {
+            "field": "xc",
+            "type": "quantitative"
+          },
+          "y": {
+            "value": 4
+          },
+          "text": {
+            "field": "dl"
           }
         }
       }
