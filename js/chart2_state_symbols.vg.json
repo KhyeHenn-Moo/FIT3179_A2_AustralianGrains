@@ -203,6 +203,67 @@
           }
         ]
       }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "name": "Western Australia",
+            "lon": 122.289,
+            "lat": -25.344
+          },
+          {
+            "name": "Northern Territory",
+            "lon": 133.356,
+            "lat": -19.364
+          },
+          {
+            "name": "South Australia",
+            "lon": 135.767,
+            "lat": -30.072
+          },
+          {
+            "name": "Queensland",
+            "lon": 144.453,
+            "lat": -22.517
+          },
+          {
+            "name": "New South Wales",
+            "lon": 147.016,
+            "lat": -32.15
+          },
+          {
+            "name": "Victoria",
+            "lon": 144.284,
+            "lat": -36.85
+          },
+          {
+            "name": "Tasmania",
+            "lon": 146.594,
+            "lat": -41.928
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "color": "#333333",
+        "dy": -13
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "name"
+        }
+      }
     }
   ],
   "config": {

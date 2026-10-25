@@ -206,6 +206,108 @@
           }
         ]
       }
+    },
+    {
+      "data": {
+        "url": "js/states_2021.geojson",
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": null,
+        "stroke": "#555555",
+        "strokeWidth": 0.8
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "name": "Western Australia",
+            "lon": 122.5,
+            "lat": -25.0
+          },
+          {
+            "name": "Northern Territory",
+            "lon": 133.4,
+            "lat": -19.5
+          },
+          {
+            "name": "South Australia",
+            "lon": 134.5,
+            "lat": -30.0
+          },
+          {
+            "name": "Queensland",
+            "lon": 144.5,
+            "lat": -22.5
+          },
+          {
+            "name": "Victoria",
+            "lon": 144.3,
+            "lat": -39.4
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "color": "#333333"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "name"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "name": "New South Wales",
+            "lon": 154.3,
+            "lat": -31.5
+          },
+          {
+            "name": "Tasmania",
+            "lon": 149.2,
+            "lat": -42.2
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "color": "#333333",
+        "align": "left",
+        "dx": 4
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "name"
+        }
+      }
     }
   ],
   "config": {
