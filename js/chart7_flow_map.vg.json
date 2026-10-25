@@ -115,7 +115,7 @@
           ],
           "mark": {
             "type": "rule",
-            "stroke": "#fc8d59",
+            "stroke": "#f28e2b",
             "opacity": 0.6,
             "strokeCap": "round"
           },

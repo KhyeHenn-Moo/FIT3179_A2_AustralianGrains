@@ -114,19 +114,19 @@
         "size": 90,
         "outliers": false,
         "box": {
-          "fill": "#f4c7c3",
-          "stroke": "#b30000"
+          "fill": "#bae4b3",
+          "stroke": "#006d2c"
         },
         "median": {
-          "color": "#7f0000",
+          "color": "#00441b",
           "size": 90,
           "thickness": 3
         },
         "rule": {
-          "stroke": "#b30000"
+          "stroke": "#006d2c"
         },
         "ticks": {
-          "stroke": "#b30000",
+          "stroke": "#006d2c",
           "size": 36
         }
       }
@@ -140,7 +140,7 @@
       "mark": {
         "type": "point",
         "filled": true,
-        "color": "#b30000",
+        "color": "#006d2c",
         "size": 55,
         "opacity": 0.9
       },

@@ -5,7 +5,7 @@
   "title": {
     "text": "How the leading grain producers changed, 2004 to 2024",
     "subtitle": [
-      "Production in million tonnes of each crop's ten largest producers in 2024. Australia is outlined in red",
+      "Production in million tonnes of each crop's ten largest producers in 2024. Australia is shown in black",
       "Source: Food and Agriculture Organization of the United Nations"
     ],
     "anchor": "start",
@@ -172,9 +172,9 @@
         "point": {
           "filled": true,
           "size": 100,
-          "color": "#b30000"
+          "color": "#222222"
         },
-        "color": "#b30000",
+        "color": "#222222",
         "strokeWidth": 4
       },
       "encoding": {
@@ -289,7 +289,7 @@
         "color": {
           "condition": {
             "test": "(datum.is_australia === 'True' || datum.is_australia === true)",
-            "value": "#b30000"
+            "value": "#222222"
           },
           "value": "#555555"
         },
@@ -350,7 +350,7 @@
         "color": {
           "condition": {
             "test": "(datum.is_australia === 'True' || datum.is_australia === true)",
-            "value": "#b30000"
+            "value": "#222222"
           },
           "value": "#555555"
         },

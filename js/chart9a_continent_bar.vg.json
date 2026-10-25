@@ -72,7 +72,7 @@
         "color": {
           "condition": {
             "test": "datum.continent === 'Asia'",
-            "value": "#d94801"
+            "value": "#f28e2b"
           },
           "value": "#bdbdbd"
         },
