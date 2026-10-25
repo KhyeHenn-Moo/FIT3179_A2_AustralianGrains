@@ -33,7 +33,7 @@
       "filter": "datum.crop === crop"
     },
     {
-      "calculate": "datum.partner === 'Iran (Islamic Republic of)' ? 'Iran' : datum.partner === 'Netherlands (Kingdom of the)' ? 'Netherlands' : datum.partner === 'United Republic of Tanzania' ? 'Tanzania' : datum.partner === 'USSR' ? 'Soviet Union' : datum.partner === 'China, Hong Kong SAR' ? 'Hong Kong' : datum.partner === 'China, Macao SAR' ? 'Macao' : datum.partner === 'China, mainland' ? 'China' : datum.partner === 'Republic of Korea' ? 'South Korea' : datum.partner === 'China, Taiwan Province of' ? 'Taiwan' : datum.partner === 'Viet Nam' ? 'Vietnam' : datum.partner === 'United States of America' ? 'United States' : datum.partner",
+      "calculate": "datum.partner === 'Iran (Islamic Republic of)' ? 'Iran' : datum.partner === 'Netherlands (Kingdom of the)' ? 'Netherlands' : datum.partner === 'United Republic of Tanzania' ? 'Tanzania' : datum.partner === 'USSR' ? 'Soviet Union' : datum.partner === 'China, Hong Kong SAR' ? 'Hong Kong' : datum.partner === 'China, Macao SAR' ? 'Macao' : datum.partner === 'China, mainland' ? 'China' : datum.partner === 'Republic of Korea' ? 'South Korea' : datum.partner === 'China, Taiwan Province of' ? 'Taiwan' : datum.partner === 'Viet Nam' ? 'Vietnam' : datum.partner === 'United States of America' ? 'United States' : datum.partner === 'Sudan (former)' ? 'Sudan (before 2011)' : datum.partner",
       "as": "buyer"
     },
     {
