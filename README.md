@@ -39,7 +39,7 @@ The Vega-Lite and Vega specification for every chart is in the `js/` folder, for
 
 | Source | Dataset | Raw file (`raw_data/`) | Used for |
 |---|---|---|---|
-| Australian Bureau of Statistics (ABS) | [Australian Agriculture: Broadacre Crops](https://dataexplorer.abs.gov.au/vis?pg=0&snb=1&df[ds]=INDUSTRY_TO): area, levied production and local value of levied crop, by Statistical Area Level 2 and state, 2022-23 to 2024-25 | `ABS_data.csv` | Charts 1, 2, 3, 6 |
+| Australian Bureau of Statistics (ABS) | [Australian Agriculture: Broadacre Crops](https://dataexplorer.abs.gov.au/vis?pg=0&snb=1&df[ds]=INDUSTRY_TO): area, levied production and local value of levied crop, by Statistical Area Level 2 and state, 2022–23 to 2024–25 | `ABS_data.csv` | Charts 1, 2, 3, 6 |
 | Food and Agriculture Organization of the United Nations (FAOSTAT) | [Trade: detailed trade matrix](https://www.fao.org/faostat/en/#data/TM): Australian export quantity by destination country | `FAOSTAT_data.csv` | Charts 7, 8, 9a, 9b |
 | FAOSTAT | [Crops and livestock products](https://www.fao.org/faostat/en/#data/QCL): area harvested, production and yield, by country | `FAOSTAT_production.csv` | Charts 10, 11 |
 | FAOSTAT | [Crops and livestock products](https://www.fao.org/faostat/en/#data/QCL): the same measures for Australia only, 1961 to 2024 | `FAOSTAT_australia_history.csv` | Charts 4, 5 |
@@ -48,7 +48,7 @@ Notes on the data:
 
 - ABS figures are **levied production**: the tonnes recorded through grain levy payments, which is not always the same as the total harvest.
 - ABS only reports small Statistical Area Level 2 areas where production was recorded. Grey areas on chart 1 mean no record, not zero.
-- Trade flows (charts 7, 9a, 9b) are for 2024 and leave out flows under 1,000 tonnes. Buyer rankings (chart 8) use periods from 1986-91 to 2021-24; the 1992-95 trade records are incomplete, so those years are left out.
+- Trade flows (charts 7, 9a, 9b) are for 2024 and leave out flows under 1,000 tonnes. Buyer rankings (chart 8) use periods from 1986–91 to 2021–24; the 1992–95 trade records are incomplete, so those years are left out.
 - Chart 7 lines run from the middle of Australia to each buyer's capital city, so they show size, not shipping routes.
 
 ### Map files
